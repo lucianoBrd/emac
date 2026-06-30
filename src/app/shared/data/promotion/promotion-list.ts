@@ -1,7 +1,7 @@
 import { Promotion } from "../../models/promotion.interface";
 
 export class PromotionListDB {
-  static list: Promotion[] = [
+  static readonly list: Promotion[] = [
     {
       id: "gal-morel",
       title: "Général René MOREL",

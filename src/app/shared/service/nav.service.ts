@@ -16,49 +16,56 @@ export class NavService {
   public items: BehaviorSubject<Menu[]>;
 
   constructor() {
+    const promotions: Promotion[] = PromotionListDB.list
+      .slice()
+      .sort((a: Promotion, b: Promotion): number => b.number - a.number);
+    const lastPromotion: Promotion | undefined = promotions.shift();
+    const lastPromotionPath: string = "/promotions/" + lastPromotion?.id;
     let promotionsMenu: Menu[] = [];
-    PromotionListDB.list
-      .sort((a: Promotion, b: Promotion): number => b.number - a.number)
-      .slice(0, 3)
-      .forEach((promotion: Promotion): void => {
-        const promotionPath: string = "/promotions/" + promotion.id;
-        promotionsMenu.push({
-          title: promotion.id,
-          type: "sub",
-          icon: "comments-smiley",
-          children: [
-            {
-              path: promotionPath,
-              title: promotion.title,
-              type: "link",
-              icon: "info-alt",
-            },
-            {
-              path: promotionPath + "/social",
-              title: ConfigDB.wordings.general.social,
-              type: "link",
-              icon: "themify-favicon",
-            },
-            {
-              path: promotionPath + "/gallery",
-              title: ConfigDB.wordings.general.gallery,
-              type: "link",
-              icon: "gallery",
-            },
-            {
-              path: promotionPath + "/blog",
-              title: ConfigDB.wordings.general.blog,
-              type: "link",
-              icon: "layout-list-thumb-alt",
-            },
-          ],
-        });
-      });
+
     promotionsMenu.push({
-      title: ConfigDB.wordings.promotion.title,
+      title: lastPromotion?.id,
       type: "sub",
       icon: "comments-smiley",
       children: [
+        {
+          path: lastPromotionPath,
+          title: lastPromotion?.title,
+          type: "link",
+          icon: "info-alt",
+        },
+        {
+          path: lastPromotionPath + "/social",
+          title: ConfigDB.wordings.general.social,
+          type: "link",
+          icon: "themify-favicon",
+        },
+        {
+          path: lastPromotionPath + "/gallery",
+          title: ConfigDB.wordings.general.gallery,
+          type: "link",
+          icon: "gallery",
+        },
+        {
+          path: lastPromotionPath + "/blog",
+          title: ConfigDB.wordings.general.blog,
+          type: "link",
+          icon: "layout-list-thumb-alt",
+        },
+      ],
+    });
+
+    promotionsMenu.push({
+      title: ConfigDB.wordings.promotion.title,
+      type: "sub",
+      children: [
+        ...promotions.slice(0, 3).map((promotion: Promotion): Menu => {
+          return {
+            path: "/promotions/" + promotion.id,
+            title: promotion.title,
+            type: "link",
+          };
+        }),
         {
           path: "/promotions",
           title:
@@ -67,7 +74,6 @@ export class NavService {
             PromotionListDB.list.length +
             ")",
           type: "link",
-          icon: "layout-grid2-thumb",
         },
       ],
     });
@@ -80,7 +86,7 @@ export class NavService {
       {
         title: ConfigDB.wordings.promotion.title,
         megaMenu: true,
-        megaMenuType: "medium",
+        megaMenuType: "small",
         type: "sub",
         children: promotionsMenu,
       },
