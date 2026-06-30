@@ -1,0 +1,34 @@
+<!--sponsor section start-->
+<section
+  class="event sponsor set-relative bg bg-img2 bg-about"
+  [style.background-image]="'url(assets/images/event/h3-bg.jpg)'"
+>
+  <div class="container set-margin">
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <div class="title title3">
+          <div class="main-title">
+            <h2 class="text-white">sponsor</h2>
+          </div>
+          <div class="sub-title">
+            <p class="text-white">
+              Register now and reserve your seat for this
+              <span>year's,</span> the largest
+              <span>web development</span> and online marketing
+              <span>conference in UK,</span> covering everything you need to
+              know in order to develop a successful online business.
+            </p>
+          </div>
+        </div>
+      </div>
+      @for(data of sponsor; track data){
+      <div class="col-md-3 col-sm-4 col-6 sponsor-img">
+        <div class="text-center">
+          <a href="#"><img [src]="data.img" alt="" class="img-fluid" /></a>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+<!--sponsor section end-->

@@ -1,0 +1,24 @@
+<!--counter section start-->
+<section
+  class="event counter set-relative bg bg-img3 bg-about"
+  [style.background-image]="'url(assets/images/event/counter-bg.jpg)'"
+>
+  <div class="container">
+    <div class="row">
+      @for(data of counter; track data){
+      <div class="col-md-3 col-6 counter-container">
+        <div class="counters">
+          <img [src]="data.img" alt="" class="img-fluid counter-img" />
+          <div class="counter-text">
+            <h2 class="count-number text-center text-white counts">
+              <span class="counter">{{ data.count }}</span>
+            </h2>
+            <h6 class="count-desc text-center text-white">{{data.type}}</h6>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+<!--counter section end-->

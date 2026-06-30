@@ -1,0 +1,33 @@
+<section class="maintenance-sec">
+    <div>
+        <div class="snow snow--near"></div>
+        <div class="snow snow--near snow--alt"></div>
+
+        <div class="snow snow--mid"></div>
+        <div class="snow snow--mid snow--alt"></div>
+
+        <div class="snow snow--far"></div>
+        <div class="snow snow--far snow--alt"></div>
+
+        <div class="center-content">
+            <div class="maintenance-container">
+                <h1>{{ wordings.app_name }}</h1>
+                <h4>{{ wordings.maintenance.title }}</h4>
+                <h2>{{ wordings.maintenance.description }}</h2>
+                @if (socials.length > 0) {
+                    <div class="social m-t-20">
+                        <ul>
+                            @for (social of socials; track social.id) {
+                                <li>
+                                    <a target="_blank" href="{{social.link}}">
+                                        <i class="{{social.fa}} center-content" title="{{social.title}}" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

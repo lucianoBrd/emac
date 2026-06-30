@@ -1,0 +1,32 @@
+<app-loader></app-loader>
+<app-meta></app-meta>
+<router-outlet></router-outlet>
+<div class="theme-pannel-main">
+    <ul>
+        @if (customize.data.settings.layout_type === 'ltr') {
+            <li id="rtl_btn" (click)="customizeLayoutType('rtl')">
+                <a href="javascript:void(0)" class="btn setting_btn">
+                    <span class="rtl-txt">{{wordingsSettings.rtl}}</span>
+                </a>
+            </li>
+        } @if (customize.data.settings.layout_type === 'rtl') {
+            <li id="ltr_btn" (click)="customizeLayoutType('ltr')">
+                <a href="javascript:void(0)" class="btn setting_btn">
+                    <span class="rtl-txt">{{wordingsSettings.ltr}}</span>
+                </a>
+            </li>
+        } @if (customize.data.settings.layout_version === 'dark') {
+            <li class="sidebar-btn dark-light-btn" (click)="customizeLayoutVersion('light')">
+                <a href="javascript:void(0)" class="dark-light">
+                    <span class="theme-layout-version">{{wordingsSettings.light}}</span>
+                </a>
+            </li>
+        } @if (customize.data.settings.layout_version === 'light') {
+            <li class="sidebar-btn dark-light-btn" (click)="customizeLayoutVersion('dark')">
+                <a href="javascript:void(0)" class="dark-light">
+                    <span class="theme-layout-version">{{wordingsSettings.dark}}</span>
+                </a>
+            </li>
+        }
+    </ul>
+</div>
