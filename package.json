@@ -10,7 +10,8 @@
     "lint": "eslint . --ext .ts,.html",
     "lint:fix": "eslint . --ext .ts,.html --fix",
     "format": "prettier --write \"**/*.{ts,html,scss,css,js,json,md}\"",
-    "github-build": "ng build --configuration production --base-href 'https://lucianobrd.github.io/emac/'"
+    "github-build": "ng build --configuration production --base-href 'https://lucianobrd.github.io/emac/'",
+    "github-deploy": "npx angular-cli-ghpages --dir=dist/emac/browser --no-silent"
   },
   "private": true,
   "dependencies": {
