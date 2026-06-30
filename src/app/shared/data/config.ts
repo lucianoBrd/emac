@@ -1,5 +1,5 @@
 export class ConfigDB {
-  static inMaintenance: boolean = true;
+  static inMaintenance: boolean = false;
   static data = {
     settings: {
       layout_type: "ltr",
