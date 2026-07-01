@@ -9,9 +9,9 @@ import { EventContact } from "./event-contact/event-contact";
 import { EventCopyright } from "./event-copyright/event-copyright";
 import { EventCounter } from "./event-counter/event-counter";
 import { EventGallery } from "./event-gallery/event-gallery";
-import { EventHeader } from "./event-header/event-header";
-import { EmacNav } from "./event-nav/emac-nav";
-import { EventPricing } from "./event-pricing/event-pricing";
+import { EmacHeader } from "./emac-header/emac-header";
+import { EmacNav } from "./emac-nav/emac-nav";
+import { EmacPromotion } from "./emac-promotion/emac-promotion";
 import { EventSchedule } from "./event-schedule/event-schedule";
 import { EventSpeaker } from "./event-speaker/event-speaker";
 import { EventSponsor } from "./event-sponsor/event-sponsor";
@@ -22,13 +22,13 @@ import { EventTestimonial } from "./event-testimonial/event-testimonial";
   selector: "app-emac",
   imports: [
     EmacNav,
-    EventPricing,
+    EmacPromotion,
     EventSponsor,
     EventAbout,
     EventBlog,
     EventBooking,
     EventContact,
-    EventHeader,
+    EmacHeader,
     EventCopyright,
     EventCounter,
     EventGallery,
@@ -40,13 +40,6 @@ import { EventTestimonial } from "./event-testimonial/event-testimonial";
   templateUrl: "./emac.html",
   styleUrls: ["./emac.scss"],
 })
-export class Emac implements OnInit {
-  constructor(
-    private route: ActivatedRoute,
-    private title: Title,
-  ) {}
+export class Emac {
 
-  ngOnInit() {
-    this.title.setTitle(this.route.snapshot.data["title"]);
-  }
 }

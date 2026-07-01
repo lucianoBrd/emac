@@ -23,6 +23,7 @@ export class ConfigDB {
       gallery: "Galerie",
       social: "Réseaux sociaux",
       back: "Retour",
+      learn_more: "Plus d'information",
     },
     page_not_found: {
       title: "Page non trouvée",
@@ -37,6 +38,7 @@ export class ConfigDB {
     promotion: {
       title: "Promotions",
       see_all: "Voir toutes",
+      current: "Promotion actuelle",
     },
     emac: {
       title: "École militaire des aspirants de Coëtquidan",

@@ -1,0 +1,67 @@
+<!--pricing section start-->
+<section
+  class="event pricing set-relative bg bg-img bg-about"
+  [style.background-image]="'url(assets/images/emac/bg1.jpg)'"
+>
+    <div class="circle secondary"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <div class="title title3">
+          <div class="main-title">
+            <h2 class="text-white">{{wording.promotion.title}}</h2>
+          </div>
+          <div class="sub-title">
+            <p class="text-white">
+                L'<span>École militaire des aspirants de Coëtquidan (EMAC)</span>, anciennement <span>4e bataillon de l'École spéciale militaire de Saint-Cyr (E.S.M. 4)</span>, est l'une des trois écoles de formation des officiers français de l'Armée de terre.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 m-b-50">
+        <owl-carousel-o
+          [options]="promotionCarouselOptions"
+          class="pricing-slider"
+        >
+          @for(promotion of promotions; track promotion){
+          <ng-template carouselSlide class="item">
+            <div class="price-container shadows bg-white text-center">
+              <div class="price-feature-container set-relative">
+                <div class="feature-text">
+                    <img class="img-fluid feature-icon" src="{{promotion.logo}}" alt="{{promotion.id}}"/>
+                  <h4
+                    class="feature-text-heading bold text-uppercase font-primary"
+                  >
+                    {{promotion.title}}
+                  </h4>
+                  <hr class="set-border" />
+                </div>
+
+                  <div class="price-value">
+                      <h6 class="price text-center font-primary">
+                          {{promotion.startDate | date:'y'}}/{{promotion.endDate | date:'y'}}
+                      </h6>
+                  </div>
+
+                  @if ($first) {
+                      <div class="mb-2 font-primary">
+                          <h6 class="text-center-feature">{{wording.promotion.current}}</h6>
+                      </div>
+                  }
+
+                <a href="/promotion/{{promotion.id}}" class="btn btn-default back-white">
+                    {{wording.general.learn_more}}
+                </a>
+              </div>
+            </div>
+          </ng-template>
+          }
+        </owl-carousel-o>
+      </div>
+        <div class="col-12 text-center">
+            <a href="/promotion" class="btn btn-default">{{wording.promotion.see_all}}</a>
+        </div>
+    </div>
+  </div>
+</section>
+<!--pricing section end-->

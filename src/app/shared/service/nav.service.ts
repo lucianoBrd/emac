@@ -1,11 +1,11 @@
-import { Injectable } from "@angular/core";
+import {inject, Injectable} from "@angular/core";
 
 import { BehaviorSubject } from "rxjs";
 
 import { ConfigDB } from "../data/config";
-import { PromotionListDB } from "../data/promotion/promotion-list";
 import { Menu } from "../models/menu.interface";
 import { Promotion } from "../models/promotion.interface";
+import {PromotionService} from "./promotion.service";
 
 @Injectable({
   providedIn: "root",
@@ -14,11 +14,10 @@ export class NavService {
   public MENUITEMS: Menu[];
   // Array
   public items: BehaviorSubject<Menu[]>;
+  private promotionService: PromotionService = inject(PromotionService);
 
   constructor() {
-    const promotions: Promotion[] = PromotionListDB.list
-      .slice()
-      .sort((a: Promotion, b: Promotion): number => b.number - a.number);
+    const promotions: Promotion[] = this.promotionService.getPromotions();
     const lastPromotion: Promotion | undefined = promotions.shift();
     const lastPromotionPath: string = "/promotions/" + lastPromotion?.id;
     let promotionsMenu: Menu[] = [];
@@ -71,7 +70,7 @@ export class NavService {
           title:
             ConfigDB.wordings.promotion.see_all +
             " (" +
-            PromotionListDB.list.length +
+            this.promotionService.getLength() +
             ")",
           type: "link",
         },
