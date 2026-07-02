@@ -6,7 +6,7 @@ export class PromotionListDB {
       id: "gal-morel",
       title: "Général René MOREL",
       number: 3,
-      logo: "assets/images/promotion/gal-morel.png",
+      logo: "assets/images/promotion/gal-morel.PNG",
       startDate: new Date(2022, 1, 1),
       endDate: new Date(2023, 1, 1),
     },

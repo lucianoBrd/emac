@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 
 import { ConfigDB } from "../shared/data/config";
 import { SocialListDB } from "../shared/data/emac/social-list";
-import { Social } from "../shared/models/social.interface";
+import { Social } from "../shared/models/emac/social.interface";
 
 @Component({
   selector: "app-maintenance",

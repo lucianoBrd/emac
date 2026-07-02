@@ -1,0 +1,48 @@
+<!--schedule section start-->
+<section class="event schedule set-relative" id="schedule">
+  <div class="circle"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <div class="title title3">
+          <div class="main-title">
+            <h2>Chant de l’<span>EMAC</span></h2>
+          </div>
+          <div class="sub-title">
+            <p>
+                Ce chant a été écrit en <span>1994</span> sur ordre du Lieutenant-colonel Lautier commandant le <span>4e bataillon de l'école spéciale militaire de Saint-Cyr (ESM4)</span>.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="cal-time">
+          <div class="time">
+            <h4 class="text-capitalize monday-text">
+              {{wording.name}}
+            </h4>
+          </div>
+        </div>
+        <div class="event-container scrollbar">
+          <div>
+            @for(song of songs; track song.id){
+            <div class="cal-time events">
+              <div class="row">
+                <div class="col-md-10">
+                  <div class="schedule-event">
+                    <h5 class="names">{{song.title}}</h5>
+                      @for(description of song.description; track description){
+                    <p class="schedule-description">{{description}}</p>
+                      }
+                  </div>
+                </div>
+              </div>
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--schedule section end-->

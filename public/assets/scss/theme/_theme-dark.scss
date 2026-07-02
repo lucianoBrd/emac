@@ -1369,6 +1369,11 @@ body {
       }
     }
     .event {
+      p {
+        &.dark {
+          color: $white-5;
+        }
+      }
       &.pricing {
         .price-container {
           .feature-icon {

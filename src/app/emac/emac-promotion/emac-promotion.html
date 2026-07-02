@@ -13,7 +13,7 @@
           </div>
           <div class="sub-title">
             <p class="text-white">
-                L'<span>École militaire des aspirants de Coëtquidan (EMAC)</span>, anciennement <span>4e bataillon de l'École spéciale militaire de Saint-Cyr (E.S.M. 4)</span>, est l'une des trois écoles de formation des officiers français de l'Armée de terre.
+                Depuis sa fondation le <span>6 juillet 2021</span>, l'école comptabilise <span>{{numberOfPromotion}} promotions</span>.
             </p>
           </div>
         </div>
@@ -36,7 +36,11 @@
                   </h4>
                   <hr class="set-border" />
                 </div>
-
+                  <div class="price-features font-primary">
+                      <h6 class="price text-center-feature">
+                          {{ wording.promotion.number }}{{ promotion.number }}
+                      </h6>
+                  </div>
                   <div class="price-value">
                       <h6 class="price text-center font-primary">
                           {{promotion.startDate | date:'y'}}/{{promotion.endDate | date:'y'}}
@@ -59,7 +63,10 @@
         </owl-carousel-o>
       </div>
         <div class="col-12 text-center">
-            <a href="/promotion" class="btn btn-default">{{wording.promotion.see_all}}</a>
+            <a href="/promotion" class="btn btn-default">
+                {{wording.promotion.see_all}}
+                ({{numberOfPromotion}})
+            </a>
         </div>
     </div>
   </div>

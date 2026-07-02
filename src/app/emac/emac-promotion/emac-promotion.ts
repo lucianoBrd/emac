@@ -1,3 +1,4 @@
+import { DatePipe } from "@angular/common";
 import { Component, inject } from "@angular/core";
 
 import { CarouselModule } from "ngx-owl-carousel-o";
@@ -5,7 +6,6 @@ import { CarouselModule } from "ngx-owl-carousel-o";
 import { ConfigDB } from "../../shared/data/config";
 import { Promotion } from "../../shared/models/promotion.interface";
 import { PromotionService } from "../../shared/service/promotion.service";
-import {DatePipe} from "@angular/common";
 
 @Component({
   selector: "app-emac-promotion",
@@ -21,6 +21,7 @@ export class EmacPromotion {
     general: ConfigDB.wordings.general,
   };
   public promotions: Promotion[];
+  public numberOfPromotion: number;
   public promotionCarouselOptions = {
     items: 3,
     margin: 30,
@@ -48,5 +49,6 @@ export class EmacPromotion {
 
   constructor() {
     this.promotions = this.promotionService.getPromotions().slice(0, 4);
+    this.numberOfPromotion = this.promotionService.getLength();
   }
 }

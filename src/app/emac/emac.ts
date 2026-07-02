@@ -2,40 +2,31 @@ import { Component, OnInit } from "@angular/core";
 import { Title } from "@angular/platform-browser";
 import { ActivatedRoute } from "@angular/router";
 
-import { EventAbout } from "./event-about/event-about";
-import { EventBlog } from "./event-blog/event-blog";
-import { EventBooking } from "./event-booking/event-booking";
-import { EventContact } from "./event-contact/event-contact";
-import { EventCopyright } from "./event-copyright/event-copyright";
-import { EventCounter } from "./event-counter/event-counter";
-import { EventGallery } from "./event-gallery/event-gallery";
+import { EmacAbout } from "./emac-about/emac-about";
+import { EmacTradition } from "./emac-tradition/emac-tradition";
+import { EventCopyright } from "./emac-copyright/event-copyright";
+import { EmacCounter } from "./emac-counter/emac-counter";
 import { EmacHeader } from "./emac-header/emac-header";
 import { EmacNav } from "./emac-nav/emac-nav";
 import { EmacPromotion } from "./emac-promotion/emac-promotion";
-import { EventSchedule } from "./event-schedule/event-schedule";
-import { EventSpeaker } from "./event-speaker/event-speaker";
-import { EventSponsor } from "./event-sponsor/event-sponsor";
-import { EventSubscribe } from "./event-subscribe/event-subscribe";
-import { EventTestimonial } from "./event-testimonial/event-testimonial";
+import { EmacSong } from "./emac-song/emac-song";
+import { EmacInfo } from "./emac-info/emac-info";
+import {EmacContact} from "./emac-contact/emac-contact";
 
 @Component({
   selector: "app-emac",
   imports: [
     EmacNav,
     EmacPromotion,
-    EventSponsor,
-    EventAbout,
-    EventBlog,
-    EventBooking,
-    EventContact,
+    EmacAbout,
+    EmacTradition,
+    EmacInfo,
     EmacHeader,
     EventCopyright,
-    EventCounter,
-    EventGallery,
-    EventSchedule,
-    EventSpeaker,
-    EventSubscribe,
-    EventTestimonial,
+    EmacCounter,
+    EmacSong,
+    EmacInfo,
+    EmacContact,
   ],
   templateUrl: "./emac.html",
   styleUrls: ["./emac.scss"],

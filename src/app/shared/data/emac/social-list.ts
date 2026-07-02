@@ -1,4 +1,4 @@
-import { Social } from "../../models/social.interface";
+import { Social } from "../../models/emac/social.interface";
 
 export class SocialListDB {
   static list: Social[] = [

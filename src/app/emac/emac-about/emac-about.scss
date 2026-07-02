@@ -1,0 +1,43 @@
+.accordion-item {
+  background-color: unset;
+}
+.accordion-button {
+  border-radius: 50px !important;
+  &:not(:hover)  {
+    background-color: unset !important;
+  }
+  &:focus, &:hover, &:active {
+    background-color: #fff !important;
+  }
+
+  &::after {
+    background-image: none;
+  }
+
+  .rotate {
+    -moz-transition: all 0.5s linear;
+    -webkit-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+  }
+
+  .rotate.down {
+    -moz-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+
+  .rotate {
+      transform: rotate(270deg);
+      margin-right: 20px;
+  }
+
+  &.collapsed {
+    .rotate {
+        transform: rotate(0deg);
+        margin-right: 15px;
+    }
+    &::after {
+      background-image: none;
+    }
+  }
+}

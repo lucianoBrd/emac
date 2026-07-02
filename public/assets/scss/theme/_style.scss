@@ -7586,6 +7586,9 @@ event css start
   h6,
   p {
     color: $secondary;
+    &.dark {
+      color: $dark;
+    }
   }
   h1 {
     font-family: "Satisfy", cursive;
