@@ -6,12 +6,10 @@
       <div class="col-md-10 offset-md-1">
         <div class="title title3">
           <div class="main-title">
-            <h2>Chant de l’<span>EMAC</span></h2>
+            <h2 [innerHTML]="wording.title"></h2>
           </div>
           <div class="sub-title">
-            <p>
-                Ce chant a été écrit en <span>1994</span> sur ordre du Lieutenant-colonel Lautier commandant le <span>4e bataillon de l'école spéciale militaire de Saint-Cyr (ESM4)</span>.
-            </p>
+            <p [innerHTML]="wording.description"></p>
           </div>
         </div>
       </div>

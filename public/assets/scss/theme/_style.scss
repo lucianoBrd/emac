@@ -5644,6 +5644,8 @@ blog  css end
     }
     .counter-img {
       margin-bottom: 20px;
+      font-size: 50px;
+      color: $white;
     }
     .count-number {
       margin-bottom: 20px;
@@ -9236,7 +9238,7 @@ error css end
     transform: translateX(-50px);
     top: 75%;
     pointer-events: none;
-    width: 150px;
+    height: 150px;
     animation: rocket-movement 20s linear infinite both running;
   }
 
@@ -9256,7 +9258,7 @@ error css end
   }
 
   .object_astronaut {
-    width: 170px;
+    height: 170px;
     animation: rotate-astronaut 200s infinite linear both alternate;
   }
 

@@ -1,5 +1,6 @@
 
 import { Component } from "@angular/core";
+import {ConfigDB} from "../../shared/data/config";
 
 @Component({
   selector: "app-emac-info",
@@ -7,4 +8,6 @@ import { Component } from "@angular/core";
   templateUrl: "./emac-info.html",
   styleUrls: ["./emac-info.scss"],
 })
-export class EmacInfo {}
+export class EmacInfo {
+  public wording = ConfigDB.wordings.emac.info;
+}

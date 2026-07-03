@@ -6,16 +6,10 @@
             <div class="col-md-10 offset-md-1">
                 <div class="title title3">
                     <div class="main-title">
-                        <h2><span>our</span> speaker</h2>
+                        <h2 [innerHTML]="wording.tradition.title"></h2>
                     </div>
                     <div class="sub-title">
-                        <p>
-                            Register now and reserve your seat for this
-                            <span>year's,</span> the largest
-                            <span>web development</span> and online marketing
-                            <span>conference in UK,</span> covering everything you need to
-                            know in order to develop a successful online business.
-                        </p>
+                        <p class="dark" [innerHTML]="wording.tradition.description"></p>
                     </div>
                 </div>
             </div>
@@ -28,43 +22,34 @@
                             <div class="social">
                                 <ul>
                                     <li>
-                                        <a href="#"
-                                        ><i
-                                                class="fa fa-facebook center-content"
-                                                aria-hidden="true"
-                                        ></i
-                                        ></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"
-                                        ><i
-                                                class="fa fa-twitter center-content"
-                                                aria-hidden="true"
-                                        ></i
-                                        ></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"
-                                        ><i
-                                                class="fa fa-google center-content"
-                                                aria-hidden="true"
-                                        ></i
-                                        ></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"
-                                        ><i
-                                                class="fa fa-globe center-content"
-                                                aria-hidden="true"
-                                        ></i
-                                        ></a>
+                                        <a (click)="openVerticallyCentered(content)">
+                                            <i class="fa fa-info center-content" aria-hidden="true"></i>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
+                            <ng-template #content let-modal>
+                                <div class="login-modal">
+                                    <div class="modal-header">
+                                        <button class="close" type="button" (click)="modal.dismiss(wording.general.close)">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body text-center">
+                                        <h3 class="m-b-20">{{tradition.title}}</h3>
+                                        <img [src]="tradition.image" alt="{{tradition.title}}" class="img-fluid m-b-20" />
+                                        <p>
+                                            {{tradition.description}}
+                                        </p>
+                                        <a class="btn btn-default primary-btn m-t-20" (click)="modal.dismiss(wording.general.close)">
+                                            {{wording.general.close}}
+                                        </a>
+                                    </div>
+                                </div>
+                            </ng-template>
                         </div>
                         <div class="employee">
                             <h5 class="e-name text-center">{{tradition.title}}</h5>
-                            <h6 class="post text-center">x</h6>
                         </div>
                     </div>
                 </div>

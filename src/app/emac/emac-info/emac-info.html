@@ -6,17 +6,10 @@
       <div class="col-md-10 offset-md-1">
         <div class="title title3">
           <div class="main-title">
-            <h2>
-                É<span>cole</span> m<span>ilitaire des </span>a<span>spirants de </span>C<span>oëtquidan</span>
-            </h2>
+            <h2 [innerHTML]="wording.title"></h2>
           </div>
           <div class="sub-title">
-            <p class="dark">
-                L'<span>École militaire des aspirants de Coëtquidan (EMAC)</span>, anciennement <span>4e bataillon de l'École spéciale militaire de Saint-Cyr (E.S.M. 4)</span>, est l'une des trois écoles de formation des officiers français de l'Armée de terre.
-            </p>
-              <p class="mt-4 dark">
-                  Elle fait partie de l'<span>Académie militaire de Saint-Cyr Coëtquidan</span>, implantée dans le camp militaire de même nom situé sur le territoire de la commune de <span>Guer</span>, dans le département du Morbihan, en région Bretagne.
-              </p>
+            <p class="dark" [innerHTML]="wording.description"></p>
           </div>
         </div>
       </div>

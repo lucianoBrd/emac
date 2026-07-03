@@ -8,7 +8,7 @@
       <div class="col-md-10 offset-md-1">
         <div class="title title3">
           <div class="main-title">
-            <h2 class="text-white">Histoire de l’<span>EMAC</span></h2>
+            <h2 class="text-white" [innerHTML]="wording.emac.about.title"></h2>
           </div>
         </div>
       </div>
@@ -35,12 +35,12 @@
           <div class="format">
             <div class="format-small-text">
               <h6 class="text-white borders-before text-uppercase">
-                <span>{{wording.general.class}}</span>
+                <span>{{wording.emac.about.class}}</span>
               </h6>
             </div>
             <div class="format-head-text">
               <h3 class="about-font-header text-white">
-                  {{wording.emac.class}}
+                  {{wording.emac.about.school_class}}
               </h3>
             </div>
             <div class="format-sub-text" ngbAccordion [closeOthers]="true">
