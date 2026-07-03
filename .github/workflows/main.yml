@@ -16,8 +16,6 @@ jobs:
           node-version: '24.x'
       - name: Install
         run: npm install
-      - name: Build
-        run: npm run build
       - name: GitHub Build
         run: npm run github-build
       - name: GitHub Deploy
