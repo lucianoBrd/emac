@@ -31,7 +31,7 @@
                             <ng-template #content let-modal>
                                 <div class="login-modal">
                                     <div class="modal-header">
-                                        <button class="close" type="button" (click)="modal.dismiss(wording.general.close)">
+                                        <button class="close" type="button" (click)="modal.dismiss('Cross click')">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
@@ -41,7 +41,7 @@
                                         <p>
                                             {{tradition.description}}
                                         </p>
-                                        <a class="btn btn-default primary-btn m-t-20" (click)="modal.dismiss(wording.general.close)">
+                                        <a class="btn btn-default primary-btn m-t-20" (click)="modal.dismiss('Cross click')">
                                             {{wording.general.close}}
                                         </a>
                                     </div>

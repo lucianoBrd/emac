@@ -22,6 +22,9 @@ body {
     ngb-modal-window {
       .modal-content {
         background-color: $light-color;
+        ul {
+          color: $white-2;
+        }
       }
       .close {
         color: $white-5;
