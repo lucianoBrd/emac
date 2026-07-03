@@ -1058,6 +1058,7 @@ section {
       }
     }
     .feature-icon {
+      max-height: 200px;
       width: auto !important;
       color: $primary;
       display: inline-block;
@@ -3539,7 +3540,7 @@ booking section end
     .follow-text {
       font-size: 14px;
       text-transform: uppercase;
-      display: inline-block;
+      //display: inline-block;
       letter-spacing: 5px;
       margin-right: 15px;
     }
@@ -3583,6 +3584,7 @@ booking section end
       left: 0;
       right: 0;
       margin: 0 auto;
+      height: 70%;
     }
   }
   &.blog {
@@ -4290,7 +4292,7 @@ music css end
 
   a {
     font-size: calc(13px + (14 - 13) * ((100vw - 300px) / (1920 - 300)));
-    color: $primary;
+    color: $secondary;
     &:hover {
       text-decoration: none;
       cursor: pointer;
@@ -5642,6 +5644,8 @@ blog  css end
     }
     .counter-img {
       margin-bottom: 20px;
+      font-size: 50px;
+      color: $white;
     }
     .count-number {
       margin-bottom: 20px;
@@ -7584,6 +7588,9 @@ event css start
   h6,
   p {
     color: $secondary;
+    &.dark {
+      color: $dark;
+    }
   }
   h1 {
     font-family: "Satisfy", cursive;
@@ -7637,6 +7644,15 @@ event css start
     }
   }
   .circle {
+    &.secondary {
+      border: 3px solid $secondary;
+      &:after {
+        background: $secondary;
+      }
+      &:before {
+        background-color: $secondary;
+      }
+    }
     position: absolute;
     top: 60px;
     height: 26px;
@@ -8332,6 +8348,7 @@ popup css start
       display: inline-block;
       width: 100%;
       height: 100%;
+      //content: url('../../images/logo/emac.svg');
       background: $primary;
       transform: scale(0);
       transform-origin: center center;
@@ -9221,7 +9238,7 @@ error css end
     transform: translateX(-50px);
     top: 75%;
     pointer-events: none;
-    width: 150px;
+    height: 150px;
     animation: rocket-movement 20s linear infinite both running;
   }
 
@@ -9241,7 +9258,7 @@ error css end
   }
 
   .object_astronaut {
-    width: 170px;
+    height: 170px;
     animation: rotate-astronaut 200s infinite linear both alternate;
   }
 
