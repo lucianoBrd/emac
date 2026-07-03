@@ -20,8 +20,8 @@ jobs:
         run: npm run build
       - name: GitHub Build
         run: npm run github-build
-      - name: Available Deploy
+      - name: GitHub Deploy
         run: npm run github-deploy
         env:
           CI: true
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAGES }}
