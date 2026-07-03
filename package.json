@@ -11,7 +11,7 @@
     "lint:fix": "eslint . --ext .ts,.html --fix",
     "format": "prettier --write \"**/*.{ts,html,scss,css,js,json,md}\"",
     "github-build": "ng build --configuration production",
-    "github-deploy": "npx angular-cli-ghpages --dir=dist/emac/browser --no-silent"
+    "github-deploy": "npx angular-cli-ghpages --dir=dist/emac/browser --no-silent --name=\"LucianoBrd\" --email=lucien.burdet@gmail.com"
   },
   "private": true,
   "dependencies": {
