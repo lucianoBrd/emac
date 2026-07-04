@@ -10237,6 +10237,77 @@
   }
 }
 
+// fix IOS `background-attachment fixed` issue
+@supports (-webkit-overflow-scrolling: touch) {
+  .header {
+    .bg {
+      &.header3 {
+        background-attachment: scroll;
+      }
+      &.music-bg {
+        background-attachment: scroll;
+      }
+    }
+
+  }
+  .music {
+    &.bg-album {
+      background-attachment: scroll;
+    }
+    &.bg-artist {
+      background-attachment: scroll;
+    }
+    &.bg-gallery {
+      background-attachment: scroll;
+    }
+  }
+  .wedding {
+    &.bg {
+      &.slider-bg {
+        background-attachment: scroll;
+      }
+    }
+  }
+  .event {
+    &.bg-about {
+      background-attachment: scroll;
+    }
+  }
+  .breadcrumb-section {
+    &.bg-dark {
+      &.bg-fixed {
+        background-attachment: scroll;
+      }
+    }
+  }
+  .parallex-section {
+    .parallex-container {
+      background-attachment: scroll;
+    }
+  }
+  .bg-decore {
+    background-attachment: scroll;
+  }
+  .parallax-banner {
+    .full-banner {
+      background-attachment: scroll;
+    }
+  }
+}
+
+@media (hover: none) {
+  .speaker {
+    .team-img {
+      .social {
+        opacity: 1 !important;
+      }
+      .overlay {
+        opacity: 1 !important;
+      }
+    }
+  }
+}
+
 /**=====================
        63. Responsive CSS end
   ==========================**/
