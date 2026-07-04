@@ -1,0 +1,46 @@
+@if (title) {
+<!-- breadcrumb section start -->
+<section class="breadcrumb-section-main inner-2 breadcrumb-section-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb-contain">
+                    <div>
+                        <h2 class="breadcrumb-txt">{{ title }}</h2>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>
+                                <a [routerLink]="['/']">
+                                    <i class="fa fa-house"></i> {{appName}}
+                                </a>
+                            </li>
+                            @if (breadcrumbs?.parentBreadcrumb) {
+                            @if (breadcrumbs?.parentPath) {
+                                <li>
+                                    <a [routerLink]="[breadcrumbs?.parentPath]">
+                                        <i class="fa fa-angle-double-right"></i> {{breadcrumbs?.parentBreadcrumb}}
+                                    </a>
+                                </li>
+                            } @else {
+                            <li>
+                                <a href="javascript:void(0)" class="pe-none">
+                                <i class="fa fa-angle-double-right"></i> {{breadcrumbs?.parentBreadcrumb}}
+                                </a>
+                            </li>
+                            }
+                            }
+                            <li>
+                                <a href="javascript:void(0)" class="pe-none">
+                                    <i class="fa fa-angle-double-right"></i>{{ breadcrumbs?.childBreadcrumb }}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--breadcrumb section end -->
+}

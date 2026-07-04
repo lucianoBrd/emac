@@ -1,0 +1,74 @@
+<!--pricing section start-->
+<section
+        class="event pricing set-relative bg bg-img bg-about"
+        [style.background-image]="'url(assets/images/emac/bg1.jpg)'"
+>
+    <div class="circle secondary"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <div class="title title3">
+                    <div class="main-title">
+                        <h2 class="text-white">{{wording.promotion.title}}</h2>
+                    </div>
+                    <div class="sub-title">
+                        <p class="text-white">
+                            Depuis sa fondation le <span>6 juillet 2021</span>, l'école comptabilise <span>{{numberOfPromotion}} promotions</span>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 m-b-50">
+                <owl-carousel-o
+                        [options]="promotionCarouselOptions"
+                        class="pricing-slider"
+                >
+                    @for(promotion of promotions; track promotion){
+                        <ng-template carouselSlide class="item">
+                            <div class="price-container shadows bg-white text-center">
+                                <div class="price-feature-container set-relative">
+                                    <div class="feature-text">
+                                        <img class="img-fluid feature-icon" src="{{promotion.logo}}" alt="{{promotion.id}}"/>
+                                        <h4
+                                                class="feature-text-heading bold text-uppercase font-primary"
+                                        >
+                                            {{promotion.title}}
+                                        </h4>
+                                        <hr class="set-border" />
+                                    </div>
+                                    <div class="price-features font-primary">
+                                        <h6 class="price text-center-feature">
+                                            {{ wording.promotion.number }}{{ promotion.number }}
+                                        </h6>
+                                    </div>
+                                    <div class="price-value">
+                                        <h6 class="price text-center font-primary">
+                                            {{promotion.startDate | date:'y'}}/{{promotion.endDate | date:'y'}}
+                                        </h6>
+                                    </div>
+
+                                    @if ($first) {
+                                        <div class="mb-2 font-primary">
+                                            <h6 class="text-center-feature">{{wording.promotion.current}}</h6>
+                                        </div>
+                                    }
+
+                                    <a [routerLink]="['/promotion/'+promotion.id]" class="btn btn-default back-white">
+                                        {{wording.general.learn_more}}
+                                    </a>
+                                </div>
+                            </div>
+                        </ng-template>
+                    }
+                </owl-carousel-o>
+            </div>
+            <div class="col-12 text-center">
+                <a [routerLink]="['/promotions']" class="btn btn-default">
+                    {{wording.promotion.see_all}}
+                    ({{numberOfPromotion}})
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!--pricing section end-->

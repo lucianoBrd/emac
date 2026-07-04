@@ -53,7 +53,7 @@
                       </div>
                   }
 
-                <a href="/promotion/{{promotion.id}}" class="btn btn-default back-white">
+                <a [routerLink]="['/promotion/'+promotion.id]" class="btn btn-default back-white">
                     {{wording.general.learn_more}}
                 </a>
               </div>
@@ -63,7 +63,7 @@
         </owl-carousel-o>
       </div>
         <div class="col-12 text-center">
-            <a href="/promotion" class="btn btn-default">
+            <a [routerLink]="['/promotions']" class="btn btn-default">
                 {{wording.promotion.see_all}}
                 ({{numberOfPromotion}})
             </a>

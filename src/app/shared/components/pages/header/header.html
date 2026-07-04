@@ -4,7 +4,7 @@
     <div class="music-content">
         <div
                 class="music-bg bg bg-shadow-top"
-                [style.background-image]="'url(assets/images/emac/header.jpg)'"
+                [style.background-image]="'url('+background+')'"
         >
             <div
                     class="text-center w-100"
@@ -15,14 +15,14 @@
                     data-tilt-perspective="400"
             >
                 <div class="img-height">
-                    <img src="assets/images/logo/emac.svg" alt="emac" class="img-fluid" />
+                    <img [src]="logo" alt="logo" class="img-fluid" />
                 </div>
             </div>
         </div>
     </div>
     <div class="left-side">
-        <h6 class="follow-text">École militaire</h6>
-        <h6 class="follow-text">des aspirants</h6>
-        <h6 class="follow-text">de Coëtquidan</h6>
+        @for (text of leftText; track text) {
+            <h6 class="follow-text">{{text}}</h6>
+        }
     </div>
 </section>

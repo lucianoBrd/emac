@@ -2,19 +2,19 @@ import { Component, inject } from "@angular/core";
 
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 
-import { TapToTop } from "../../shared/components/tap-to-top/tap-to-top";
-import { ConfigDB } from "../../shared/data/config";
-import { SocialListDB } from "../../shared/data/emac/social-list";
-import { Social } from "../../shared/models/emac/social.interface";
-import { SocialService } from "../../shared/service/emac/social.service";
+import { TapToTop } from "../../tap-to-top/tap-to-top";
+import { ConfigDB } from "../../../data/config";
+import { SocialListDB } from "../../../data/emac/social-list";
+import { Social } from "../../../models/emac/social.interface";
+import { SocialService } from "../../../service/emac/social.service";
 
 @Component({
-  selector: "app-emac-copyright",
+  selector: "app-copyright",
   imports: [TapToTop],
-  templateUrl: "./event-copyright.html",
-  styleUrls: ["./event-copyright.scss"],
+  templateUrl: "./copyright.html",
+  styleUrls: ["./copyright.scss"],
 })
-export class EventCopyright {
+export class Copyright {
   public wordings = {
     general: ConfigDB.wordings.general,
     privacy_policy: ConfigDB.wordings.privacy_policy,

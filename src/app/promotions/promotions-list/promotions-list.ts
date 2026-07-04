@@ -1,20 +1,20 @@
-import { DatePipe } from "@angular/common";
-import { Component, inject } from "@angular/core";
+import {Component, inject} from "@angular/core";
 
-import { CarouselModule } from "ngx-owl-carousel-o";
-
-import { ConfigDB } from "../../shared/data/config";
-import { Promotion } from "../../shared/models/promotion.interface";
-import { PromotionService } from "../../shared/service/promotion.service";
+import { Menu } from "../../shared/components/navigation/menu/menu";
+import {CarouselModule} from "ngx-owl-carousel-o";
+import {DatePipe} from "@angular/common";
+import {PromotionService} from "../../shared/service/promotion.service";
+import {ConfigDB} from "../../shared/data/config";
+import {Promotion} from "../../shared/models/promotion.interface";
 import {RouterLink} from "@angular/router";
 
 @Component({
-  selector: "app-emac-promotion",
-  imports: [CarouselModule, DatePipe, RouterLink],
-  templateUrl: "./emac-promotion.html",
-  styleUrls: ["./emac-promotion.scss"],
+  selector: "promotions-list",
+  imports: [Menu, CarouselModule, DatePipe, RouterLink],
+  templateUrl: "./promotions-list.html",
+  styleUrls: ["./promotions-list.scss"],
 })
-export class EmacPromotion {
+export class PromotionsList {
   private promotionService: PromotionService = inject(PromotionService);
 
   public wording = {

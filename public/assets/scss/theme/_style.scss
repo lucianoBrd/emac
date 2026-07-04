@@ -13881,6 +13881,13 @@ header {
         }
         > a {
           color: white;
+          &.ecommerce {
+            color: $secondary;
+            pointer-events: none;
+            &:hover {
+              color: $secondary;
+            }
+          }
           &:hover {
             color: white;
           }

@@ -3,34 +3,37 @@ import { Title } from "@angular/platform-browser";
 import { ActivatedRoute } from "@angular/router";
 
 import { EmacAbout } from "./emac-about/emac-about";
-import { EmacTradition } from "./emac-tradition/emac-tradition";
-import { EventCopyright } from "./emac-copyright/event-copyright";
+import { EmacContact } from "./emac-contact/emac-contact";
 import { EmacCounter } from "./emac-counter/emac-counter";
-import { EmacHeader } from "./emac-header/emac-header";
-import { EmacNav } from "./emac-nav/emac-nav";
+import { EmacInfo } from "./emac-info/emac-info";
 import { EmacPromotion } from "./emac-promotion/emac-promotion";
 import { EmacSong } from "./emac-song/emac-song";
-import { EmacInfo } from "./emac-info/emac-info";
-import {EmacContact} from "./emac-contact/emac-contact";
+import { EmacTradition } from "./emac-tradition/emac-tradition";
+import { Copyright } from "../shared/components/pages/copyright/copyright";
+import { Header } from "../shared/components/pages/header/header";
+import { Nav } from "../shared/components/pages/nav/nav";
+import { ConfigDB } from "../shared/data/config";
+import {TapToTop} from "../shared/components/tap-to-top/tap-to-top";
 
 @Component({
   selector: "app-emac",
   imports: [
-    EmacNav,
     EmacPromotion,
     EmacAbout,
     EmacTradition,
     EmacInfo,
-    EmacHeader,
-    EventCopyright,
     EmacCounter,
     EmacSong,
     EmacInfo,
     EmacContact,
+    Nav,
+    Header,
+    Copyright,
+    TapToTop,
   ],
   templateUrl: "./emac.html",
   styleUrls: ["./emac.scss"],
 })
 export class Emac {
-
+  public wordings = ConfigDB.wordings.emac.header;
 }

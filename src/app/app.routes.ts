@@ -22,7 +22,8 @@ export const routes: Routes = [
     canActivate: [AuthGuardMaintenance],
   },
   {
-    path: "",
+    path: "promotions",
+    loadComponent: () => import('./promotions/promotions').then(m => m.Promotions),
     loadChildren: () =>
       import("../app/promotions/promotions.routes").then((r) => r.Promotions),
     canActivate: [AuthGuardMaintenance],
