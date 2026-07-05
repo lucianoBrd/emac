@@ -26,6 +26,7 @@ export class ConfigDB {
       learn_more: "Plus d'information",
       close: "Fermer",
       sitemap: "Sitemap",
+      search: "Rechercher",
     },
     privacy_policy: {
       title: "Politique de confidentialité",

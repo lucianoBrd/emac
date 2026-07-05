@@ -52,7 +52,7 @@ export class Breadcrumb {
         }),
       )
       .pipe(filter((route) => route.outlet === PRIMARY_OUTLET))
-      .subscribe((event) => {
+      .subscribe((event) => {//todo fix breadcrumb
         let title = event.snapshot.data["title"];
         let parent = event.parent!.snapshot.data["breadcrumb"];
         let parentPath = event.parent!.snapshot.data["path"];

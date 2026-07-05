@@ -1,4 +1,4 @@
-import { Component, inject } from "@angular/core";
+import {Component, inject, Input} from "@angular/core";
 
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 
@@ -22,6 +22,8 @@ export class Copyright {
   };
   public socials: Social[] = SocialListDB.list;
   public year: number = new Date().getFullYear();
+  @Input()
+  public copyrightClass: string = "";
 
   private modalService = inject(NgbModal);
 
