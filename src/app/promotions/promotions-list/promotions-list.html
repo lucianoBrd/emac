@@ -5,6 +5,15 @@
 <section class="event pricing set-relative">
     <div class="container">
         <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <div class="title title3">
+                    <div class="sub-title">
+                        @for (description of wording.promotion.description; track description) {
+                            <p class="dark" [innerHTML]="description.replace('{{numberOfPromotion}}', numberOfPromotion.toString())"></p>
+                        }
+                    </div>
+                </div>
+            </div>
             @for(promotion of promotions; track promotion.id){
                 <div class="col-lg-4 col-md-6 col-12 mb-4">
                 <div class="price-container shadows bg-dark text-center">

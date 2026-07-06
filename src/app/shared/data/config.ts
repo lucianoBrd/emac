@@ -48,6 +48,10 @@ export class ConfigDB {
       see_all: "Voir toutes",
       current: "Promotion actuelle",
       number: "Promotion n°",
+      description: [
+          "Promotions de l'École militaire des aspirants de Coëtquidan.",
+          "Depuis sa fondation le <span>6 juillet 2021</span>, l'école comptabilise {{numberOfPromotion}} promotions.",
+          ],
     },
     emac: {
       header: ["École militaire", "des aspirants", "de Coëtquidan"],

@@ -51,10 +51,12 @@
                                 {{about.description}}
                             </p>
                         }
-                <button class="btn btn-default" ngbAccordionButton>
-                    <div class="fa fa-angle-right rotate"></div>
-                    {{wording.general.learn_more}}
-                </button>
+                        @if (abouts.length > 2) {
+                            <button class="btn btn-default" ngbAccordionButton>
+                                <div class="fa fa-angle-right rotate"></div>
+                                {{wording.general.learn_more}}
+                            </button>
+                        }
                     </div>
                     <div ngbAccordionCollapse>
                         <div ngbAccordionBody>

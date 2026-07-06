@@ -12,9 +12,9 @@
             <h2 class="text-white">{{wording.promotion.title}}</h2>
           </div>
           <div class="sub-title">
-            <p class="text-white">
-                Depuis sa fondation le <span>6 juillet 2021</span>, l'école comptabilise <span>{{numberOfPromotion}} promotions</span>.
-            </p>
+              @for (description of wording.promotion.description; track description) {
+                  <p class="text-white" [innerHTML]="description.replace('{{numberOfPromotion}}', numberOfPromotion.toString())"></p>
+              }
           </div>
         </div>
       </div>
