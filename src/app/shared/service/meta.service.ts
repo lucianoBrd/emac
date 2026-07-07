@@ -11,10 +11,16 @@ export class MetaService {
   private metaService: Meta = inject(Meta);
 
   public setTitle(newTitle: string): void {
+    if (!newTitle) {
+      return;
+    }
     this.titleService.setTitle(newTitle + " | " + ConfigDB.data.app_name);
   }
 
   public setDescription(newDesc: string): void {
+    if (!newDesc) {
+      return;
+    }
     this.metaService.updateTag({
       name: "description",
       content: newDesc,
@@ -22,6 +28,9 @@ export class MetaService {
   }
 
   public setKeywords(newKw: string): void {
+    if (!newKw) {
+      return;
+    }
     this.metaService.updateTag({
       name: "keywords",
       content: ConfigDB.data.keywords + newKw,

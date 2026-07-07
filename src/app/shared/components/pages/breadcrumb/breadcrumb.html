@@ -15,24 +15,24 @@
                                     {{appName}}
                                 </a>
                             </li>
-                            @if (breadcrumbs?.parentBreadcrumb) {
-                            @if (breadcrumbs?.parentPath) {
+                            @if (parentBreadcrumb) {
+                            @if (parentPath) {
                                 <li>
-                                    <a [routerLink]="[breadcrumbs?.parentPath]">
-                                        <i class="fa fa-angle-double-right"></i> {{breadcrumbs?.parentBreadcrumb}}
+                                    <a [routerLink]="[parentPath]">
+                                        <i class="fa fa-angle-double-right"></i> {{parentBreadcrumb}}
                                     </a>
                                 </li>
                             } @else {
                             <li>
                                 <a href="javascript:void(0)" class="pe-none">
-                                <i class="fa fa-angle-double-right"></i> {{breadcrumbs?.parentBreadcrumb}}
+                                <i class="fa fa-angle-double-right"></i> {{parentBreadcrumb}}
                                 </a>
                             </li>
                             }
                             }
                             <li>
                                 <a href="javascript:void(0)" class="pe-none">
-                                    <i class="fa fa-angle-double-right"></i>{{ breadcrumbs?.childBreadcrumb }}
+                                    <i class="fa fa-angle-double-right"></i>{{ childBreadcrumb }}
                                 </a>
                             </li>
                         </ul>

@@ -16,6 +16,12 @@ export class PromotionService {
     return PromotionListDB.list.slice().sort(sort);
   }
 
+  getPromotion(id: string): Promotion | undefined {
+    return PromotionListDB.list.find(
+      (promotion: Promotion): boolean => promotion.id === id,
+    );
+  }
+
   getLength(): number {
     return PromotionListDB.list.length;
   }

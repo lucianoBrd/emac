@@ -12,10 +12,20 @@ export const Promotions: Routes = [
             (m) => m.PromotionsList,
           ),
         data: {
-          title: ConfigDB.wordings.promotion.title,
-          breadcrumb: ConfigDB.wordings.promotion.title,
+          title: ConfigDB.wordings.promotion.list.title,
+          breadcrumb: ConfigDB.wordings.promotion.list.title,
           description: ConfigDB.wordings.emac.description, // todo review
           keywords: ConfigDB.wordings.emac.keywords,
+        },
+      },
+      {
+        path: ":promotionId",
+        loadComponent: () =>
+            import("./promotions-detail/promotions-detail").then(
+                (m) => m.PromotionsDetail,
+            ),
+        data: {
+          breadcrumb: ConfigDB.wordings.promotion.detail.title,
         },
       },
     ],

@@ -12,7 +12,7 @@ export class Header {
   @Input()
   public leftText: string[];
   @Input()
-  public background: string;
+  public background: string|null;
   @Input()
   public logo: string;
 

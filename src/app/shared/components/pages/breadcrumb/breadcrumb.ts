@@ -1,5 +1,5 @@
 import { NgClass } from "@angular/common";
-import { Component, inject } from "@angular/core";
+import { Component, inject, OnDestroy, OnInit } from "@angular/core";
 import {
   ActivatedRoute,
   NavigationEnd,
@@ -8,9 +8,10 @@ import {
   RouterModule,
 } from "@angular/router";
 
-import { map } from "rxjs";
+import { map, Subject, takeUntil } from "rxjs";
 import { filter } from "rxjs/operators";
-import {ConfigDB} from "../../../data/config";
+
+import { ConfigDB } from "../../../data/config";
 
 @Component({
   selector: "app-breadcrumb",
@@ -18,52 +19,41 @@ import {ConfigDB} from "../../../data/config";
   templateUrl: "./breadcrumb.html",
   styleUrls: ["./breadcrumb.scss"],
 })
-export class Breadcrumb {
+export class Breadcrumb implements OnInit, OnDestroy {
   private activatedRoute = inject(ActivatedRoute);
   private router = inject(Router);
+  private destroy$: Subject<boolean> = new Subject<boolean>();
 
   public url: string = "";
-  public breadcrumbs:
-    | {
-        parentBreadcrumb?: string | null;
-        parentPath?: string | null;
-        childBreadcrumb?: string;
-      }
-    | undefined;
+  public parentBreadcrumb: string | null;
+  public parentPath: string | null;
+  public childBreadcrumb: string | null;
   public title: string;
-    public appName = ConfigDB.data.app_name;
-  constructor() {
-    this.router.events
-      .pipe(
-        filter((event) => {
-          if (event instanceof NavigationEnd) {
-            this.url = event.url;
-          }
-          return event instanceof NavigationEnd;
-        }),
-      )
-      .pipe(map(() => this.activatedRoute))
-      .pipe(
-        map((route) => {
-          while (route.firstChild) {
-            route = route.firstChild;
-          }
-          return route;
-        }),
-      )
-      .pipe(filter((route) => route.outlet === PRIMARY_OUTLET))
-      .subscribe((event) => {//todo fix breadcrumb
-        let title = event.snapshot.data["title"];
-        let parent = event.parent!.snapshot.data["breadcrumb"];
-        let parentPath = event.parent!.snapshot.data["path"];
-        let child = event.snapshot.data["breadcrumb"];
-        this.breadcrumbs = {};
+  public appName = ConfigDB.data.app_name;
+
+  ngOnDestroy(): void {
+    this.destroy$.next(true);
+    this.destroy$.unsubscribe();
+  }
+
+  ngOnInit(): void {
+    this.activatedRoute.data
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((data) => {
+        let title = data["title"];
+        let child = data["breadcrumb"];
         this.title = title;
-        this.breadcrumbs = {
-          parentBreadcrumb: parent,
-          parentPath: parentPath,
-          childBreadcrumb: child,
-        };
+        this.childBreadcrumb = child;
       });
+    if (this.activatedRoute.parent) {
+      this.activatedRoute.parent.data
+        .pipe(takeUntil(this.destroy$))
+        .subscribe((data) => {
+          let parent = data["breadcrumb"];
+          let parentPath = data["path"];
+          this.parentBreadcrumb = parent;
+          this.parentPath = parentPath;
+        });
+    }
   }
 }

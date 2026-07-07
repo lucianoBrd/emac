@@ -1,0 +1,10 @@
+<app-nav headerClass="resume loding-header nav-abs custom-scroll nav-lg"></app-nav>
+@if (promotion) {
+    <app-header
+            [logo]="promotion.detail.header.logo"
+            [background]="promotion.detail.header.background"
+            [leftText]="promotion.detail.header.text"
+    ></app-header>
+}
+
+<app-footer></app-footer>

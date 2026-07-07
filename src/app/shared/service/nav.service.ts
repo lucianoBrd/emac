@@ -55,7 +55,7 @@ export class NavService {
     });
 
     promotionsMenu.push({
-      title: ConfigDB.wordings.promotion.title,
+      title: ConfigDB.wordings.promotion.list.title,
       type: "sub",
       children: [
         ...promotions.slice(0, 3).map((promotion: Promotion): Menu => {
@@ -83,7 +83,7 @@ export class NavService {
         type: "link",
       },
       {
-        title: ConfigDB.wordings.promotion.title,
+        title: ConfigDB.wordings.promotion.list.title,
         megaMenu: true,
         megaMenuType: "small",
         type: "sub",

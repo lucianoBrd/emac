@@ -3,8 +3,8 @@
 
     <div class="music-content">
         <div
-                class="music-bg bg bg-shadow-top"
-                [style.background-image]="'url('+background+')'"
+                [class]="background ? 'music-bg bg bg-shadow-top' : 'header3 bg'"
+                [style.background-image]="background ? 'url('+background+')' : null"
         >
             <div
                     class="text-center w-100"

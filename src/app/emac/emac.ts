@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import {Component, inject, OnInit} from "@angular/core";
 import { Title } from "@angular/platform-browser";
 import { ActivatedRoute } from "@angular/router";
 
@@ -14,6 +14,9 @@ import { Header } from "../shared/components/pages/header/header";
 import { Nav } from "../shared/components/pages/nav/nav";
 import { ConfigDB } from "../shared/data/config";
 import {TapToTop} from "../shared/components/tap-to-top/tap-to-top";
+import {PromotionService} from "../shared/service/promotion.service";
+import {EmacService} from "../shared/service/emac.service";
+import {Emac as EmacInterface} from "../shared/models/emac.interface";
 
 @Component({
   selector: "app-emac",
@@ -36,4 +39,5 @@ import {TapToTop} from "../shared/components/tap-to-top/tap-to-top";
 })
 export class Emac {
   public wordings = ConfigDB.wordings.emac.header;
+  public emac: EmacInterface = inject(EmacService).getEmac();
 }

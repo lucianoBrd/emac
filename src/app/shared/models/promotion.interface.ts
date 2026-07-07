@@ -1,3 +1,5 @@
+import {PromotionDetail} from "./promotion/promotion.detail.interface";
+
 export interface Promotion {
   id: Readonly<string>;
   title: string;
@@ -5,4 +7,5 @@ export interface Promotion {
   logo: string;
   startDate: Date;
   endDate: Date;
+  detail: PromotionDetail;
 }

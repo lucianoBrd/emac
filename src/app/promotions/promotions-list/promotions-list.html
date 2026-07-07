@@ -8,7 +8,7 @@
             <div class="col-md-10 offset-md-1">
                 <div class="title title3">
                     <div class="sub-title">
-                        @for (description of wording.promotion.description; track description) {
+                        @for (description of wording.promotion.list.description; track description) {
                             <p class="dark" [innerHTML]="description.replace('{{numberOfPromotion}}', numberOfPromotion.toString())"></p>
                         }
                     </div>
@@ -44,7 +44,7 @@
                             </div>
                         }
 
-                        <a [routerLink]="['/promotion/'+promotion.id]" class="btn btn-default back-white">
+                        <a [routerLink]="['/promotions/'+promotion.id]" class="btn btn-default back-white">
                             {{wording.general.learn_more}}
                         </a>
                     </div>
