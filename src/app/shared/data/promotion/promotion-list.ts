@@ -107,6 +107,22 @@ export class PromotionListDB {
             "Chef d’un courage indomptable, il exerçait un ascendant naturel sur ses troupes, car il avait le don du commandement et la passion de servir. De l’Afrique au maquis breton, du ciel d’Angleterre aux plaines de France, Pierre-Louis Bourgoin a incarné l’audace, la fidélité et le dévouement. Son parcours, marqué par le sacrifice et la foi dans la France Libre, illustre pleinement la devise de notre école : « L’audace de servir. »",
           ],
         },
+
+        about: {
+          id: "col-bourgoin",
+          title: "L’<span>insigne</span> de promotion",
+          background: "assets/images/promotion/col-bourgoin/about.jpg",
+          image: "assets/images/promotion/col-bourgoin.png",
+          description: [
+"Bouclier à la lisière d’or parti d’hermine et de sable broché d’une épée haute d’argent à la lame chargée du grade et du nom en lettres capitales de sable aussi « COL BOURGOIN », accompagnée à dextre d’une Croix de Lorraine de sable mouvant de la lame et à senestre d’une partie de l’écusson aux armes du « Special Air Service » (SAS) ; sur le tout banderole d’azur surlignée de gueules chargée de la devise en anglais des SAS « WHO DARES WINS » (qui ose gagne) en lettres capitales d’or, en pointe brochant la garde d’or plaque de Grand-croix de la Légion d’honneur.",
+              '<i class="fa fa-angle-double-right font-secondary"></i> L’écu reprend la forme traditionnelle des insignes de promotion de l’EMAC.',
+              '<i class="fa fa-angle-double-right font-secondary"></i> L’épée portant le nom de notre parrain est le symbole du commandement.',
+              '<i class="fa fa-angle-double-right font-secondary"></i> Le fond blanc recouvert d’hermines fait référence à la Bretagne et plus particulièrement au maquis de Saint-Marcel, lieu où il a été parachuté et a combattu en juin 1944 avec son état-major et une compagnie lors des opérations de la bataille de Normandie, pour encadrer la résistance et fixer les troupes allemandes.',
+              '<i class="fa fa-angle-double-right font-secondary"></i> La Croix de Lorraine rappelle que notre parrain est membre de l’Ordre de la Libération.',
+              '<i class="fa fa-angle-double-right font-secondary"></i> L’insigne des SAS, une banderole frappée de l’épitaphe « who dares wins » surmontée d’un glaive ailé sur fond noir, couleur des opérations spéciales, évoque son appartenance à cette unité et notamment au 4e régiment du Special Air Service qu’il commandera à partir de novembre 1943.',
+              '<i class="fa fa-angle-double-right font-secondary"></i> La Grand-croix de la Légion d’honneur correspond à la plus haute distinction décernée à notre parrain.',
+          ],
+        },
       },
     },
   ];

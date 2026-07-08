@@ -78,11 +78,6 @@ export class ConfigDB {
         description:
           "L’EMAC, héritière des écoles qui l’ont précédée, dispose d’un parcours de tradition qui jalonne la formation des élèves officiers. Celui-ci marque leur intégration au sein de l’armée de Terre tout en favorisant le développement d’un <span>esprit de corps</span> au sein de la promotion.<br> Les traditions, de même que le cérémonial, ont ainsi vocation à inculquer aux futurs officiers un <span>socle de valeurs communes</span>.",
       },
-      about: {
-        title: "Histoire de l’<span>EMAC</span>",
-        school_class: "« L’Audace de Servir »",
-        class: "Devise",
-      },
       contact: {
         address: [
           "École militaire des aspirants de Coëtquidan",

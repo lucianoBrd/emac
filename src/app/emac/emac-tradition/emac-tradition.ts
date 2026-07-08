@@ -2,9 +2,7 @@ import {Component, ElementRef, inject} from "@angular/core";
 
 import { CarouselModule } from "ngx-owl-carousel-o";
 
-import { About } from "../../shared/models/emac/about.interface";
 import { Tradition } from "../../shared/models/emac/tradition.interface";
-import { AboutService } from "../../shared/service/emac/about.service";
 import { TraditionService } from "../../shared/service/emac/tradition.service";
 import {ConfigDB} from "../../shared/data/config";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";

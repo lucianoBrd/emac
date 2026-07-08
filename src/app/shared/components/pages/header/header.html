@@ -3,8 +3,8 @@
 
     <div class="music-content">
         <div
-                [class]="background ? 'music-bg bg bg-shadow-top' : 'header3 bg'"
-                [style.background-image]="background ? 'url('+background+')' : null"
+                [class]="header.background ? 'music-bg bg bg-shadow-top' : 'header3 bg'"
+                [style.background-image]="header.background ? 'url('+header.background+')' : null"
         >
             <div
                     class="text-center w-100"
@@ -15,13 +15,13 @@
                     data-tilt-perspective="400"
             >
                 <div class="img-height">
-                    <img [src]="logo" alt="logo" class="img-fluid" />
+                    <img [src]="header.logo" alt="logo" class="img-fluid" />
                 </div>
             </div>
         </div>
     </div>
     <div class="left-side">
-        @for (text of leftText; track text) {
+        @for (text of header.text; track text) {
             <h6 class="follow-text">{{text}}</h6>
         }
     </div>

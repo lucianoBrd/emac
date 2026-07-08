@@ -2,7 +2,6 @@ import {Component, inject, OnInit} from "@angular/core";
 import { Title } from "@angular/platform-browser";
 import { ActivatedRoute } from "@angular/router";
 
-import { EmacAbout } from "./emac-about/emac-about";
 import { EmacContact } from "./emac-contact/emac-contact";
 import { EmacCounter } from "./emac-counter/emac-counter";
 import { EmacPromotion } from "./emac-promotion/emac-promotion";
@@ -17,12 +16,12 @@ import {PromotionService} from "../shared/service/promotion.service";
 import {EmacService} from "../shared/service/emac.service";
 import {Emac as EmacInterface} from "../shared/models/emac.interface";
 import {Info} from "../shared/components/pages/info/info";
+import {About} from "../shared/components/pages/about/about";
 
 @Component({
   selector: "app-emac",
   imports: [
     EmacPromotion,
-    EmacAbout,
     EmacTradition,
     EmacCounter,
     EmacSong,
@@ -32,6 +31,7 @@ import {Info} from "../shared/components/pages/info/info";
     Copyright,
     TapToTop,
     Info,
+    About,
   ],
   templateUrl: "./emac.html",
   styleUrls: ["./emac.scss"],

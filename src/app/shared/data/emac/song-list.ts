@@ -1,4 +1,3 @@
-import { About } from "../../models/emac/about.interface";
 import { Song } from "../../models/emac/song.interface";
 
 export class SongListDB {

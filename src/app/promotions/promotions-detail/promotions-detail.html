@@ -1,15 +1,16 @@
 <app-nav headerClass="resume loding-header nav-abs custom-scroll nav-lg"></app-nav>
 @if (promotion) {
     <app-header
-            [logo]="promotion.detail.header.logo"
-            [background]="promotion.detail.header.background"
-            [leftText]="promotion.detail.header.text"
+            [header]="promotion.detail.header"
     ></app-header>
     <app-info
-            [title]="promotion.detail.info.title"
-            [subTitle]="promotion.detail.info.subTitle"
-            [description]="promotion.detail.info.description"
+            [info]="promotion.detail.info"
     ></app-info>
+    @if (promotion.detail.about) {
+        <app-about
+                [about]="promotion.detail.about"
+        ></app-about>
+    }
 }
 
 <app-footer></app-footer>

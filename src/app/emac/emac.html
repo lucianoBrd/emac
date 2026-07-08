@@ -1,15 +1,14 @@
 <app-nav headerClass="resume loding-header nav-abs custom-scroll nav-lg"></app-nav>
 <app-header
-        [logo]="emac.header.logo"
-        [background]="emac.header.background"
-        [leftText]="emac.header.text"
+        [header]="emac.header"
 ></app-header>
 <app-emac-promotion></app-emac-promotion>
 <app-info
-        [title]="emac.info.title"
-        [description]="emac.info.description"
+        [info]="emac.info"
 ></app-info>
-<app-emac-about></app-emac-about>
+<app-about
+        [about]="emac.about"
+></app-about>
 <app-emac-tradition></app-emac-tradition>
 <app-emac-counter></app-emac-counter>
 <app-emac-song></app-emac-song>

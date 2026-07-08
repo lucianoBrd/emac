@@ -1,6 +1,7 @@
 import {Component, ElementRef, inject, Input} from "@angular/core";
 
 import VanillaTilt from "vanilla-tilt";
+import {Header as HeaderInterface} from "../../../models/shared/header.interface";
 
 @Component({
   selector: "app-header",
@@ -10,11 +11,7 @@ import VanillaTilt from "vanilla-tilt";
 })
 export class Header {
   @Input()
-  public leftText: string[];
-  @Input()
-  public background: string|null;
-  @Input()
-  public logo: string;
+  public header: HeaderInterface;
 
   constructor(private el: ElementRef) {}
 

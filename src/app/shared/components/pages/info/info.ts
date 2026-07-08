@@ -7,6 +7,7 @@ import {
   NgbAccordionCollapse,
   NgbAccordionDirective, NgbAccordionHeader, NgbAccordionItem
 } from "@ng-bootstrap/ng-bootstrap";
+import {Info as InfoInterface} from "../../../models/shared/info.interface";
 
 @Component({
   selector: "app-info",
@@ -24,9 +25,5 @@ import {
 export class Info {
   public wordings = ConfigDB.wordings.general;
   @Input()
-  public description: string[];
-  @Input()
-  public title: string;
-  @Input()
-  public subTitle?: string;
+  public info: InfoInterface;
 }

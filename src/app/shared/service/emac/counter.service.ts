@@ -1,7 +1,5 @@
 import { Injectable } from "@angular/core";
 
-import { AboutListDB } from "../../data/emac/about-list";
-import { About } from "../../models/emac/about.interface";
 import {Counter} from "../../models/emac/counter.interface";
 import {CounterListDB} from "../../data/emac/counter-list";
 

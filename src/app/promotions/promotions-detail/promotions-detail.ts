@@ -21,6 +21,7 @@ import { Promotion } from "../../shared/models/promotion.interface";
 import { FilterService } from "../../shared/service/filter.service";
 import { PromotionService } from "../../shared/service/promotion.service";
 import {Info} from "../../shared/components/pages/info/info";
+import {About} from "../../shared/components/pages/about/about";
 
 @Component({
   selector: "promotions-detail",
@@ -35,6 +36,7 @@ import {Info} from "../../shared/components/pages/info/info";
     RouterOutlet,
     Header,
     Info,
+    About,
   ],
   templateUrl: "./promotions-detail.html",
   styleUrls: ["./promotions-detail.scss"],

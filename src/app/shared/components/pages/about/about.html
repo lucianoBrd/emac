@@ -1,25 +1,25 @@
 <!-- about section Start-->
 <section
   class="event about bg bg-img bg-about"
-  [style.background-image]="'url(assets/images/emac/bg2.jpg)'"
+  [style.background-image]="'url(' + about.background + ')'"
 >
   <div class="container">
     <div class="row">
       <div class="col-md-10 offset-md-1">
         <div class="title title3">
           <div class="main-title">
-            <h2 class="text-white" [innerHTML]="wordings.emac.about.title"></h2>
+            <h2 class="text-white" [innerHTML]="about.title"></h2>
           </div>
         </div>
       </div>
       <div class="col-lg-4 offset-lg-1 col-md-6">
         <div class="text-right">
           <div class="announcer-img">
-            <img src="assets/images/general/about.jpg" alt="about" class="img-fluid" />
-            <img src="assets/images/general/about.jpg" alt="about" class="img-fluid" />
+            <img src="assets/images/general/about.jpg" alt="about" />
+            <img src="assets/images/general/about.jpg" alt="about" />
             <img
-              src="assets/images/emac/emac.jpg"
-              alt="emac"
+              [src]="about.image"
+              [alt]="about.title"
               class="img-fluid"
               aTilt
               data-tilt
@@ -33,38 +33,39 @@
       <div class="col-xl-5 offset-xl-1 col-lg-7 col-md-6">
         <div class="abouts center-text">
           <div class="format">
-            <div class="format-small-text">
-              <h6 class="text-white borders-before text-uppercase">
-                <span>{{wordings.emac.about.class}}</span>
-              </h6>
-            </div>
-            <div class="format-head-text">
-              <h3 class="about-font-header text-white">
-                  {{wordings.emac.about.school_class}}
-              </h3>
-            </div>
+              @if (about.smallText) {
+                  <div class="format-small-text">
+                      <h6 class="text-white borders-before text-uppercase">
+                          <span>{{about.smallText}}</span>
+                      </h6>
+                  </div>
+              }
+              @if (about.headText) {
+                  <div class="format-head-text">
+                      <h3 class="about-font-header text-white">
+                          {{about.headText}}
+                      </h3>
+                  </div>
+              }
+
             <div class="format-sub-text" ngbAccordion [closeOthers]="true">
                 <div ngbAccordionItem [collapsed]="true">
                     <div ngbAccordionHeader>
-                        @for (about of abouts.slice(0, 2); track about.id) {
-                            <p class="about-para p-light">
-                                {{about.description}}
-                            </p>
+                        @for (d of about.description.slice(0, 2); track d) {
+                            <p class="about-para p-light" [innerHTML]="d"></p>
                         }
-                        @if (abouts.length > 2) {
+                        @if (about.description.length > 2) {
                             <button class="btn btn-default" ngbAccordionButton>
                                 <div class="fa fa-angle-right rotate"></div>
-                                {{wordings.general.learn_more}}
+                                {{wordings.learn_more}}
                             </button>
                         }
                     </div>
                     <div ngbAccordionCollapse>
                         <div ngbAccordionBody>
                             <ng-template>
-                                @for (about of abouts.slice(2, abouts.length); track about.id) {
-                                    <p class="about-para p-light">
-                                        {{about.description}}
-                                    </p>
+                                @for (d of about.description.slice(2, about.description.length); track d) {
+                                    <p class="about-para p-light" [innerHTML]="d"></p>
                                 }
                             </ng-template>
                         </div>
