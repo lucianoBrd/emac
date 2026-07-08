@@ -7,5 +7,5 @@ import {ConfigDB} from "../../shared/data/config";
   styleUrls: ['./emac-contact.scss'],
 })
 export class EmacContact {
-  public wording = ConfigDB.wordings.emac.contact;
+  public wordings = ConfigDB.wordings.emac.contact;
 }

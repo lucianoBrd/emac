@@ -15,5 +15,4 @@ import {ConfigDB} from "../shared/data/config";
   styleUrls: ['./promotions.scss'],
 })
 export class Promotions {
-  public wordings = ConfigDB.wordings.emac.header;
 }

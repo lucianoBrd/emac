@@ -14,7 +14,7 @@ import {ConfigDB} from "../../shared/data/config";
 })
 export class EmacSong {
   public songs: Song[];
-  public wording = ConfigDB.wordings.emac.song;
+  public wordings = ConfigDB.wordings.emac.song;
 
   constructor(private songService: SongService) {
     this.songs = this.songService.getSongs();

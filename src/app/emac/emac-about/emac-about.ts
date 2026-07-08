@@ -14,7 +14,7 @@ import { AboutService } from "../../shared/service/emac/about.service";
   styleUrls: ["./emac-about.scss"],
 })
 export class EmacAbout implements OnInit {
-  public wording = {
+  public wordings = {
     emac: ConfigDB.wordings.emac,
     general: ConfigDB.wordings.general,
   };

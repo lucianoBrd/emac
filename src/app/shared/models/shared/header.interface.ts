@@ -1,6 +1,6 @@
 export interface Header {
-  id: Readonly<number>;
+  id: Readonly<string>;
   logo: string;
-  background: string|null;
+  background: string | null;
   text: string[];
 }

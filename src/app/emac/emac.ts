@@ -5,7 +5,6 @@ import { ActivatedRoute } from "@angular/router";
 import { EmacAbout } from "./emac-about/emac-about";
 import { EmacContact } from "./emac-contact/emac-contact";
 import { EmacCounter } from "./emac-counter/emac-counter";
-import { EmacInfo } from "./emac-info/emac-info";
 import { EmacPromotion } from "./emac-promotion/emac-promotion";
 import { EmacSong } from "./emac-song/emac-song";
 import { EmacTradition } from "./emac-tradition/emac-tradition";
@@ -17,6 +16,7 @@ import {TapToTop} from "../shared/components/tap-to-top/tap-to-top";
 import {PromotionService} from "../shared/service/promotion.service";
 import {EmacService} from "../shared/service/emac.service";
 import {Emac as EmacInterface} from "../shared/models/emac.interface";
+import {Info} from "../shared/components/pages/info/info";
 
 @Component({
   selector: "app-emac",
@@ -24,20 +24,18 @@ import {Emac as EmacInterface} from "../shared/models/emac.interface";
     EmacPromotion,
     EmacAbout,
     EmacTradition,
-    EmacInfo,
     EmacCounter,
     EmacSong,
-    EmacInfo,
     EmacContact,
     Nav,
     Header,
     Copyright,
     TapToTop,
+    Info,
   ],
   templateUrl: "./emac.html",
   styleUrls: ["./emac.scss"],
 })
 export class Emac {
-  public wordings = ConfigDB.wordings.emac.header;
   public emac: EmacInterface = inject(EmacService).getEmac();
 }

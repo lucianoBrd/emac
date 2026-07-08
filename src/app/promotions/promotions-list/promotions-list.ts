@@ -23,7 +23,7 @@ export class PromotionsList {
   private promotionService: PromotionService = inject(PromotionService);
   private filterService: FilterService = inject(FilterService);
 
-  public wording = {
+  public wordings = {
     promotion: ConfigDB.wordings.promotion,
     general: ConfigDB.wordings.general,
   };

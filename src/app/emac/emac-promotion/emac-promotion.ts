@@ -17,7 +17,7 @@ import {RouterLink} from "@angular/router";
 export class EmacPromotion {
   private promotionService: PromotionService = inject(PromotionService);
 
-  public wording = {
+  public wordings = {
     promotion: ConfigDB.wordings.promotion,
     general: ConfigDB.wordings.general,
   };

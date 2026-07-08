@@ -18,7 +18,7 @@ export class Menu implements OnInit {
   public active: boolean = false;
   public activeChildItem: string = "";
   public overlay: boolean = false;
-  public wording = ConfigDB.wordings.general;
+  public wordings = ConfigDB.wordings.general;
 
   constructor(public navServices: NavService) {}
 

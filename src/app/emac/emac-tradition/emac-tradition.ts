@@ -17,7 +17,7 @@ import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 })
 export class EmacTradition {
   public traditions: Tradition[];
-  public wording = {
+  public wordings = {
     tradition: ConfigDB.wordings.emac.tradition,
     general: ConfigDB.wordings.general,
   };

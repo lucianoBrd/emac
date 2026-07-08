@@ -1,0 +1,49 @@
+<!-- booking Start-->
+<section class="event booking set-relative" id="register">
+  <div class="circle"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <div class="title title3">
+          <div class="main-title">
+            <h2 [innerHTML]="title"></h2>
+              @if (subTitle) {
+                  <h6 class="mt-2">
+                      <span>{{wordings.of}}</span>
+                  </h6>
+                  <h5 [innerHTML]="subTitle"></h5>
+              }
+          </div>
+
+            <div class="format">
+                <div class="format-sub-text" ngbAccordion [closeOthers]="true">
+                    <div ngbAccordionItem [collapsed]="true">
+                        <div ngbAccordionHeader>
+                            @for (d of description.slice(0, 2); track d) {
+                                <p class="dark about-para text-start" [innerHTML]="d"></p>
+                            }
+                            @if (description.length > 2) {
+                                <button class="btn btn-default primary-btn" ngbAccordionButton>
+                                    <div class="fa fa-angle-right rotate"></div>
+                                    {{wordings.learn_more}}
+                                </button>
+                            }
+                        </div>
+                        <div ngbAccordionCollapse>
+                            <div ngbAccordionBody>
+                                <ng-template>
+                                    @for (d of description.slice(2, description.length); track d) {
+                                        <p class="dark about-para text-start" [innerHTML]="d"></p>
+                                    }
+                                </ng-template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- booking end-->

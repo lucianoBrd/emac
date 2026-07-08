@@ -6,10 +6,10 @@
             <div class="col-md-10 offset-md-1">
                 <div class="title title3">
                     <div class="main-title">
-                        <h2 [innerHTML]="wording.tradition.title"></h2>
+                        <h2 [innerHTML]="wordings.tradition.title"></h2>
                     </div>
                     <div class="sub-title">
-                        <p class="dark" [innerHTML]="wording.tradition.description"></p>
+                        <p class="dark" [innerHTML]="wordings.tradition.description"></p>
                     </div>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                                             {{tradition.description}}
                                         </p>
                                         <a class="btn btn-default primary-btn m-t-20" (click)="modal.dismiss('Cross click')">
-                                            {{wording.general.close}}
+                                            {{wordings.general.close}}
                                         </a>
                                     </div>
                                 </div>

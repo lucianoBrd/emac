@@ -20,6 +20,7 @@ import { ConfigDB } from "../../shared/data/config";
 import { Promotion } from "../../shared/models/promotion.interface";
 import { FilterService } from "../../shared/service/filter.service";
 import { PromotionService } from "../../shared/service/promotion.service";
+import {Info} from "../../shared/components/pages/info/info";
 
 @Component({
   selector: "promotions-detail",
@@ -33,6 +34,7 @@ import { PromotionService } from "../../shared/service/promotion.service";
     Footer,
     RouterOutlet,
     Header,
+    Info,
   ],
   templateUrl: "./promotions-detail.html",
   styleUrls: ["./promotions-detail.scss"],
@@ -41,8 +43,6 @@ export class PromotionsDetail implements OnInit, OnDestroy {
   private promotionService: PromotionService = inject(PromotionService);
   private activatedRoute: ActivatedRoute = inject(ActivatedRoute);
   private destroy$: Subject<boolean> = new Subject<boolean>();
-
-  public wordings = ConfigDB.wordings.emac.header;
 
   public promotion: Promotion | undefined;
 

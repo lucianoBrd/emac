@@ -9,10 +9,10 @@
       <div class="col-md-10 offset-md-1">
         <div class="title title3">
           <div class="main-title">
-            <h2 class="text-white">{{wording.promotion.list.title}}</h2>
+            <h2 class="text-white">{{wordings.promotion.list.title}}</h2>
           </div>
           <div class="sub-title">
-              @for (description of wording.promotion.list.description; track description) {
+              @for (description of wordings.promotion.list.description; track description) {
                   <p class="text-white" [innerHTML]="description.replace('{{numberOfPromotion}}', numberOfPromotion.toString())"></p>
               }
           </div>
@@ -38,7 +38,7 @@
                 </div>
                   <div class="price-features font-primary">
                       <h6 class="price text-center-feature">
-                          {{ wording.promotion.number }}{{ promotion.number }}
+                          {{ wordings.promotion.number }}{{ promotion.number }}
                       </h6>
                   </div>
                   <div class="price-value">
@@ -49,12 +49,12 @@
 
                   @if ($first) {
                       <div class="mb-2 font-primary">
-                          <h6 class="text-center-feature">{{wording.promotion.current}}</h6>
+                          <h6 class="text-center-feature">{{wordings.promotion.current}}</h6>
                       </div>
                   }
 
                 <a [routerLink]="['/promotions/'+promotion.id]" class="btn btn-default back-white">
-                    {{wording.general.learn_more}}
+                    {{wordings.general.learn_more}}
                 </a>
               </div>
             </div>
@@ -64,7 +64,7 @@
       </div>
         <div class="col-12 text-center">
             <a [routerLink]="['/promotions']" class="btn btn-default">
-                {{wording.promotion.see_all}}
+                {{wordings.promotion.see_all}}
                 ({{numberOfPromotion}})
             </a>
         </div>
