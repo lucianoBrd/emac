@@ -1,0 +1,9 @@
+#!/bin/sh
+
+echo "lint code"
+
+# todo failed if files changed
+npm run lint:fix
+npm run format
+
+exit 0

@@ -1,7 +1,8 @@
-import {Component, ElementRef, inject, Input} from "@angular/core";
+import { Component, ElementRef, inject, Input } from "@angular/core";
 
 import VanillaTilt from "vanilla-tilt";
-import {Header as HeaderInterface} from "../../../models/shared/header.interface";
+
+import { Header as HeaderInterface } from "../../../models/shared/header.interface";
 
 @Component({
   selector: "app-header",

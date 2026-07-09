@@ -1,13 +1,16 @@
+import { Component, Input } from "@angular/core";
 
-import {Component, Input} from "@angular/core";
-import {ConfigDB} from "../../../data/config";
 import {
   NgbAccordionBody,
   NgbAccordionButton,
   NgbAccordionCollapse,
-  NgbAccordionDirective, NgbAccordionHeader, NgbAccordionItem
+  NgbAccordionDirective,
+  NgbAccordionHeader,
+  NgbAccordionItem,
 } from "@ng-bootstrap/ng-bootstrap";
-import {Info as InfoInterface} from "../../../models/shared/info.interface";
+
+import { ConfigDB } from "../../../data/config";
+import { Info as InfoInterface } from "../../../models/shared/info.interface";
 
 @Component({
   selector: "app-info",
@@ -17,7 +20,7 @@ import {Info as InfoInterface} from "../../../models/shared/info.interface";
     NgbAccordionCollapse,
     NgbAccordionDirective,
     NgbAccordionHeader,
-    NgbAccordionItem
+    NgbAccordionItem,
   ],
   templateUrl: "./info.html",
   styleUrls: ["./info.scss"],

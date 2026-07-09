@@ -13,12 +13,15 @@
           </div>
         </div>
       </div>
+      @if (false) {
+      <div class="col-12">
+        <app-music></app-music>
+      </div>
+      }
       <div class="col-12">
         <div class="cal-time">
           <div class="time">
-            <h4 class="text-capitalize monday-text">
-              {{song.name}}
-            </h4>
+            <h4 class="text-capitalize monday-text">{{song.name}}</h4>
           </div>
         </div>
         <div class="event-container scrollbar">
@@ -29,9 +32,9 @@
                 <div class="col-md-10">
                   <div class="schedule-event">
                     <h5 class="names">{{verse.title}}</h5>
-                      @for(description of verse.description; track description){
+                    @for(description of verse.description; track description){
                     <p class="schedule-description">{{description}}</p>
-                      }
+                    }
                   </div>
                 </div>
               </div>

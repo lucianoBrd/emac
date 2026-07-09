@@ -1,11 +1,11 @@
-import {inject, Injectable} from "@angular/core";
+import { inject, Injectable } from "@angular/core";
 
 import { BehaviorSubject } from "rxjs";
 
+import { PromotionService } from "./promotion.service";
 import { ConfigDB } from "../data/config";
 import { Menu } from "../models/menu.interface";
 import { Promotion } from "../models/promotion.interface";
-import {PromotionService} from "./promotion.service";
 
 @Injectable({
   providedIn: "root",

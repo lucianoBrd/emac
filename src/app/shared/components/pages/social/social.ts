@@ -1,5 +1,6 @@
-import {Component, Input} from "@angular/core";
-import {Social as SocialInterface} from "../../../models/shared/social.interface";
+import { Component, Input } from "@angular/core";
+
+import { Social as SocialInterface } from "../../../models/shared/social.interface";
 
 @Component({
   selector: "app-social",

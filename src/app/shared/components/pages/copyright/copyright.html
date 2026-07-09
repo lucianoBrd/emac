@@ -5,43 +5,68 @@
       <div class="col-md-6">
         <div class="link-horizontal d-flex align-content-lg-center h-100">
           <ul>
-              @for (s of social.social; track s) {
-                  <li>
-                      <a href="{{s.link}}" target="_blank" class="center-content">
-                          <i class="fa fa-{{s.icon}}" aria-hidden="true" title="{{s.title}}"></i>
-                      </a>
-                  </li>
-              }
-              <li>
-                  <a target="_blank" class="center-content" href="https://github.com/lucianoBrd/emac/">
-                      <i aria-hidden="true" class="fa fa-github" title="{{wordings.general.contribute}}"></i>
+            @for (s of social.social; track s) {
+            <li>
+              <a href="{{s.link}}" target="_blank" class="center-content">
+                <i
+                  class="fa fa-{{s.icon}}"
+                  aria-hidden="true"
+                  title="{{s.title}}"
+                ></i>
+              </a>
+            </li>
+            }
+            <li>
+              <a
+                target="_blank"
+                class="center-content"
+                href="https://github.com/lucianoBrd/emac/"
+              >
+                <i
+                  aria-hidden="true"
+                  class="fa fa-github"
+                  title="{{wordings.general.contribute}}"
+                ></i>
+              </a>
+            </li>
+            <li>
+              <a class="center-content" href="/sitemap.xml"
+                >{{wordings.general.sitemap}}</a
+              >
+            </li>
+            <li>
+              <a
+                class="center-content"
+                (click)="openVerticallyCentered(content)"
+                >{{wordings.privacy_policy.title}}</a
+              >
+            </li>
+
+            <ng-template #content let-modal>
+              <div class="login-modal">
+                <div class="modal-header">
+                  <button
+                    class="close"
+                    type="button"
+                    (click)="modal.dismiss('Cross click')"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <h3 class="m-b-20">{{wordings.privacy_policy.title}}</h3>
+
+                  <div [innerHTML]="wordings.privacy_policy.description"></div>
+
+                  <a
+                    class="btn btn-default primary-btn m-t-20"
+                    (click)="modal.dismiss('Cross click')"
+                  >
+                    {{wordings.general.close}}
                   </a>
-              </li>
-              <li>
-                  <a class="center-content" href="/sitemap.xml">{{wordings.general.sitemap}}</a>
-              </li>
-              <li>
-                  <a class="center-content" (click)="openVerticallyCentered(content)">{{wordings.privacy_policy.title}}</a>
-              </li>
-
-              <ng-template #content let-modal>
-                  <div class="login-modal">
-                      <div class="modal-header">
-                          <button class="close" type="button" (click)="modal.dismiss('Cross click')">
-                              <span aria-hidden="true">&times;</span>
-                          </button>
-                      </div>
-                      <div class="modal-body">
-                          <h3 class="m-b-20">{{wordings.privacy_policy.title}}</h3>
-
-                          <div [innerHTML]="wordings.privacy_policy.description"></div>
-
-                          <a class="btn btn-default primary-btn m-t-20" (click)="modal.dismiss('Cross click')">
-                              {{wordings.general.close}}
-                          </a>
-                      </div>
-                  </div>
-              </ng-template>
+                </div>
+              </div>
+            </ng-template>
           </ul>
         </div>
       </div>

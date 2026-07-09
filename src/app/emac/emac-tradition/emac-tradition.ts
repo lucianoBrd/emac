@@ -1,11 +1,11 @@
-import {Component, ElementRef, inject} from "@angular/core";
+import { Component, ElementRef, inject } from "@angular/core";
 
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { CarouselModule } from "ngx-owl-carousel-o";
 
+import { ConfigDB } from "../../shared/data/config";
+import { EmacDB } from "../../shared/data/emac";
 import { Tradition } from "../../shared/models/emac/tradition.interface";
-import {ConfigDB} from "../../shared/data/config";
-import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {EmacDB} from "../../shared/data/emac";
 
 @Component({
   selector: "app-emac-tradition",

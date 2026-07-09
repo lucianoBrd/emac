@@ -1,28 +1,27 @@
 <!-- header Start-->
 <section class="music header" id="header">
-
-    <div class="music-content">
-        <div
-                [class]="header.background ? 'music-bg bg bg-shadow-top' : 'header3 bg'"
-                [style.background-image]="header.background ? 'url('+header.background+')' : null"
-        >
-            <div
-                    class="text-center w-100"
-                    aTilt
-                    data-tilt
-                    data-tilt-max="3"
-                    data-tilt-speed="400"
-                    data-tilt-perspective="400"
-            >
-                <div class="img-height">
-                    <img [src]="header.logo" alt="logo" class="img-fluid" />
-                </div>
-            </div>
+  <div class="music-content">
+    <div
+      [class]="header.background ? 'music-bg bg bg-shadow-top' : 'header3 bg'"
+      [style.background-image]="header.background ? 'url('+header.background+')' : null"
+    >
+      <div
+        class="text-center w-100"
+        aTilt
+        data-tilt
+        data-tilt-max="3"
+        data-tilt-speed="400"
+        data-tilt-perspective="400"
+      >
+        <div class="img-height">
+          <img [src]="header.logo" alt="logo" class="img-fluid" />
         </div>
+      </div>
     </div>
-    <div class="left-side font-border">
-        @for (text of header.text; track text) {
-            <h6 class="follow-text">{{text}}</h6>
-        }
-    </div>
+  </div>
+  <div class="left-side font-border">
+    @for (text of header.text; track text) {
+    <h6 class="follow-text">{{text}}</h6>
+    }
+  </div>
 </section>

@@ -14,32 +14,36 @@
         </div>
       </div>
       <div class="col-xl-5 offset-xl-1 col-md-6 p-r-0 map">
-        <div class="iframe-container"
-             [style.background-image]="'url(' + footer.image + ')'"
-             [style.background-size]="'cover'"
+        <div
+          class="iframe-container"
+          [style.background-image]="'url(' + footer.image + ')'"
+          [style.background-size]="'cover'"
         ></div>
       </div>
       <div class="col-xl-5 p-l-0 col-md-6 set-z-index form-footer">
         <div class="bg-white">
           <form>
             <ul class="title title3">
-                @for (text of footer.text; track text) {
-                    <li>
-                        <h6 class="main-title">
-                        <i class="fa fa-angle-double-right mr-2" aria-hidden="true"></i>
-                        <span>{{text}}</span>
-                        </h6>
-                    </li>
-                }
+              @for (text of footer.text; track text) {
+              <li>
+                <h6 class="main-title">
+                  <i
+                    class="fa fa-angle-double-right mr-2"
+                    aria-hidden="true"
+                  ></i>
+                  <span>{{text}}</span>
+                </h6>
+              </li>
+              }
             </ul>
           </form>
         </div>
       </div>
     </div>
   </div>
-    @if (footer.logo) {
-        <img [src]="footer.logo" alt="logo" class="set-abs top-0 plane2" />
-        <img [src]="footer.logo" alt="logo" class="set-abs bottom-0 plane" />
-    }
+  @if (footer.logo) {
+  <img [src]="footer.logo" alt="logo" class="set-abs top-0 plane2" />
+  <img [src]="footer.logo" alt="logo" class="set-abs bottom-0 plane" />
+  }
 </footer>
 <!--contact section end-->

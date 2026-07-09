@@ -1,9 +1,9 @@
-import {Header} from "./shared/header.interface";
-import {Info} from "./shared/info.interface";
-import {About} from "./shared/about.interface";
-import {Song} from "./shared/song.interface";
-import {Footer} from "./shared/footer.interface";
-import {Social} from "./shared/social.interface";
+import { About } from "./shared/about.interface";
+import { Footer } from "./shared/footer.interface";
+import { Header } from "./shared/header.interface";
+import { Info } from "./shared/info.interface";
+import { Social } from "./shared/social.interface";
+import { Song } from "./shared/song.interface";
 
 export interface Promotion {
   id: Readonly<string>;

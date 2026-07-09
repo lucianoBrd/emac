@@ -1,19 +1,17 @@
-<app-nav headerClass="resume loding-header nav-abs custom-scroll nav-lg"></app-nav>
+<app-nav
+  headerClass="resume loding-header nav-abs custom-scroll nav-lg"
+></app-nav>
 @if (promotion) {
-    <app-header [header]="promotion.header"></app-header>
-    <app-info [info]="promotion.info"></app-info>
-    @if (promotion.about) {
-        <app-about [about]="promotion.about"></app-about>
-    }
-    @if (promotion.social) {
-        <app-social [social]="promotion.social"></app-social>
-    }
-    @if (promotion.song) {
-        <app-song [song]="promotion.song"></app-song>
-    }
-    @if (promotion.footer) {
-        <app-footer [footer]="promotion.footer"></app-footer>
-    }
-}
+<app-header [header]="promotion.header"></app-header>
+<app-info [info]="promotion.info"></app-info>
+@if (promotion.about) {
+<app-about [about]="promotion.about"></app-about>
+} @if (promotion.social) {
+<app-social [social]="promotion.social"></app-social>
+} @if (promotion.song) {
+<app-song [song]="promotion.song"></app-song>
+} @if (promotion.footer) {
+<app-footer [footer]="promotion.footer"></app-footer>
+} }
 <app-copyright copyrightClass="dark"></app-copyright>
 <app-tap-to-top></app-tap-to-top>

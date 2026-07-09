@@ -1,9 +1,9 @@
-
 import { Component, OnInit } from "@angular/core";
 import { RouterModule } from "@angular/router";
-import { Menu as MenuInterface } from '../../../models/menu.interface';
+
+import { ConfigDB } from "../../../data/config";
+import { Menu as MenuInterface } from "../../../models/menu.interface";
 import { NavService } from "../../../service/nav.service";
-import {ConfigDB} from "../../../data/config";
 
 @Component({
   selector: "app-menu",

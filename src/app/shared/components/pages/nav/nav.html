@@ -4,28 +4,27 @@
     <div class="row">
       <div class="col">
         <nav>
-          <a [routerLink]="['/']" class="d-inline-block m-r-auto"
-            >
-              <img src="assets/images/logo/emac.svg"
-                   alt="emac"
-                   class="img-fluid"
-                   width="40"
-                   style="filter: none !important;"
-              />
+          <a [routerLink]="['/']" class="d-inline-block m-r-auto">
+            <img
+              src="assets/images/logo/emac.svg"
+              alt="emac"
+              class="img-fluid"
+              width="40"
+              style="filter: none !important"
+            />
           </a>
           <app-menu></app-menu>
-            @if (headerClass === 'ecommerce') {
-                <div class="top-header-right">
-                    <ul>
-                        <li>
-                            <a href="javascript:void(0)" class="ecommerce pe-none">
-                                {{emacTitle}}
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            }
-
+          @if (headerClass === 'ecommerce') {
+          <div class="top-header-right">
+            <ul>
+              <li>
+                <a href="javascript:void(0)" class="ecommerce pe-none">
+                  {{emacTitle}}
+                </a>
+              </li>
+            </ul>
+          </div>
+          }
         </nav>
       </div>
     </div>

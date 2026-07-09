@@ -1,8 +1,8 @@
-import {Component, Input} from "@angular/core";
+import { Component, Input } from "@angular/core";
+import { RouterLink } from "@angular/router";
 
+import { EmacDB } from "../../../data/emac";
 import { Menu } from "../../navigation/menu/menu";
-import {RouterLink} from "@angular/router";
-import {EmacDB} from "../../../data/emac";
 
 @Component({
   selector: "app-nav",
@@ -13,5 +13,6 @@ import {EmacDB} from "../../../data/emac";
 export class Nav {
   public emacTitle = EmacDB.emac.title;
   @Input()
-  public headerClass: string = 'event loding-header nav-abs custom-scroll nav-lg';
+  public headerClass: string =
+    "event loding-header nav-abs custom-scroll nav-lg";
 }

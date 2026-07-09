@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 
-import {Emac} from "../models/emac.interface";
-import {EmacDB} from "../data/emac";
+import { EmacDB } from "../data/emac";
+import { Emac } from "../models/emac.interface";
 
 @Injectable({
   providedIn: "root",

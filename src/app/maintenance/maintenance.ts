@@ -1,8 +1,8 @@
 import { Component } from "@angular/core";
 
 import { ConfigDB } from "../shared/data/config";
-import {EmacDB} from "../shared/data/emac";
-import {Social} from "../shared/models/shared/social.interface";
+import { EmacDB } from "../shared/data/emac";
+import { Social } from "../shared/models/shared/social.interface";
 
 @Component({
   selector: "app-maintenance",

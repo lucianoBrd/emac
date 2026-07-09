@@ -1,10 +1,10 @@
-import {Component, ElementRef, Input, OnInit} from "@angular/core";
+import { Component, ElementRef, Input, OnInit } from "@angular/core";
 
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import VanillaTilt from "vanilla-tilt";
-import {ConfigDB} from "../../../data/config";
-import {About as AboutInterface} from "../../../models/shared/about.interface";
 
+import { ConfigDB } from "../../../data/config";
+import { About as AboutInterface } from "../../../models/shared/about.interface";
 
 @Component({
   selector: "app-about",
@@ -17,10 +17,7 @@ export class About implements OnInit {
   public about: AboutInterface;
   public wordings = ConfigDB.wordings.general;
 
-  constructor(
-    private el: ElementRef,
-  ) {
-  }
+  constructor(private el: ElementRef) {}
 
   ngOnInit(): void {
     VanillaTilt.init(this.el.nativeElement.querySelectorAll("[data-tilt]"), {

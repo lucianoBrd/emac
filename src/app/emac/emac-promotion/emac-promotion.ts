@@ -1,12 +1,12 @@
 import { DatePipe } from "@angular/common";
 import { Component, inject } from "@angular/core";
+import { RouterLink } from "@angular/router";
 
 import { CarouselModule } from "ngx-owl-carousel-o";
 
 import { ConfigDB } from "../../shared/data/config";
 import { Promotion } from "../../shared/models/promotion.interface";
 import { PromotionService } from "../../shared/service/promotion.service";
-import {RouterLink} from "@angular/router";
 
 @Component({
   selector: "app-emac-promotion",

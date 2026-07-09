@@ -1,15 +1,17 @@
 # EMAC
 
 École militaire des aspirants de Coëtquidan.
-Première version du site de l'EMAC. 
+Première version du site de l'EMAC.
 
 Ce site permet l'affichage d'informations concernant :
+
 - l'EMAC
 - les promotions de l'EMAC
 
 ## Contribuer
 
 Afin de contribuer :
+
 1. Créer une branche à partir de `main`.
 2. Effectuer les modifications sur la nouvelle branche.
 3. Créer une PR (pull request) de votre branche sur `main`.
@@ -22,12 +24,13 @@ Afin de contribuer :
 - Les données (type base de données format `JSON`) se trouvent dans : `emac/src/app/shared/data`.
 
 Par exemple, afin d'ajouter une promotion, il suffit de modifier le fichier `emac/src/app/shared/data/promotion/promotion.ts` et d'y ajouter les informations de la nouvelle promotion (en ayant préalablement ajouté l'image dans le dossier mentionné plus haut) :
+
 ```ts
 import { Promotion } from "../../models/promotion.interface";
 
 export class PromotionDB {
   static readonly list: Promotion[] = [
-    // ...  
+    // ...
     {
       id: "col-bourgoin",
       title: "Colonel BOURGOIN",
@@ -37,12 +40,12 @@ export class PromotionDB {
       endDate: new Date(2026, 1, 1),
     },
     {
-        id: "new-promotion",
-        title: "New Promotion",
-        number: 7,
-        logo: "link/to/the/image",
-        startDate: new Date(2026, 1, 1),
-        endDate: new Date(2027, 1, 1),
+      id: "new-promotion",
+      title: "New Promotion",
+      number: 7,
+      logo: "link/to/the/image",
+      startDate: new Date(2026, 1, 1),
+      endDate: new Date(2027, 1, 1),
     },
   ];
 }
@@ -135,8 +138,8 @@ Before you begin, make sure your development environment includes **Node** and a
 
 Download latest stable version of node.js i.e. 20.19.0 from [**nodejs.org.**](http://nodejs.org)
 
-*   Install Node.js using downloaded file
-*   To check your node version, run **node -v** in a terminal/console window.
+- Install Node.js using downloaded file
+- To check your node version, run **node -v** in a terminal/console window.
 
 ##### Npm package manager
 
@@ -154,7 +157,7 @@ Install the Angular CLI globally.
 
 To install the CLI using npm, open a terminal/console window and enter the following command:
 
-```npm install -g @angular/cli```
+`npm install -g @angular/cli`
 
 ### EMAC setup
 
@@ -166,86 +169,86 @@ If you have already download and install node.js and Angular CLI then ignore pre
 
 Download stable version of node.js from [**nodejs.org.**](http://nodejs.org)
 
-*   Install Node.js using downloaded file
-*   To check your node version, run **node -v** in a terminal/console window.
+- Install Node.js using downloaded file
+- To check your node version, run **node -v** in a terminal/console window.
 
 ###### Angular CLI
 
 Install Angular CLI Using:
 
-```npm install -g @angular/cli```
+`npm install -g @angular/cli`
 
 ##### Setup EMAC project by
 
-*   **1) Clone EMAC project from GitHub**
-*   **2) Import all dependency by installing npm command**
-```npm install```
-*   **3) Now you are in stage to successfully run EMAC using below command:**
-```ng serve```
+- **1) Clone EMAC project from GitHub**
+- **2) Import all dependency by installing npm command**
+  `npm install`
+- **3) Now you are in stage to successfully run EMAC using below command:**
+  `ng serve`
 
 ### Common issue
 
 ##### A common issue which user face during setup
 
-*   **1) If you had not doing "npm i" command for installing all dependencies and directly run "ng serve" command you may have following error**
+- **1) If you had not doing "npm i" command for installing all dependencies and directly run "ng serve" command you may have following error**
 
 ![error_1](./documentation/error_1.png)
 
 **Solution:**
 
-```npm install```
+`npm install`
 
-*   **2) when running command using "ng serve" you may get sass error as below:**
+- **2) when running command using "ng serve" you may get sass error as below:**
 
 ![error_2](./documentation/error_2.png)
 
 **Solution:**
 
-```npm install node-sass --save-dev``` 
+`npm install node-sass --save-dev`
 
-*   **2) Some times you also may get below error when running "ng serve"**
+- **2) Some times you also may get below error when running "ng serve"**
 
 ![error_3](./documentation/error_3.png)
 
 **Solution:**
 
-```sudo npm cache clean```
+`sudo npm cache clean`
 
 ### Folder Structured
 
 Here we represent Angular Folder Structure and Style Customize
 
-*   EMAC
+- EMAC
 
-    *   public
-        *   assets
-            *   css
-            *   fonts
-            *   images
-            *   pace
-            *   scss
-            *   .gitkeep
-        *   CNAME
-        *   sitemap.xml
+  - public
+    - assets
+      - css
+      - fonts
+      - images
+      - pace
+      - scss
+      - .gitkeep
+    - CNAME
+    - sitemap.xml
 
-    *   src
-        *   app
-            *   emac
-            *   maintenance
-            *   page-not-found
-            *   promotions
-            *   shared
-            *   app.html
-            *   app.scss
-            *   app.ts
-            *   app.config.ts
-            *   app.routes.ts
-        *   index.html
-        *   main.ts
-        *   style.scss
-    *   angular.json
-    *   package.json
-    *   tsconfig.json
+  - src
+    - app
+      - emac
+      - maintenance
+      - page-not-found
+      - promotions
+      - shared
+      - app.html
+      - app.scss
+      - app.ts
+      - app.config.ts
+      - app.routes.ts
+    - index.html
+    - main.ts
+    - style.scss
+  - angular.json
+  - package.json
+  - tsconfig.json
 
 ### SCSS and CSS Structure
 
@@ -273,29 +276,30 @@ For Mobile Responsive it emable using toggle bar in responsive screen
 
 #### Unice Angular come with two new features
 
-*   Dark
+- Dark
 
-    If you want to use dark then you just need to add **<body class="dark">** in index.html at src root.
-*   RTL
+  If you want to use dark then you just need to add **<body class="dark">** in index.html at src root.
 
-    If you want to use RTL then you just need to add **<body class="rtl">** in index.html at src root.
+- RTL
 
-*   ##### **Main Theme**
+  If you want to use RTL then you just need to add **<body class="rtl">** in index.html at src root.
 
-    We have make one config file in main theme called **shared >> data >> config.ts** from where you can pass your default conflict like you want LTR or RTL and Dark or Light layout.
-    
-    Also, all text is defined in this file.
-    
-    That you can set from that config.ts
+- ##### **Main Theme**
+
+  We have make one config file in main theme called **shared >> data >> config.ts** from where you can pass your default conflict like you want LTR or RTL and Dark or Light layout.
+
+  Also, all text is defined in this file.
+
+  That you can set from that config.ts
 
 ### Dependencies
 
-*   **Bootstrap** : Doc: https://ng-bootstrap.github.io/#/home
-*   **Ngx-toastr** : Doc: https://www.npmjs.com/package/ngx-toastr
-*   **Gallery** : Doc: https://www.npmjs.com/package/@ks89/angular-modal-gallery
-*   **Masonary Gallery** : Doc: https://www.npmjs.com/package/ngx-masonry
-*   **Ngx-rangeslider** : Doc: https://www.npmjs.com/package/ngx-rangeslider-component
-*   **Carousel** : Doc: https://www.npmjs.com/package/ngx-owl-carousel-o
+- **Bootstrap** : Doc: https://ng-bootstrap.github.io/#/home
+- **Ngx-toastr** : Doc: https://www.npmjs.com/package/ngx-toastr
+- **Gallery** : Doc: https://www.npmjs.com/package/@ks89/angular-modal-gallery
+- **Masonary Gallery** : Doc: https://www.npmjs.com/package/ngx-masonry
+- **Ngx-rangeslider** : Doc: https://www.npmjs.com/package/ngx-rangeslider-component
+- **Carousel** : Doc: https://www.npmjs.com/package/ngx-owl-carousel-o
 
 ### Thank you
 

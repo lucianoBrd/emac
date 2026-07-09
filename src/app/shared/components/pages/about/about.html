@@ -33,44 +33,41 @@
       <div class="col-xl-5 offset-xl-1 col-lg-7 col-md-6">
         <div class="abouts center-text">
           <div class="format">
-              @if (about.smallText) {
-                  <div class="format-small-text">
-                      <h6 class="text-white borders-before text-uppercase">
-                          <span>{{about.smallText}}</span>
-                      </h6>
-                  </div>
-              }
-              @if (about.headText) {
-                  <div class="format-head-text">
-                      <h3 class="about-font-header text-white">
-                          {{about.headText}}
-                      </h3>
-                  </div>
-              }
+            @if (about.smallText) {
+            <div class="format-small-text">
+              <h6 class="text-white borders-before text-uppercase">
+                <span>{{about.smallText}}</span>
+              </h6>
+            </div>
+            } @if (about.headText) {
+            <div class="format-head-text">
+              <h3 class="about-font-header text-white">{{about.headText}}</h3>
+            </div>
+            }
 
             <div class="format-sub-text" ngbAccordion [closeOthers]="true">
-                <div ngbAccordionItem [collapsed]="true">
-                    <div ngbAccordionHeader>
-                        @for (d of about.description.slice(0, 2); track d) {
-                            <p class="about-para p-light" [innerHTML]="d"></p>
-                        }
-                        @if (about.description.length > 2) {
-                            <button class="btn btn-default" ngbAccordionButton>
-                                <div class="fa fa-angle-right rotate"></div>
-                                {{wordings.learn_more}}
-                            </button>
-                        }
-                    </div>
-                    <div ngbAccordionCollapse>
-                        <div ngbAccordionBody>
-                            <ng-template>
-                                @for (d of about.description.slice(2, about.description.length); track d) {
-                                    <p class="about-para p-light" [innerHTML]="d"></p>
-                                }
-                            </ng-template>
-                        </div>
-                    </div>
+              <div ngbAccordionItem [collapsed]="true">
+                <div ngbAccordionHeader>
+                  @for (d of about.description.slice(0, 2); track d) {
+                  <p class="about-para p-light" [innerHTML]="d"></p>
+                  } @if (about.description.length > 2) {
+                  <button class="btn btn-default" ngbAccordionButton>
+                    <div class="fa fa-angle-right rotate"></div>
+                    {{wordings.learn_more}}
+                  </button>
+                  }
                 </div>
+                <div ngbAccordionCollapse>
+                  <div ngbAccordionBody>
+                    <ng-template>
+                      @for (d of about.description.slice(2,
+                      about.description.length); track d) {
+                      <p class="about-para p-light" [innerHTML]="d"></p>
+                      }
+                    </ng-template>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

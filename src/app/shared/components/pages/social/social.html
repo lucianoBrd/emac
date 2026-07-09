@@ -8,12 +8,16 @@
       @for(s of social.social.slice(0, 4); track s){
       <div class="col-md-3 col-6 counter-container position-relative">
         <div class="counters">
-            <i class="fa fa-{{s.icon}} counter-img" aria-hidden="true"></i>
+          <i class="fa fa-{{s.icon}} counter-img" aria-hidden="true"></i>
           <div class="counter-text">
             <h6 class="count-desc text-center text-white">
-                <a target="_blank" [href]="s.link" class="stretched-link text-white">
-                    {{s.title}}
-                </a>
+              <a
+                target="_blank"
+                [href]="s.link"
+                class="stretched-link text-white"
+              >
+                {{s.title}}
+              </a>
             </h6>
           </div>
         </div>

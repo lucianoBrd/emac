@@ -1,6 +1,6 @@
+import { EmacDB } from "./emac";
 import { Promotion } from "../models/promotion.interface";
-import {EmacDB} from "./emac";
-import {ColBourgoinDB} from "./promotion/col-bourgoin";
+import { ColBourgoinDB } from "./promotion/col-bourgoin";
 
 export class PromotionDB {
   static readonly list: Promotion[] = [

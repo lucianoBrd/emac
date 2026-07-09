@@ -3,8 +3,8 @@ import { Component, OnInit } from "@angular/core";
 import { RouterModule } from "@angular/router";
 
 import { NavService } from "../../../../shared/service/nav.service";
-import {Menu as MenuInterface} from "../../../models/menu.interface";
-import {ConfigDB} from "../../../data/config";
+import { ConfigDB } from "../../../data/config";
+import { Menu as MenuInterface } from "../../../models/menu.interface";
 
 @Component({
   selector: "app-center-menu",

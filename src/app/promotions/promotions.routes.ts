@@ -1,5 +1,6 @@
 import { Routes } from "@angular/router";
-import {ConfigDB} from "../shared/data/config";
+
+import { ConfigDB } from "../shared/data/config";
 
 export const Promotions: Routes = [
   {
@@ -21,9 +22,9 @@ export const Promotions: Routes = [
       {
         path: ":promotionId",
         loadComponent: () =>
-            import("./promotions-detail/promotions-detail").then(
-                (m) => m.PromotionsDetail,
-            ),
+          import("./promotions-detail/promotions-detail").then(
+            (m) => m.PromotionsDetail,
+          ),
         data: {
           breadcrumb: ConfigDB.wordings.promotion.detail.title,
         },
