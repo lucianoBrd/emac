@@ -5,11 +5,10 @@ import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { ConfigDB } from "../../../data/config";
 import { EmacDB } from "../../../data/emac";
 import { Social } from "../../../models/shared/social.interface";
-import { TapToTop } from "../../tap-to-top/tap-to-top";
 
 @Component({
   selector: "app-copyright",
-  imports: [TapToTop],
+  imports: [],
   templateUrl: "./copyright.html",
   styleUrls: ["./copyright.scss"],
 })
