@@ -13,7 +13,6 @@ import { Subject, takeUntil } from "rxjs";
 
 import { Breadcrumb } from "../../shared/components/pages/breadcrumb/breadcrumb";
 import { Filter } from "../../shared/components/pages/filter/filter";
-import { Footer } from "../../shared/components/pages/footer/footer";
 import { Header } from "../../shared/components/pages/header/header";
 import { Nav } from "../../shared/components/pages/nav/nav";
 import { ConfigDB } from "../../shared/data/config";
@@ -22,6 +21,10 @@ import { FilterService } from "../../shared/service/filter.service";
 import { PromotionService } from "../../shared/service/promotion.service";
 import {Info} from "../../shared/components/pages/info/info";
 import {About} from "../../shared/components/pages/about/about";
+import {Song} from "../../shared/components/pages/song/song";
+import {Copyright} from "../../shared/components/pages/copyright/copyright";
+import {TapToTop} from "../../shared/components/tap-to-top/tap-to-top";
+import {Footer} from "../../shared/components/pages/footer/footer";
 
 @Component({
   selector: "promotions-detail",
@@ -32,11 +35,14 @@ import {About} from "../../shared/components/pages/about/about";
     Filter,
     Breadcrumb,
     Nav,
-    Footer,
     RouterOutlet,
     Header,
     Info,
     About,
+    Song,
+    Copyright,
+    TapToTop,
+    Footer,
   ],
   templateUrl: "./promotions-detail.html",
   styleUrls: ["./promotions-detail.scss"],

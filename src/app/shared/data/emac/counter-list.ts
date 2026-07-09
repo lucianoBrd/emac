@@ -1,11 +1,11 @@
 import {Counter} from "../../models/emac/counter.interface";
-import {PromotionListDB} from "../promotion/promotion-list";
+import {PromotionDB} from "../promotion";
 
 export class CounterListDB {
   static list: Counter[] = [
     {
       id: 1,
-      count: PromotionListDB.list.length.toString(),
+      count: PromotionDB.list.length.toString(),
       title: "Promotions",
       icon: "users",
     },

@@ -26,11 +26,5 @@ export class SocialListDB {
       title: "Terre Defense",
       icon: "book",
     },
-    {
-      id: 5,
-      link: "https://github.com/lucianoBrd/emac/",
-      title: "Contribuer",
-      icon: "github",
-    },
   ];
 }

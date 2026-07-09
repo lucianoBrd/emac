@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 
-import { PromotionListDB } from "../data/promotion/promotion-list";
+import { PromotionDB } from "../data/promotion";
 import { Promotion } from "../models/promotion.interface";
 
 @Injectable({
@@ -13,16 +13,16 @@ export class PromotionService {
       b: Promotion,
     ): number => b.number - a.number,
   ): Promotion[] {
-    return PromotionListDB.list.slice().sort(sort);
+    return PromotionDB.list.slice().sort(sort);
   }
 
   getPromotion(id: string): Promotion | undefined {
-    return PromotionListDB.list.find(
+    return PromotionDB.list.find(
       (promotion: Promotion): boolean => promotion.id === id,
     );
   }
 
   getLength(): number {
-    return PromotionListDB.list.length;
+    return PromotionDB.list.length;
   }
 }

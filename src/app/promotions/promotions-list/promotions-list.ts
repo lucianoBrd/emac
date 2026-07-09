@@ -11,11 +11,12 @@ import { FilterService } from "../../shared/service/filter.service";
 import { PromotionService } from "../../shared/service/promotion.service";
 import {Breadcrumb} from "../../shared/components/pages/breadcrumb/breadcrumb";
 import {Nav} from "../../shared/components/pages/nav/nav";
-import {Footer} from "../../shared/components/pages/footer/footer";
+import {Copyright} from "../../shared/components/pages/copyright/copyright";
+import {TapToTop} from "../../shared/components/tap-to-top/tap-to-top";
 
 @Component({
   selector: "promotions-list",
-  imports: [CarouselModule, DatePipe, RouterLink, Filter, Breadcrumb, Nav, Footer, RouterOutlet],
+    imports: [CarouselModule, DatePipe, RouterLink, Filter, Breadcrumb, Nav, RouterOutlet, Copyright, TapToTop],
   templateUrl: "./promotions-list.html",
   styleUrls: ["./promotions-list.scss"],
 })

@@ -5,7 +5,7 @@ import {
   AuthGuardMaintenance,
   AuthGuarNotdMaintenance,
 } from "./shared/service/permission.service";
-import {Promotions} from "./promotions/promotions.routes";
+import {EmacDB} from "./shared/data/emac";
 
 export const routes: Routes = [
   {
@@ -15,9 +15,9 @@ export const routes: Routes = [
             (m) => m.Emac,
         ),
     data: {
-      title: ConfigDB.wordings.emac.title,
-      description: ConfigDB.wordings.emac.description,
-      keywords: ConfigDB.wordings.emac.keywords,
+      title: EmacDB.emac.title,
+      description: EmacDB.emac.description,
+      keywords: EmacDB.emac.keywords,
     },
     canActivate: [AuthGuardMaintenance],
   },

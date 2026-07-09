@@ -21,11 +21,11 @@ Afin de contribuer :
 - Les modèles de données se trouvent dans : `emac/src/app/shared/models`.
 - Les données (type base de données format `JSON`) se trouvent dans : `emac/src/app/shared/data`.
 
-Par exemple, afin d'ajouter une promotion, il suffit de modifier le fichier `emac/src/app/shared/data/promotion/promotion-list.ts` et d'y ajouter les informations de la nouvelle promotion (en ayant préalablement ajouté l'image dans le dossier mentionné plus haut) :
+Par exemple, afin d'ajouter une promotion, il suffit de modifier le fichier `emac/src/app/shared/data/promotion/promotion.ts` et d'y ajouter les informations de la nouvelle promotion (en ayant préalablement ajouté l'image dans le dossier mentionné plus haut) :
 ```ts
 import { Promotion } from "../../models/promotion.interface";
 
-export class PromotionListDB {
+export class PromotionDB {
   static readonly list: Promotion[] = [
     // ...  
     {

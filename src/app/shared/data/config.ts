@@ -28,6 +28,7 @@ export class ConfigDB {
       sitemap: "Sitemap",
       search: "Rechercher",
       of: "De",
+      contribute: "Contribuer",
     },
     privacy_policy: {
       title: "Politique de confidentialité",
@@ -62,17 +63,6 @@ export class ConfigDB {
       number: "Promotion n°",
     },
     emac: {
-      title: "École militaire des aspirants de Coëtquidan",
-      description:
-        "L'École militaire des aspirants de Coëtquidan (EMAC), anciennement 4e bataillon de l'École spéciale militaire de Saint-Cyr (E.S.M. 4), est l'une des trois écoles de formation des officiers français de l'Armée de terre. Elle fait partie de l'Académie militaire de Saint-Cyr Coëtquidan, implantée dans le camp militaire de même nom situé sur le territoire de la commune de Guer, dans le département du Morbihan, en région Bretagne.",
-      keywords:
-        "emac,École militaire des aspirants de Coëtquidan,amscc,officiers sous contrat",
-      song: {
-        title: "Chant de l’<span>EMAC</span>",
-        name: "Pour l’audace de servir",
-        description:
-          "Ce chant a été écrit en <span>1994</span> sur ordre du Lieutenant-colonel Lautier commandant le <span>4e bataillon de l'école spéciale militaire de Saint-Cyr (ESM4)</span>.",
-      },
       tradition: {
         title: "Traditions de l'<span>EMAC</span>",
         description:

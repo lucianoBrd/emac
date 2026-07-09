@@ -6,10 +6,10 @@
       <div class="col-md-10 offset-md-1">
         <div class="title title3">
           <div class="main-title">
-            <h2 [innerHTML]="wordings.title"></h2>
+            <h2 [innerHTML]="song.title"></h2>
           </div>
           <div class="sub-title">
-            <p [innerHTML]="wordings.description"></p>
+            <p [innerHTML]="song.description"></p>
           </div>
         </div>
       </div>
@@ -17,19 +17,19 @@
         <div class="cal-time">
           <div class="time">
             <h4 class="text-capitalize monday-text">
-              {{wordings.name}}
+              {{song.name}}
             </h4>
           </div>
         </div>
         <div class="event-container scrollbar">
           <div>
-            @for(song of songs; track song.id){
+            @for(verse of song.verse; track verse){
             <div class="cal-time events">
               <div class="row">
                 <div class="col-md-10">
                   <div class="schedule-event">
-                    <h5 class="names">{{song.title}}</h5>
-                      @for(description of song.description; track description){
+                    <h5 class="names">{{verse.title}}</h5>
+                      @for(description of verse.description; track description){
                     <p class="schedule-description">{{description}}</p>
                       }
                   </div>

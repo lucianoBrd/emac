@@ -491,6 +491,9 @@ nav {
 .font-secondary {
   color: $secondary !important;
 }
+.font-border {
+  text-shadow: -1px 0 $dark, 0 1px $dark, 1px 0 $dark, 0 -1px $dark;
+}
 .set-abs {
   position: absolute;
 }
