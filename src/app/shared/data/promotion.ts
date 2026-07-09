@@ -5,6 +5,46 @@ import {ColBourgoinDB} from "./promotion/col-bourgoin";
 export class PromotionDB {
   static readonly list: Promotion[] = [
     {
+      id: "slt-maurice-genevoix",
+      title: "Sous-lieutenant Maurice GENEVOIX",
+      number: 1,
+      logo: "assets/images/promotion/slt-maurice-genevoix.PNG",
+      startDate: new Date(2020, 1, 1),
+      endDate: new Date(2021, 1, 1),
+      header: {
+        id: "slt-maurice-genevoix",
+        logo: "assets/images/promotion/slt-maurice-genevoix.PNG",
+        background: null,
+        text: [],
+      },
+      info: {
+        id: "slt-maurice-genevoix",
+        title: "Promotion <span>Sous-lieutenant Maurice GENEVOIX</span>",
+        subTitle: "<span>L'</span>" + EmacDB.emac.info.title,
+        description: [],
+      },
+    },
+    {
+      id: "gal-bellec",
+      title: "Général Jean-Charles BELLEC",
+      number: 2,
+      logo: "assets/images/promotion/gal-bellec.png",
+      startDate: new Date(2021, 1, 1),
+      endDate: new Date(2022, 1, 1),
+      header: {
+        id: "gal-bellec",
+        logo: "assets/images/promotion/gal-bellec.png",
+        background: null,
+        text: [],
+      },
+      info: {
+        id: "gal-bellec",
+        title: "Promotion <span>Général Jean-Charles BELLEC</span>",
+        subTitle: "<span>L'</span>" + EmacDB.emac.info.title,
+        description: [],
+      },
+    },
+    {
       id: "gal-morel",
       title: "Général René MOREL",
       number: 3,
