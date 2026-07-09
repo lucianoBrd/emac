@@ -1,0 +1,49 @@
+<!--schedule section start-->
+<section class="event schedule set-relative" id="schedule">
+  <div class="circle"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <div class="title title3">
+          <div class="main-title">
+            <h2 [innerHTML]="song.title"></h2>
+          </div>
+          <div class="sub-title">
+            <p [innerHTML]="song.description"></p>
+          </div>
+        </div>
+      </div>
+      @if (false) {
+      <div class="col-12">
+        <app-music></app-music>
+      </div>
+      }
+      <div class="col-12">
+        <div class="cal-time">
+          <div class="time">
+            <h4 class="text-capitalize monday-text">{{song.name}}</h4>
+          </div>
+        </div>
+        <div class="event-container scrollbar">
+          <div>
+            @for(verse of song.verse; track verse){
+            <div class="cal-time events">
+              <div class="row">
+                <div class="col-md-10">
+                  <div class="schedule-event">
+                    <h5 class="names">{{verse.title}}</h5>
+                    @for(description of verse.description; track description){
+                    <p class="schedule-description">{{description}}</p>
+                    }
+                  </div>
+                </div>
+              </div>
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--schedule section end-->

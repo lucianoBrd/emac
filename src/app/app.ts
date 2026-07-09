@@ -3,8 +3,8 @@ import { NavigationEnd, Router, RouterOutlet } from "@angular/router";
 
 import { Loader } from "./shared/components/loader/loader";
 import { Meta } from "./shared/components/meta/meta";
+import { ConfigDB } from "./shared/data/config";
 import { CustomizerService } from "./shared/service/customizer.service";
-import {ConfigDB} from "./shared/data/config";
 
 @Component({
   selector: "app-root",
@@ -19,9 +19,7 @@ export class App {
   public url: string;
   public layoutType: string = "light";
 
-  constructor(
-    private router: Router,
-  ) {
+  constructor(private router: Router) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.url = event.url;

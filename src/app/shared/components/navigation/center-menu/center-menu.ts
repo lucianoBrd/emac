@@ -3,8 +3,8 @@ import { Component, OnInit } from "@angular/core";
 import { RouterModule } from "@angular/router";
 
 import { NavService } from "../../../../shared/service/nav.service";
-import {Menu as MenuInterface} from "../../../models/menu.interface";
-import {ConfigDB} from "../../../data/config";
+import { ConfigDB } from "../../../data/config";
+import { Menu as MenuInterface } from "../../../models/menu.interface";
 
 @Component({
   selector: "app-center-menu",
@@ -19,7 +19,7 @@ export class CenterMenu implements OnInit {
   public active: boolean = false;
   public activeChildItem: string = "";
   public overlay: boolean = false;
-  public wording = ConfigDB.wordings.general;
+  public wordings = ConfigDB.wordings.general;
 
   constructor(public navServices: NavService) {}
 

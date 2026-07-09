@@ -518,6 +518,11 @@ body {
     }
     .copyright {
       background-color: $dark-color;
+      &.event {
+        &.dark {
+          background: $dark;
+        }
+      }
       .link-horizontal {
         ul {
           li {

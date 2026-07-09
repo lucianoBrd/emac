@@ -1,6 +1,10 @@
 export interface Tradition {
-  id: Readonly<number>;
+  id: Readonly<string>;
   title: string;
   description: string;
-  image: string;
+  tradition: {
+    title: string;
+    description: string;
+    image: string;
+  }[];
 }

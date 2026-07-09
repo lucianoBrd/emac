@@ -1,10 +1,13 @@
-<app-emac-nav></app-emac-nav>
-<app-emac-header></app-emac-header>
+<app-nav
+  headerClass="resume loding-header nav-abs custom-scroll nav-lg"
+></app-nav>
+<app-header [header]="emac.header"></app-header>
 <app-emac-promotion></app-emac-promotion>
-<app-emac-info></app-emac-info>
-<app-emac-about></app-emac-about>
+<app-info [info]="emac.info"></app-info>
+<app-about [about]="emac.about"></app-about>
 <app-emac-tradition></app-emac-tradition>
-<app-emac-counter></app-emac-counter>
-<app-emac-song></app-emac-song>
+<app-social [social]="emac.social"></app-social>
+<app-song [song]="emac.song"></app-song>
 <app-emac-contact></app-emac-contact>
-<app-emac-copyright></app-emac-copyright>
+<app-copyright></app-copyright>
+<app-tap-to-top></app-tap-to-top>

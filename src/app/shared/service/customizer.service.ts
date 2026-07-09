@@ -11,8 +11,11 @@ export class CustomizerService {
   public data = ConfigDB.data;
 
   constructor() {
-    const layoutVersion = localStorage.getItem(Cookie.layoutVersion) || this.data.settings.layout_version;
-    const layoutType = localStorage.getItem(Cookie.layoutType) || this.data.settings.layout_type;
+    const layoutVersion =
+      localStorage.getItem(Cookie.layoutVersion) ||
+      this.data.settings.layout_version;
+    const layoutType =
+      localStorage.getItem(Cookie.layoutType) || this.data.settings.layout_type;
     if (layoutVersion) {
       document.body.classList.add(layoutVersion);
       this.data.settings.layout_version = layoutVersion;

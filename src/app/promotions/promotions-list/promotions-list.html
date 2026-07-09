@@ -1,0 +1,71 @@
+<app-nav headerClass="ecommerce"></app-nav>
+<app-breadcrumb></app-breadcrumb>
+<!--pricing section start-->
+<app-filter [filter]="filter"></app-filter>
+<section class="event pricing set-relative">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <div class="title title3">
+          <div class="sub-title">
+            @for (description of wordings.promotion.list.description; track
+            description) {
+            <p
+              class="dark"
+              [innerHTML]="description.replace('{{numberOfPromotion}}', numberOfPromotion.toString())"
+            ></p>
+            }
+          </div>
+        </div>
+      </div>
+      @for(promotion of promotions; track promotion.id){
+      <div class="col-lg-4 col-md-6 col-12 mb-4">
+        <div class="price-container shadows bg-dark text-center">
+          <div class="price-feature-container set-relative">
+            <div class="feature-text">
+              <img
+                class="img-fluid feature-icon"
+                src="{{promotion.logo}}"
+                alt="{{promotion.id}}"
+              />
+              <h4 class="feature-text-heading bold text-uppercase font-primary">
+                {{promotion.title}}
+              </h4>
+              <hr class="set-border" />
+            </div>
+            <div class="price-features font-primary">
+              <h6 class="price text-white text-center-feature">
+                {{ wordings.promotion.number }}{{ promotion.number }}
+              </h6>
+            </div>
+            <div class="price-value">
+              <h6 class="price text-center font-primary">
+                {{promotion.startDate | date:'y'}}/{{promotion.endDate |
+                date:'y'}}
+              </h6>
+            </div>
+
+            @if ($first) {
+            <div class="mb-2 font-primary">
+              <h6 class="text-center-feature">
+                {{wordings.promotion.current}}
+              </h6>
+            </div>
+            }
+
+            <a
+              [routerLink]="['/promotions/'+promotion.id]"
+              class="btn btn-default back-white"
+            >
+              {{wordings.general.learn_more}}
+            </a>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+<!--pricing section end-->
+<app-copyright copyrightClass="dark"></app-copyright>
+<app-tap-to-top></app-tap-to-top>
