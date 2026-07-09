@@ -3,7 +3,6 @@ import { Title } from "@angular/platform-browser";
 import { ActivatedRoute } from "@angular/router";
 
 import { EmacContact } from "./emac-contact/emac-contact";
-import { EmacCounter } from "./emac-counter/emac-counter";
 import { EmacPromotion } from "./emac-promotion/emac-promotion";
 import { EmacTradition } from "./emac-tradition/emac-tradition";
 import { Copyright } from "../shared/components/pages/copyright/copyright";
@@ -17,13 +16,13 @@ import {Emac as EmacInterface} from "../shared/models/emac.interface";
 import {Info} from "../shared/components/pages/info/info";
 import {About} from "../shared/components/pages/about/about";
 import {Song} from "../shared/components/pages/song/song";
+import {Social} from "../shared/components/pages/social/social";
 
 @Component({
   selector: "app-emac",
   imports: [
     EmacPromotion,
     EmacTradition,
-    EmacCounter,
     EmacContact,
     Nav,
     Header,
@@ -32,6 +31,7 @@ import {Song} from "../shared/components/pages/song/song";
     Info,
     About,
     Song,
+    Social,
   ],
   templateUrl: "./emac.html",
   styleUrls: ["./emac.scss"],

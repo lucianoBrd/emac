@@ -6,18 +6,18 @@
             <div class="col-md-10 offset-md-1">
                 <div class="title title3">
                     <div class="main-title">
-                        <h2 [innerHTML]="wordings.tradition.title"></h2>
+                        <h2 [innerHTML]="tradition.title"></h2>
                     </div>
                     <div class="sub-title">
-                        <p class="dark" [innerHTML]="wordings.tradition.description"></p>
+                        <p class="dark" [innerHTML]="tradition.description"></p>
                     </div>
                 </div>
             </div>
-            @for(tradition of traditions; track tradition.id){
+            @for(t of tradition.tradition; track t){
                 <div class="col-md-3 col-sm-6 speker-container">
                     <div class="text-center">
                         <div class="team-img">
-                            <img [src]="tradition.image" alt="{{tradition.title}}" class="img-fluid" />
+                            <img [src]="t.image" alt="{{t.title}}" class="img-fluid" />
                             <div class="overlay"></div>
                             <div class="social">
                                 <ul>
@@ -36,20 +36,20 @@
                                         </button>
                                     </div>
                                     <div class="modal-body text-center">
-                                        <h3 class="m-b-20">{{tradition.title}}</h3>
-                                        <img [src]="tradition.image" alt="{{tradition.title}}" class="img-fluid m-b-20" />
+                                        <h3 class="m-b-20">{{t.title}}</h3>
+                                        <img [src]="t.image" alt="{{t.title}}" class="img-fluid m-b-20" />
                                         <p>
-                                            {{tradition.description}}
+                                            {{t.description}}
                                         </p>
                                         <a class="btn btn-default primary-btn m-t-20" (click)="modal.dismiss('Cross click')">
-                                            {{wordings.general.close}}
+                                            {{wordings}}
                                         </a>
                                     </div>
                                 </div>
                             </ng-template>
                         </div>
                         <div class="employee">
-                            <h5 class="e-name text-center">{{tradition.title}}</h5>
+                            <h5 class="e-name text-center">{{t.title}}</h5>
                         </div>
                     </div>
                 </div>

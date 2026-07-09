@@ -3,6 +3,7 @@ import {Info} from "./shared/info.interface";
 import {About} from "./shared/about.interface";
 import {Song} from "./shared/song.interface";
 import {Footer} from "./shared/footer.interface";
+import {Social} from "./shared/social.interface";
 
 export interface Promotion {
   id: Readonly<string>;
@@ -16,4 +17,5 @@ export interface Promotion {
   about?: About;
   song?: Song;
   footer?: Footer;
+  social?: Social;
 }

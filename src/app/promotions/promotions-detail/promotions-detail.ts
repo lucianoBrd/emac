@@ -25,6 +25,7 @@ import {Song} from "../../shared/components/pages/song/song";
 import {Copyright} from "../../shared/components/pages/copyright/copyright";
 import {TapToTop} from "../../shared/components/tap-to-top/tap-to-top";
 import {Footer} from "../../shared/components/pages/footer/footer";
+import {Social} from "../../shared/components/pages/social/social";
 
 @Component({
   selector: "promotions-detail",
@@ -43,6 +44,7 @@ import {Footer} from "../../shared/components/pages/footer/footer";
     Copyright,
     TapToTop,
     Footer,
+    Social,
   ],
   templateUrl: "./promotions-detail.html",
   styleUrls: ["./promotions-detail.scss"],

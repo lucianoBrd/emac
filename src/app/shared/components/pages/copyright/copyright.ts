@@ -4,9 +4,8 @@ import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 
 import { TapToTop } from "../../tap-to-top/tap-to-top";
 import { ConfigDB } from "../../../data/config";
-import { SocialListDB } from "../../../data/emac/social-list";
-import { Social } from "../../../models/emac/social.interface";
-import { SocialService } from "../../../service/emac/social.service";
+import {EmacDB} from "../../../data/emac";
+import {Social} from "../../../models/shared/social.interface";
 
 @Component({
   selector: "app-copyright",
@@ -20,16 +19,12 @@ export class Copyright {
     privacy_policy: ConfigDB.wordings.privacy_policy,
     app_name: ConfigDB.data.app_name,
   };
-  public socials: Social[] = SocialListDB.list;
+  public social: Social = EmacDB.emac.social;
   public year: number = new Date().getFullYear();
   @Input()
   public copyrightClass: string = "";
 
   private modalService = inject(NgbModal);
-
-  constructor(private socialService: SocialService) {
-    this.socials = this.socialService.getSocials();
-  }
 
   openVerticallyCentered(content: unknown) {
     this.modalService.open(content, { centered: true, size: "lg" });

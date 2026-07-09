@@ -1,4 +1,4 @@
-import {Emac} from "../models/emac.interface";
+import { Emac } from "../models/emac.interface";
 
 export class EmacDB {
   static emac: Emac = {
@@ -11,10 +11,11 @@ export class EmacDB {
     },
     info: {
       id: "emac",
-      title: 'É<span class="text-lowercase">cole</span> m<span class="text-lowercase">ilitaire des </span>a<span class="text-lowercase">spirants de </span>C<span class="text-lowercase">oëtquidan</span>',
+      title:
+        'É<span class="text-lowercase">cole</span> m<span class="text-lowercase">ilitaire des </span>a<span class="text-lowercase">spirants de </span>C<span class="text-lowercase">oëtquidan</span>',
       description: [
-          "L'<strong>École militaire des aspirants de Coëtquidan (EMAC)</strong>, anciennement <strong>4e bataillon de l'École spéciale militaire de Saint-Cyr (E.S.M. 4)</strong>, est l'une des trois écoles de formation des officiers français de l'Armée de terre.",
-        "Elle fait partie de l'<strong>Académie militaire de Saint-Cyr Coëtquidan</strong>, implantée dans le camp militaire de même nom situé sur le territoire de la commune de <strong>Guer</strong>, dans le département du Morbihan, en région Bretagne."
+        "L'<strong>École militaire des aspirants de Coëtquidan (EMAC)</strong>, anciennement <strong>4e bataillon de l'École spéciale militaire de Saint-Cyr (E.S.M. 4)</strong>, est l'une des trois écoles de formation des officiers français de l'Armée de terre.",
+        "Elle fait partie de l'<strong>Académie militaire de Saint-Cyr Coëtquidan</strong>, implantée dans le camp militaire de même nom situé sur le territoire de la commune de <strong>Guer</strong>, dans le département du Morbihan, en région Bretagne.",
       ],
     },
     about: {
@@ -41,7 +42,8 @@ export class EmacDB {
       id: "emac",
       title: "Chant de l’<span>EMAC</span>",
       name: "Pour l’audace de servir",
-      description: "Ce chant a été écrit en <span>1994</span> sur ordre du Lieutenant-colonel Lautier commandant le <span>4e bataillon de l'école spéciale militaire de Saint-Cyr (ESM4)</span>.",
+      description:
+        "Ce chant a été écrit en <span>1994</span> sur ordre du Lieutenant-colonel Lautier commandant le <span>4e bataillon de l'école spéciale militaire de Saint-Cyr (ESM4)</span>.",
       verse: [
         {
           id: "emac",
@@ -99,11 +101,80 @@ export class EmacDB {
         },
       ],
     },
+    tradition: {
+      id: "emac",
+      title: "Traditions de l'<span>EMAC</span>",
+      description:
+        "L’EMAC, héritière des écoles qui l’ont précédée, dispose d’un parcours de tradition qui jalonne la formation des élèves officiers. Celui-ci marque leur intégration au sein de l’armée de Terre tout en favorisant le développement d’un <span>esprit de corps</span> au sein de la promotion.<br> Les traditions, de même que le cérémonial, ont ainsi vocation à inculquer aux futurs officiers un <span>socle de valeurs communes</span>.",
+      tradition: [
+        {
+          title: "La remise des calots de tradition",
+          description:
+            "À la fin de la guerre d’Algérie, le calot est la coiffe règlementaire des unités terrestres françaises. Celui-ci est par la suite remplacé par le béret. Le calot reste cependant un symbole fort de cohésion, porté dans de nombreux régiments. Ce couvre-chef, à la couleur bleu horizon de l’école, est porté par les élèves-officiers lors des évènements de tradition et de vie de promotion. La cérémonie de remise des calots est l’occasion d’échanges entre promotions, les élèves-officiers se voyant remettre leur calot par la génération précédente.",
+          image: "assets/images/emac/calot.jpg",
+        },
+        {
+          title: "La remise des « Alphas »",
+          description:
+            "L’Alpha est le premier galon que reçoivent les élèvesofficiers. Hautement symbolique, cette remise marque la fin de la période d’incorporation des recrues, dans les premières semaines. Cette cérémonie marque ainsi l’entrée des élèves au sein de l’Académie militaire. La cérémonie est précédée d’une marche durant laquelle les instructeurs présentent les hauts lieux de tradition du camp de Coëtquidan. Cette marche est l’occasion pour les futurs officiers de réfléchir au sens de leur engagement.",
+          image: "assets/images/emac/alpha.jpg",
+        },
+        {
+          title: "L’adoubement",
+          description:
+            "La remise des sabres symbolise l’accès à l’état d’officier, notamment à travers la symbolique de la chevalerie médiévale. Selon cette tradition, tout écuyer qui aspire au statut de chevalier reçoit ses armes et son armure au cours de l’adoubement. Le sabre représente l’état d’officier et est le symbole du commandement. L’ancien insigne de grade d’élève-officier de réserve (EOR), aussi appelé la « crevette », statut dont les aspirants de l’EMAC sont héritiers depuis la Première Guerre mondiale, est toujours porté par les stagiaires appartenant à la réserve opérationnelle.",
+          image: "assets/images/emac/adoubement.jpg",
+        },
+        {
+          title: "La présentation au Drapeau",
+          description:
+            "Depuis la création de l’École militaire des aspirants de Coëtquidan, les officiers sous-contrat disposent d’un drapeau qui leur est propre et dont ils ont la garde partagée avec leurs cadres. Cette cérémonie est un rite marquant dans la vie de tout soldat. La présentation au Drapeau est d’abord la présentation d’un héritage, qu’il faut préserver et entretenir. Il s’agit également d’un lien fort entre les membres d’une même unité, qui se rassemblent autour de ses couleurs. La prise d’armes est précédée d’une veillée au Drapeau au Musée de l’Officier, où toute la promotion se relaie en section pour honorer les couleurs de la Nation ainsi que ses ainés.",
+          image: "assets/images/emac/drapeau.jpg",
+        },
+        {
+          title: "La remise des képis",
+          description:
+            "La remise des képis est un moment charnière dans le parcours de tradition des élèves-officiers. Tout d’abord parce que celui-ci se mérite. Les aspirants se voient remettre leur képi par leurs cadres, après une marche aux alentours du camp de Coëtquidan. Ce moment unique est l’occasion pour les élèves-officiers de marquer un peu plus leur appartenance au corps des officiers.",
+          image: "assets/images/emac/kepi.jpg",
+        },
+        {
+          title: "Le baptême de promotion",
+          description:
+            "La cérémonie majeure de l’EMAC est, comme pour les autres écoles, le baptême de promotion. Depuis la monarchie de Juillet, il est de coutume de donner un parrain aux promotions des écoles d’officiers de l’armée de Terre. Ce parrain est choisi pour ses qualités d’officier, de soldat et d’homme, qui ont valeur d’exemple pour la nouvelle promotion. Les promotions précédentes ont ainsi choisi pour parrains : Maurice Genevoix, Général Morel, Général Bellec, Lieutenant Michard, Chef d’escadrons Chomel de Jarnieu.",
+          image: "assets/images/emac/bapteme.jpg",
+        },
+      ],
+    },
+    social: {
+      id: "emac",
+      background: "assets/images/emac/bg3.jpg",
+      social: [
+        {
+          link: "https://www.facebook.com/saintcyrcoetquidan",
+          title: "Facebook AMSCC",
+          icon: "facebook",
+        },
+        {
+          link: "https://x.com/SaintCyrCoet",
+          title: "Twitter AMSCC",
+          icon: "twitter",
+        },
+        {
+          link: "https://www.instagram.com/saintcyrcoetquidan/",
+          title: "Instagram AMSCC",
+          icon: "instagram",
+        },
+        {
+          link: "https://www.terre.defense.gouv.fr/amscc/devenir-officier/ecole-militaire-aspirants-coetquidan",
+          title: "Terre Defense",
+          icon: "book",
+        },
+      ],
+    },
     title: "École militaire des aspirants de Coëtquidan",
     description:
-        "L'École militaire des aspirants de Coëtquidan (EMAC), anciennement 4e bataillon de l'École spéciale militaire de Saint-Cyr (E.S.M. 4), est l'une des trois écoles de formation des officiers français de l'Armée de terre. Elle fait partie de l'Académie militaire de Saint-Cyr Coëtquidan, implantée dans le camp militaire de même nom situé sur le territoire de la commune de Guer, dans le département du Morbihan, en région Bretagne.",
+      "L'École militaire des aspirants de Coëtquidan (EMAC), anciennement 4e bataillon de l'École spéciale militaire de Saint-Cyr (E.S.M. 4), est l'une des trois écoles de formation des officiers français de l'Armée de terre. Elle fait partie de l'Académie militaire de Saint-Cyr Coëtquidan, implantée dans le camp militaire de même nom situé sur le territoire de la commune de Guer, dans le département du Morbihan, en région Bretagne.",
     keywords:
-        "emac,École militaire des aspirants de Coëtquidan,amscc,officiers sous contrat",
-
+      "emac,École militaire des aspirants de Coëtquidan,amscc,officiers sous contrat",
   };
 }

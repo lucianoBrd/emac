@@ -142,5 +142,16 @@ export class ColBourgoinDB {
         "Distinguished Service Order (Royaume-Uni)",
       ],
     },
+    social: {
+      id: "col-bourgoin",
+      background: "assets/images/promotion/col-bourgoin/bg1.jpg",
+      social: [
+        {
+          link: "https://www.instagram.com/promotion_bourgoin/",
+          title: "Instagram bourgoin",
+          icon: "instagram",
+        },
+      ],
+    },
   };
 }
