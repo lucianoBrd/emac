@@ -2,8 +2,15 @@
 
 echo "lint code"
 
-# todo failed if files changed
+changed=$(git status --porcelain --untracked-files=no | grep '^.M' > /dev/null)
 npm run format
 npm run lint:fix
+lint_changed=$(git status --porcelain --untracked-files=no | grep '^.M' > /dev/null)
+
+if test "$lint_changed" != "$changed"
+then
+	echo >&2 "Lint code before push: `npm run format` & `npm run lint:fix`"
+	exit 1
+fi
 
 exit 0
