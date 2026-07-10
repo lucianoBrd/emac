@@ -3,7 +3,7 @@
 echo "lint code"
 
 # todo failed if files changed
-npm run lint:fix
 npm run format
+npm run lint:fix
 
 exit 0

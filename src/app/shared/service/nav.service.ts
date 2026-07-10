@@ -34,22 +34,10 @@ export class NavService {
           icon: "info-alt",
         },
         {
-          path: lastPromotionPath + "/social",
-          title: ConfigDB.wordings.general.social,
-          type: "link",
-          icon: "themify-favicon",
-        },
-        {
           path: lastPromotionPath + "/gallery",
           title: ConfigDB.wordings.general.gallery,
           type: "link",
           icon: "gallery",
-        },
-        {
-          path: lastPromotionPath + "/blog",
-          title: ConfigDB.wordings.general.blog,
-          type: "link",
-          icon: "layout-list-thumb-alt",
         },
       ],
     });

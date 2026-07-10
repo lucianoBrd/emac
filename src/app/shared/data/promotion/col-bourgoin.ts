@@ -144,7 +144,7 @@ export class ColBourgoinDB {
     },
     social: {
       id: "col-bourgoin",
-      background: "assets/images/promotion/col-bourgoin/bg1.jpg",
+      background: "assets/images/promotion/col-bourgoin/logo.png",
       social: [
         {
           link: "https://www.instagram.com/promotion_bourgoin/",

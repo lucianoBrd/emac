@@ -52,11 +52,10 @@ export class ConfigDB {
           "Promotions de l'École militaire des aspirants de Coëtquidan.",
           "Depuis sa fondation le <span>6 juillet 2021</span>, l'école comptabilise {{numberOfPromotion}} promotions.",
         ],
-        keywords: "",
-        meta_description: "",
+        keywords: "promotion,promotions",
       },
       detail: {
-        title: "Promotions",
+        title: "Promotion",
       },
       see_all: "Voir toutes",
       current: "Promotion actuelle",
