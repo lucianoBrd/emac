@@ -2,7 +2,6 @@ import { DatePipe } from "@angular/common";
 import {
   Component,
   inject,
-  Input as RouterInput,
   OnDestroy,
   OnInit,
 } from "@angular/core";
@@ -11,6 +10,7 @@ import { ActivatedRoute, RouterLink, RouterOutlet } from "@angular/router";
 import { CarouselModule } from "ngx-owl-carousel-o";
 import { Subject, takeUntil } from "rxjs";
 
+import { PromotionDetailGallery } from "./promotion-detail-gallery/promotion-detail-gallery";
 import { About } from "../../shared/components/pages/about/about";
 import { Breadcrumb } from "../../shared/components/pages/breadcrumb/breadcrumb";
 import { Copyright } from "../../shared/components/pages/copyright/copyright";
@@ -24,10 +24,8 @@ import { Song } from "../../shared/components/pages/song/song";
 import { TapToTop } from "../../shared/components/tap-to-top/tap-to-top";
 import { ConfigDB } from "../../shared/data/config";
 import { Promotion } from "../../shared/models/promotion.interface";
-import { FilterService } from "../../shared/service/filter.service";
 import { MetaService } from "../../shared/service/meta.service";
 import { PromotionService } from "../../shared/service/promotion.service";
-import {PromotionDetailGallery} from "./promotion-detail-gallery/promotion-detail-gallery";
 
 @Component({
   selector: "promotions-detail",

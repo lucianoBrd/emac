@@ -1,4 +1,4 @@
-import { Component, ElementRef, inject, Input } from "@angular/core";
+import { Component, ElementRef, Input } from "@angular/core";
 
 import VanillaTilt from "vanilla-tilt";
 

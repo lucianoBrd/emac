@@ -1,13 +1,13 @@
-import {Component, inject, Input} from "@angular/core";
+import { Component, inject, Input } from "@angular/core";
+import { DomSanitizer } from "@angular/platform-browser";
+import { RouterLink } from "@angular/router";
 
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { CarouselModule } from "ngx-owl-carousel-o";
-import {Gallery} from "../../../shared/models/shared/gallery.interface";
-import {GalleryType} from "../../../shared/enum/gallery.type";
-import {ConfigDB} from "../../../shared/data/config";
-import {RouterLink} from "@angular/router";
-import {PromotionService} from "../../../shared/service/promotion.service";
-import {DomSanitizer} from "@angular/platform-browser";
-import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+
+import { ConfigDB } from "../../../shared/data/config";
+import { GalleryType } from "../../../shared/enum/gallery.type";
+import { Gallery } from "../../../shared/models/shared/gallery.interface";
 
 @Component({
   selector: "promotion-detail-gallery",
@@ -58,6 +58,6 @@ export class PromotionDetailGallery {
   }
 
   public openVerticallyCentered(content: unknown) {
-    this.modalService.open(content, { centered: true, size: 'lg' });
+    this.modalService.open(content, { centered: true, size: "lg" });
   }
 }

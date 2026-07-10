@@ -2,10 +2,10 @@
 
 echo "lint code"
 
-changed=$(git status --porcelain --untracked-files=no | grep '^.M' > /dev/null)
+changed=$(git status --porcelain=1 | wc -l)
 npm run format
 npm run lint:fix
-lint_changed=$(git status --porcelain --untracked-files=no | grep '^.M' > /dev/null)
+lint_changed=$(git status --porcelain=1 | wc -l)
 
 if test "$lint_changed" != "$changed"
 then

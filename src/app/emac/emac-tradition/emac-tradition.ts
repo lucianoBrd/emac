@@ -1,4 +1,4 @@
-import { Component, ElementRef, inject } from "@angular/core";
+import { Component, inject } from "@angular/core";
 
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { CarouselModule } from "ngx-owl-carousel-o";

@@ -1,21 +1,17 @@
-import { NgClass } from "@angular/common";
 import { Component, inject, OnDestroy, OnInit } from "@angular/core";
 import {
   ActivatedRoute,
-  NavigationEnd,
-  PRIMARY_OUTLET,
   Router,
   RouterModule,
 } from "@angular/router";
 
-import { map, Subject, takeUntil } from "rxjs";
-import { filter } from "rxjs/operators";
+import { Subject, takeUntil } from "rxjs";
 
 import { ConfigDB } from "../../../data/config";
 
 @Component({
   selector: "app-breadcrumb",
-  imports: [RouterModule, NgClass],
+  imports: [RouterModule],
   templateUrl: "./breadcrumb.html",
   styleUrls: ["./breadcrumb.scss"],
 })

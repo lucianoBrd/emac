@@ -1,6 +1,6 @@
+import { GalleryType } from "../../enum/gallery.type";
 import { Promotion } from "../../models/promotion.interface";
 import { EmacDB } from "../emac";
-import {GalleryType} from "../../enum/gallery.type";
 
 export class ColBourgoinDB {
   static promotion: Promotion = {
