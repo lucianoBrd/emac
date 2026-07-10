@@ -4,6 +4,7 @@ import { Header } from "./shared/header.interface";
 import { Info } from "./shared/info.interface";
 import { Social } from "./shared/social.interface";
 import { Song } from "./shared/song.interface";
+import {Gallery} from "./shared/gallery.interface";
 
 export interface Promotion {
   id: Readonly<string>;
@@ -18,4 +19,5 @@ export interface Promotion {
   song?: Song;
   footer?: Footer;
   social?: Social;
+  gallery?: Gallery;
 }

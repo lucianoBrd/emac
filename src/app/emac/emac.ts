@@ -19,7 +19,7 @@ import { EmacService } from "../shared/service/emac.service";
 import { PromotionService } from "../shared/service/promotion.service";
 
 @Component({
-  selector: "app-emac",
+  selector: "emac",
   imports: [
     EmacPromotion,
     EmacTradition,

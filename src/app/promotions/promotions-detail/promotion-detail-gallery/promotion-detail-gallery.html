@@ -6,72 +6,73 @@
       <div class="col-md-10 offset-md-1">
         <div class="title title3">
           <div class="main-title">
-            <h2><span>our </span>blog</h2>
-          </div>
-          <div class="sub-title">
-            <p>
-              Register now and reserve your seat for this
-              <span>year's unice,</span> the largest
-              <span>web development</span> and online marketing
-              <span>conference in UK,</span> covering everything you need to
-              know in order to develop a successful online business.
-            </p>
+            <h2><span>{{gallery.title}}</span></h2>
           </div>
         </div>
       </div>
       <div class="col-12">
-        <owl-carousel-o [options]="blogCarouselOptions">
-          @for (blog of blogs; track blog) {
+        <owl-carousel-o [options]="galleryCarouselOptions">
+          @for (g of gallery.gallery.slice(0, 5); track g) {
           <ng-template carouselSlide class="item">
-            <div class="img-container">
-              <img [src]="blog.img" alt="" class="img-fluid" />
-              <div class="overlay"></div>
+            <div class="img-container" [style.max-height]="'300px'">
+                @switch (g.type) {
+                    @case (galleryType.video) {
+                        @if (g.thumb) {
+                            <img [src]="g.thumb" [alt]="g.description" class="img-fluid" />
+                        } @else {
+                        <video onloadedmetadata="this.muted = true; this.playsinline = true;" oncanplay="this.play()" autoplay loop playsinline="" muted="" onplaying="this.controls=false" [aria-label]="g.description" class="img-fluid">
+                            <source [src]="g.image" type='{{g.mimeType}}'>
+                        </video>
+                        }
+                    }
+                    @case (galleryType.youtube) {
+                        <img [src]="g.thumb" [alt]="g.description" class="img-fluid" />
+                    }
+                    @default {
+                        <img [src]="g.thumb ? g.thumb : g.image" [alt]="g.description" class="img-fluid" />
+                    }
+                }
               <div class="blog-info set-abs bottom-0">
-                <div class="center-text flex m-b-20">
-                  <i class="fa fa-user-o m-r-5" aria-hidden="true"></i>
-                  <h6 class="m-r-25 font-blog">{{ blog.type }}</h6>
-                  <i class="fa fa-calendar-o m-r-5" aria-hidden="true"></i>
-                  <h6 class="font-blog">{{ blog.date }}</h6>
-                </div>
-                <h4 class="blog-text">{{ blog.title }}</h4>
-                <p class="borders-before">
-                  <span>{{ blog.subTitle }}</span>
-                </p>
-                <p class="small-font">{{ blog.description }}</p>
-                <div class="social-list">
-                  <ul>
-                    <li>
-                      <a href="#">
-                        <div class="center-content">
-                          <i
-                            class="fa fa-facebook center-content"
-                            aria-hidden="true"
-                          ></i>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div class="center-content">
-                          <i
-                            class="fa fa-twitter center-content"
-                            aria-hidden="true"
-                          ></i>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div class="center-content">
-                          <i
-                            class="fa fa-google center-content"
-                            aria-hidden="true"
-                          ></i>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+                  @if (g.description) {
+                      <p class="borders-before">
+                          <span>{{ g.description }}</span>
+                      </p>
+                  }
+                  @if (g.type === galleryType.video || g.type === galleryType.youtube) {
+                      <div class="social-list">
+                          <ul>
+                              <li>
+                                  <a (click)="openVerticallyCentered(content)">
+                                      <div class="center-content">
+                                          <i
+                                                  class="fa fa-play center-content"
+                                                  aria-hidden="true"
+                                          ></i>
+                                      </div>
+                                  </a>
+                                  <ng-template #content let-modal>
+                                      <div class="modal-body video-modal">
+                                          <button
+                                                  type="button"
+                                                  class="close"
+                                                  [aria-label]="wordings.close"
+                                                  (click)="modal.dismiss('Cross click')"
+                                          >
+                                              <span aria-hidden="true">&times;</span>
+                                          </button>
+                                          <iframe
+                                                  class="mfp-iframe"
+                                                  frameborder="0"
+                                                  allowfullscreen=""
+                                                  [src]="updateVideoUrl(g.image + '?autoplay=1')"
+                                          ></iframe>
+                                      </div>
+                                  </ng-template>
+                              </li>
+                          </ul>
+                      </div>
+                  }
+
               </div>
             </div>
           </ng-template>
@@ -79,6 +80,9 @@
         </owl-carousel-o>
       </div>
     </div>
+      <div class="text-center mt-4">
+          <a [routerLink]="['/promotions/' + gallery.id + '/gallery']" class="btn btn-default primary-btn m-0-auto">{{wordings.see_all}}</a>
+      </div>
   </div>
 </section>
 <!--blog section end-->

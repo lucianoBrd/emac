@@ -1,45 +1,30 @@
-import { Component } from "@angular/core";
+import {Component, inject, Input} from "@angular/core";
 
 import { CarouselModule } from "ngx-owl-carousel-o";
+import {Gallery} from "../../../shared/models/shared/gallery.interface";
+import {GalleryType} from "../../../shared/enum/gallery.type";
+import {ConfigDB} from "../../../shared/data/config";
+import {RouterLink} from "@angular/router";
+import {PromotionService} from "../../../shared/service/promotion.service";
+import {DomSanitizer} from "@angular/platform-browser";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
-  selector: "app-event-blog",
-  imports: [CarouselModule],
-  templateUrl: "./event-blog.html",
-  styleUrls: ["./event-blog.scss"],
+  selector: "promotion-detail-gallery",
+  imports: [CarouselModule, RouterLink],
+  templateUrl: "./promotion-detail-gallery.html",
+  styleUrls: ["./promotion-detail-gallery.scss"],
 })
 export class PromotionDetailGallery {
-  blogs = [
-    {
-      img: "assets/images/event/blog/1.jpg",
-      date: "5 September 2024",
-      type: "admin",
-      title: "Find Great Speaker For Event.",
-      subTitle: "Detais This Event",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard .",
-    },
-    {
-      img: "assets/images/event/blog/2.jpg",
-      date: "5 September 2024",
-      type: "admin",
-      title: "Find Great Speaker For Event.",
-      subTitle: "Detais This Event",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard .",
-    },
-    {
-      img: "assets/images/event/blog/3.jpg",
-      date: "5 September 2024",
-      type: "admin",
-      title: "Find Great Speaker For Event.",
-      subTitle: "Detais This Event",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard .",
-    },
-  ];
+  private sanitizer: DomSanitizer = inject(DomSanitizer);
+  private modalService = inject(NgbModal);
 
-  blogCarouselOptions = {
+  @Input()
+  public gallery: Gallery;
+  public galleryType: typeof GalleryType = GalleryType;
+  public wordings = ConfigDB.wordings.general;
+
+  public galleryCarouselOptions = {
     items: 3,
     margin: 60,
     nav: false,
@@ -67,4 +52,12 @@ export class PromotionDetailGallery {
       },
     },
   };
+
+  public updateVideoUrl(url: string) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
+
+  public openVerticallyCentered(content: unknown) {
+    this.modalService.open(content, { centered: true, size: 'lg' });
+  }
 }

@@ -8,7 +8,7 @@ import { EmacDB } from "../../shared/data/emac";
 import { Tradition } from "../../shared/models/emac/tradition.interface";
 
 @Component({
-  selector: "app-emac-tradition",
+  selector: "emac-tradition",
   imports: [CarouselModule],
   templateUrl: "./emac-tradition.html",
   styleUrls: ["./emac-tradition.scss"],

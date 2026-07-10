@@ -24,6 +24,7 @@ export class ConfigDB {
       social: "Réseaux sociaux",
       back: "Retour",
       learn_more: "Plus d'information",
+      see_all: "Voir tout",
       close: "Fermer",
       sitemap: "Sitemap",
       search: "Rechercher",

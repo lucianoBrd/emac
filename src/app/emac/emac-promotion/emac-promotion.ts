@@ -9,7 +9,7 @@ import { Promotion } from "../../shared/models/promotion.interface";
 import { PromotionService } from "../../shared/service/promotion.service";
 
 @Component({
-  selector: "app-emac-promotion",
+  selector: "emac-promotion",
   imports: [CarouselModule, DatePipe, RouterLink],
   templateUrl: "./emac-promotion.html",
   styleUrls: ["./emac-promotion.scss"],

@@ -27,6 +27,7 @@ import { Promotion } from "../../shared/models/promotion.interface";
 import { FilterService } from "../../shared/service/filter.service";
 import { MetaService } from "../../shared/service/meta.service";
 import { PromotionService } from "../../shared/service/promotion.service";
+import {PromotionDetailGallery} from "./promotion-detail-gallery/promotion-detail-gallery";
 
 @Component({
   selector: "promotions-detail",
@@ -46,6 +47,7 @@ import { PromotionService } from "../../shared/service/promotion.service";
     TapToTop,
     Footer,
     Social,
+    PromotionDetailGallery,
   ],
   templateUrl: "./promotions-detail.html",
   styleUrls: ["./promotions-detail.scss"],

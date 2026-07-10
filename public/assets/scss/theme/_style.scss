@@ -3271,13 +3271,16 @@ footer {
   button {
     &.close {
       position: absolute;
+      right: -40px;
       top: -20px;
-      right: -20px;
-      border: none;
-      outline: none;
+      outline: none !important;
+      background: none !important;
+      border: none !important;
       span {
-        color: unset !important;
-        opacity: unset !important;
+        color: $white !important;
+        opacity: 1 !important;
+        display: block;
+        font-size: 30px;
         &:focus {
           outline: 0;
         }
@@ -7805,7 +7808,7 @@ event css start
                 width: 28px;
                 &:hover {
                   background-color: white;
-                  color: #ba38d2;
+                  color: $primary;
                 }
               }
             }
@@ -8343,6 +8346,7 @@ popup css start
   .modal-header {
     background: $light;
     padding: 0;
+    border-bottom: none;
   }
   .modal-body {
     padding: 40px;
@@ -8405,15 +8409,19 @@ popup css start
   }
   .close {
     position: absolute;
-    right: -45px;
-    top: 0;
-    background: #f5f5f5;
-    opacity: 1 !important;
-    color: #000;
+    right: -40px;
+    top: -20px;
     z-index: 2;
     margin: 0;
-    outline: none;
-    border: none;
+    outline: none !important;
+    background: none !important;
+    border: none !important;
+    span {
+      color: $white !important;
+      opacity: 1 !important;
+      display: block;
+      font-size: 30px;
+    }
   }
 }
 .loader-wrapper {
