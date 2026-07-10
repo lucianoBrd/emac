@@ -1,9 +1,5 @@
 import { Component, inject, OnDestroy, OnInit } from "@angular/core";
-import {
-  ActivatedRoute,
-  Router,
-  RouterModule,
-} from "@angular/router";
+import { ActivatedRoute, Router, RouterModule } from "@angular/router";
 
 import { Subject, takeUntil } from "rxjs";
 

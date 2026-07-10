@@ -1,10 +1,5 @@
 import { DatePipe } from "@angular/common";
-import {
-  Component,
-  inject,
-  OnDestroy,
-  OnInit,
-} from "@angular/core";
+import { Component, inject, OnDestroy, OnInit } from "@angular/core";
 import { ActivatedRoute, RouterLink, RouterOutlet } from "@angular/router";
 
 import { CarouselModule } from "ngx-owl-carousel-o";
