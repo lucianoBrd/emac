@@ -30,8 +30,8 @@ export class ConfigDB {
       search: "Rechercher",
       of: "De",
       contribute: "Contribuer",
-      empty_items: 'Aucun élément à afficher pour le moment',
-      download: 'Télécharger',
+      empty_items: "Aucun élément à afficher pour le moment",
+      download: "Télécharger",
     },
     privacy_policy: {
       title: "Politique de confidentialité",

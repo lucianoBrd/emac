@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
-import {ConfigDB} from "../../data/config";
+
+import { ConfigDB } from "../../data/config";
 
 @Component({
   selector: "app-empty",

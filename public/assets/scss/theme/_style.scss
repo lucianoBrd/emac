@@ -9641,13 +9641,15 @@ error css end
       position: relative;
       overflow: hidden;
     }
-    img, video {
+    img,
+    video {
       width: 100%;
       height: auto;
     }
   }
   .isotopeSelector {
-    img, video {
+    img,
+    video {
       transition: all 0.4s ease;
     }
     .gallery-item {
@@ -9690,7 +9692,8 @@ error css end
     }
     .overlay {
       &:hover {
-        img, video {
+        img,
+        video {
           transform: scale(1.2) rotate(2deg);
           transition: all 0.4s ease;
         }

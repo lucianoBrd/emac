@@ -3,7 +3,8 @@ import { ActivatedRoute } from "@angular/router";
 
 import {
   Gallery,
-  GalleryItem, IframeItem,
+  GalleryItem,
+  IframeItem,
   ImageItem,
   ImageSize,
   ThumbnailsPosition,
@@ -21,20 +22,16 @@ import { TapToTop } from "../../shared/components/tap-to-top/tap-to-top";
 import { ConfigDB } from "../../shared/data/config";
 import { GalleryType } from "../../shared/enum/gallery.type";
 import { Promotion } from "../../shared/models/promotion.interface";
-import { Item, Gallery as GalleryInterface } from "../../shared/models/shared/gallery.interface";
+import {
+  Item,
+  Gallery as GalleryInterface,
+} from "../../shared/models/shared/gallery.interface";
 import { MetaService } from "../../shared/service/meta.service";
 import { PromotionService } from "../../shared/service/promotion.service";
 
 @Component({
   selector: "promotions-gallery",
-  imports: [
-    CarouselModule,
-    Breadcrumb,
-    Nav,
-    Copyright,
-    TapToTop,
-    Empty,
-  ],
+  imports: [CarouselModule, Breadcrumb, Nav, Copyright, TapToTop, Empty],
   templateUrl: "./promotions-gallery.html",
   styleUrls: ["./promotions-gallery.scss"],
 })
@@ -49,7 +46,7 @@ export class PromotionsGallery implements OnInit, OnDestroy {
   public promotion: Promotion | undefined;
   public wordings = ConfigDB.wordings.general.download;
   public items: GalleryItem[];
-  public promotionGallery: GalleryInterface|null = null;
+  public promotionGallery: GalleryInterface | null = null;
   public galleryType: typeof GalleryType = GalleryType;
 
   ngOnDestroy(): void {
