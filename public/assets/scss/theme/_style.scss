@@ -9641,14 +9641,33 @@ error css end
       position: relative;
       overflow: hidden;
     }
-    img {
+    img, video {
       width: 100%;
       height: auto;
     }
   }
   .isotopeSelector {
-    img {
+    img, video {
       transition: all 0.4s ease;
+    }
+    .gallery-item {
+      position: relative;
+      .overlay-icon {
+        i {
+          z-index: 2;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          display: flex;
+          transform: translate(-50%, -50%);
+          color: $primary;
+          font-size: 22px;
+          width: 50px;
+          height: 50px;
+          align-items: center;
+          justify-content: center;
+        }
+      }
     }
     .overlay-background {
       transform: scale(0);
@@ -9671,7 +9690,7 @@ error css end
     }
     .overlay {
       &:hover {
-        img {
+        img, video {
           transform: scale(1.2) rotate(2deg);
           transition: all 0.4s ease;
         }

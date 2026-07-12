@@ -25,6 +25,13 @@ export const Promotions: Routes = [
             (m) => m.PromotionsDetail,
           ),
       },
+      {
+        path: ":promotionId/gallery",
+        loadComponent: () =>
+            import("./promotions-gallery/promotions-gallery").then(
+                (m) => m.PromotionsGallery,
+            ),
+      },
     ],
   },
 ];
