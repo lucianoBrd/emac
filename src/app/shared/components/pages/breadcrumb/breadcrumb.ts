@@ -33,26 +33,32 @@ export class Breadcrumb implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe((data) => {
         const title = data["title"];
-          const child = data["breadcrumb"];
-          const parentBreadcrumb = data["parentBreadcrumb"];
-          const parentPath = data["parentPath"];
-          const pathParameter = data["pathParameter"];
+        const child = data["breadcrumb"];
+        const parentBreadcrumb = data["parentBreadcrumb"];
+        const parentPath = data["parentPath"];
+        const pathParameter = data["pathParameter"];
         this.title = title;
         this.childBreadcrumb = child;
 
         if (parentBreadcrumb) {
-            this.activatedRoute.params
-                .pipe(takeUntil(this.destroy$))
-                .subscribe((params) => {
-                    const parameter: string = params[pathParameter];
-                    if (parameter) {
-                        this.parentBreadcrumb = parentBreadcrumb.replace(":" + pathParameter, parameter);
-                        this.parentPath = parentPath.replace(":" + pathParameter, parameter);
-                    } else {
-                        this.parentBreadcrumb = parentBreadcrumb;
-                        this.parentPath = parentPath;
-                    }
-                });
+          this.activatedRoute.params
+            .pipe(takeUntil(this.destroy$))
+            .subscribe((params) => {
+              const parameter: string = params[pathParameter];
+              if (parameter) {
+                this.parentBreadcrumb = parentBreadcrumb.replace(
+                  ":" + pathParameter,
+                  parameter,
+                );
+                this.parentPath = parentPath.replace(
+                  ":" + pathParameter,
+                  parameter,
+                );
+              } else {
+                this.parentBreadcrumb = parentBreadcrumb;
+                this.parentPath = parentPath;
+              }
+            });
         }
       });
     // if (this.activatedRoute.parent) {

@@ -73,11 +73,13 @@ export class PromotionsGallery implements OnInit, OnDestroy {
           if (this.promotion?.gallery) {
             this.promotionGallery = this.promotion.gallery;
             this.updateNgGallery();
-            this.metaService.setKeywords(keywords + "," + this.promotionGallery.title);
-            this.metaService.setTitle(keywords + " " + this.promotionGallery.title);
-            this.metaService.setDescription(
-              this.promotionGallery.description,
+            this.metaService.setKeywords(
+              keywords + "," + this.promotionGallery.title,
             );
+            this.metaService.setTitle(
+              keywords + " " + this.promotionGallery.title,
+            );
+            this.metaService.setDescription(this.promotionGallery.description);
           }
         }
       });
