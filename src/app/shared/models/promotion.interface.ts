@@ -1,5 +1,6 @@
 import { About } from "./shared/about.interface";
 import { Footer } from "./shared/footer.interface";
+import { Gallery } from "./shared/gallery.interface";
 import { Header } from "./shared/header.interface";
 import { Info } from "./shared/info.interface";
 import { Social } from "./shared/social.interface";
@@ -18,4 +19,5 @@ export interface Promotion {
   song?: Song;
   footer?: Footer;
   social?: Social;
+  gallery?: Gallery;
 }

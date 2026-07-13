@@ -2,8 +2,16 @@
 
 echo "lint code"
 
-# todo failed if files changed
-npm run lint:fix
+changed=$(git status --porcelain=1 | wc -l)
 npm run format
+npm run lint:fix
+lint_changed=$(git status --porcelain=1 | wc -l)
+
+if test "$lint_changed" != "$changed"
+then
+	echo "Lint code before push: `npm run format` & `npm run lint:fix`"
+	echo >&2 "Lint code before push: `npm run format` & `npm run lint:fix`"
+	exit 1
+fi
 
 exit 0

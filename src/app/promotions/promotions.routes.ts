@@ -15,8 +15,7 @@ export const Promotions: Routes = [
         data: {
           title: ConfigDB.wordings.promotion.list.title,
           breadcrumb: ConfigDB.wordings.promotion.list.title,
-          // description: ConfigDB.wordings.emac.description, // todo review
-          // keywords: ConfigDB.wordings.emac.keywords,
+          description: ConfigDB.wordings.promotion.list.description.at(0),
         },
       },
       {
@@ -25,8 +24,20 @@ export const Promotions: Routes = [
           import("./promotions-detail/promotions-detail").then(
             (m) => m.PromotionsDetail,
           ),
+      },
+      {
+        path: ":promotionId/gallery",
+        loadComponent: () =>
+          import("./promotions-gallery/promotions-gallery").then(
+            (m) => m.PromotionsGallery,
+          ),
         data: {
-          breadcrumb: ConfigDB.wordings.promotion.detail.title,
+          title: ConfigDB.wordings.promotion.gallery.title,
+          breadcrumb: ConfigDB.wordings.promotion.gallery.title,
+          parentBreadcrumb:
+            ConfigDB.wordings.promotion.detail.title + " :promotionId",
+          parentPath: "/promotions/:promotionId",
+          pathParameter: "promotionId",
         },
       },
     ],

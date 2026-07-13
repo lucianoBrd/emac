@@ -1,3 +1,4 @@
+import { GalleryType } from "../../enum/gallery.type";
 import { Promotion } from "../../models/promotion.interface";
 import { EmacDB } from "../emac";
 
@@ -144,12 +145,54 @@ export class ColBourgoinDB {
     },
     social: {
       id: "col-bourgoin",
-      background: "assets/images/promotion/col-bourgoin/bg1.jpg",
+      background: "assets/images/promotion/col-bourgoin/logo.png",
       social: [
         {
           link: "https://www.instagram.com/promotion_bourgoin/",
           title: "Instagram bourgoin",
           icon: "instagram",
+        },
+      ],
+    },
+    gallery: {
+      id: "col-bourgoin",
+      title: "Galerie",
+      description: "Galerie de la promotion Colonel Bourgoin",
+      gallery: [
+        {
+          image: "assets/images/promotion/col-bourgoin/gallery/14.jpg",
+          type: GalleryType.image,
+          description: "14 compagnie",
+        },
+        {
+          image: "assets/images/promotion/col-bourgoin/gallery/15.jpg",
+          type: GalleryType.image,
+          description: "15 compagnie",
+        },
+        {
+          image: "assets/images/promotion/col-bourgoin/gallery/13.jpg",
+          type: GalleryType.image,
+          description: "13 compagnie",
+        },
+        {
+          image: "https://www.youtube.com/embed/YpYa_hMUw9I",
+          type: GalleryType.youtube,
+          description: "Baptême de la promotion",
+          thumb: "assets/images/promotion/col-bourgoin/gallery/bapteme.jpg",
+        },
+        {
+          image: "assets/images/promotion/col-bourgoin/gallery/cnec.mp4",
+          type: GalleryType.video,
+          mimeType: "video/mp4",
+          description: "Cérémonie de remise des brevets CNEC",
+        },
+        {
+          image: "assets/images/promotion/col-bourgoin/gallery/necropole.jpg",
+          type: GalleryType.image,
+        },
+        {
+          image: "assets/images/promotion/col-bourgoin/gallery/verdun.jpg",
+          type: GalleryType.image,
         },
       ],
     },

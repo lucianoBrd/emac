@@ -1,6 +1,4 @@
-import { Component, inject, OnInit } from "@angular/core";
-import { Title } from "@angular/platform-browser";
-import { ActivatedRoute } from "@angular/router";
+import { Component, inject } from "@angular/core";
 
 import { EmacContact } from "./emac-contact/emac-contact";
 import { EmacPromotion } from "./emac-promotion/emac-promotion";
@@ -13,13 +11,11 @@ import { Nav } from "../shared/components/pages/nav/nav";
 import { Social } from "../shared/components/pages/social/social";
 import { Song } from "../shared/components/pages/song/song";
 import { TapToTop } from "../shared/components/tap-to-top/tap-to-top";
-import { ConfigDB } from "../shared/data/config";
 import { Emac as EmacInterface } from "../shared/models/emac.interface";
 import { EmacService } from "../shared/service/emac.service";
-import { PromotionService } from "../shared/service/promotion.service";
 
 @Component({
-  selector: "app-emac",
+  selector: "emac",
   imports: [
     EmacPromotion,
     EmacTradition,

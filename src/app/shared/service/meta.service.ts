@@ -10,14 +10,14 @@ export class MetaService {
   private titleService: Title = inject(Title);
   private metaService: Meta = inject(Meta);
 
-  public setTitle(newTitle: string): void {
+  public setTitle(newTitle: string | undefined): void {
     if (!newTitle) {
       return;
     }
     this.titleService.setTitle(newTitle + " | " + ConfigDB.data.app_name);
   }
 
-  public setDescription(newDesc: string): void {
+  public setDescription(newDesc: string | undefined): void {
     if (!newDesc) {
       return;
     }
@@ -27,13 +27,13 @@ export class MetaService {
     });
   }
 
-  public setKeywords(newKw: string): void {
+  public setKeywords(newKw: string | undefined): void {
     if (!newKw) {
       return;
     }
     this.metaService.updateTag({
       name: "keywords",
-      content: ConfigDB.data.keywords + newKw,
+      content: ConfigDB.data.keywords + "," + newKw,
     });
   }
 }

@@ -1,0 +1,75 @@
+<app-nav headerClass="ecommerce"></app-nav>
+<app-breadcrumb></app-breadcrumb>
+<!-- section start -->
+@if (promotionGallery && promotionGallery.gallery.length > 0) {
+<section class="resume portfolio-section zoom-gallery filter-section">
+  <div class="container">
+    <div class="p-4col-width">
+      <div class="isotopeContainer row">
+        @for (g of promotionGallery.gallery; track g) {
+        <figure
+          class="p-width isotopeSelector text-center"
+          itemprop="associatedMedia"
+        >
+          <div class="overlay d-flex flex-column justify-content-between">
+            <a
+              href="javascript:void(0)"
+              (click)="lightbox.open($index)"
+              itemprop="contentUrl"
+            >
+              <div class="d-flex justify-content-center gallery-item">
+                @switch (g.type) { @case (galleryType.video) {
+                <div class="overlay-icon">
+                  <i class="fa fa-play" aria-hidden="true"></i>
+                </div>
+                @if (g.thumb) {
+                <img [src]="g.thumb" [alt]="g.description" class="img-fluid" />
+                } @else {
+                <video
+                  onloadedmetadata="
+                    this.muted = true;
+                    this.playsinline = true;
+                  "
+                  oncanplay="this.play()"
+                  autoplay
+                  loop
+                  playsinline=""
+                  muted=""
+                  onplaying="this.controls = false"
+                  [aria-label]="g.description"
+                  class="img-fluid"
+                >
+                  <source [src]="g.image" type="{{g.mimeType}}" />
+                </video>
+                } } @case (galleryType.youtube) {
+                <div class="overlay-icon">
+                  <i class="fa fa-play" aria-hidden="true"></i>
+                </div>
+                <img [src]="g.thumb" [alt]="g.description" class="img-fluid" />
+                } @default {
+                <img
+                  [src]="g.thumb ? g.thumb : g.image"
+                  [alt]="g.description"
+                  class="img-fluid"
+                />
+                } }
+              </div>
+            </a>
+            <div class="portfolio-text m-auto text-center">
+              @if (g.description) {
+              <p class="head-sub-text">{{g.description}}</p>
+              }
+            </div>
+          </div>
+        </figure>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+} @else {
+<app-empty></app-empty>
+}
+<!-- section end -->
+<app-copyright copyrightClass="dark  position-relative"></app-copyright>
+<app-tap-to-top></app-tap-to-top>
