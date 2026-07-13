@@ -1,7 +1,7 @@
 import { Component, Input } from "@angular/core";
 
 import { Song as SongInterface } from "../../../models/shared/song.interface";
-import {Music} from "../music/music";
+import { Music } from "../music/music";
 
 @Component({
   selector: "app-song",
