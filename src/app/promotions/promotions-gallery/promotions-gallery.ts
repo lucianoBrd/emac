@@ -28,6 +28,7 @@ import {
 } from "../../shared/models/shared/gallery.interface";
 import { MetaService } from "../../shared/service/meta.service";
 import { PromotionService } from "../../shared/service/promotion.service";
+import {RmNgDeviceDetectionService} from "rm-ng-device-detection";
 
 @Component({
   selector: "promotions-gallery",
@@ -41,6 +42,8 @@ export class PromotionsGallery implements OnInit, OnDestroy {
   private metaService: MetaService = inject(MetaService);
   protected lightbox: Lightbox = inject(Lightbox);
   private gallery: Gallery = inject(Gallery);
+  private readonly deviceService: RmNgDeviceDetectionService = inject(RmNgDeviceDetectionService)
+
   private destroy$: Subject<boolean> = new Subject<boolean>();
 
   public promotion: Promotion | undefined;
@@ -129,7 +132,7 @@ export class PromotionsGallery implements OnInit, OnDestroy {
 
     const lightboxRef = this.gallery.ref("lightbox");
     lightboxRef.setConfig({
-      imageSize: ImageSize.Cover,
+      imageSize: this.deviceService.isMobile() ? ImageSize.Contain : ImageSize.Cover,
       thumbPosition: ThumbnailsPosition.Top,
       thumbs: false,
     });

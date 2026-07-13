@@ -32,6 +32,7 @@
     "ngx-masonry": "^14.0.1",
     "ngx-owl-carousel-o": "^21.0.0",
     "ngx-toastr": "^19.0.0",
+    "rm-ng-device-detection": "^5.0.1",
     "rxjs": "~7.8.0",
     "swiper": "^8.3.1",
     "tslib": "^2.3.0",
