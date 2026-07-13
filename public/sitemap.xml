@@ -1,18 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/css" href="https://www.xml-sitemaps.com/css/sitemap.css"?>
-<urlset
-        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-        xmlns:fo="http://www.w3.org/1999/XSL/Format"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://lucianobdt.org/</loc>
-        <lastmod>2026-07-03T20:57:52+00:00</lastmod>
+        <lastmod>2026-07-13</lastmod>
+        <priority>1.0</priority>
     </url>
-
+    <url>
+        <loc>https://lucianobdt.org/promotions/col-bourgoin</loc>
+        <lastmod>2026-07-13</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lucianobdt.org/promotions/col-bourgoin/gallery</loc>
+        <lastmod>2026-07-13</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://lucianobdt.org/promotions/ces-chomel-de-jarnieu</loc>
+        <lastmod>2026-07-13</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lucianobdt.org/promotions/ltn-michard</loc>
+        <lastmod>2026-07-13</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lucianobdt.org/promotions/gal-morel</loc>
+        <lastmod>2026-07-13</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lucianobdt.org/promotions/gal-bellec</loc>
+        <lastmod>2026-07-13</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lucianobdt.org/promotions/slt-maurice-genevoix</loc>
+        <lastmod>2026-07-13</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lucianobdt.org/promotions</loc>
+        <lastmod>2026-07-13</lastmod>
+        <priority>0.9</priority>
+    </url>
 </urlset>
