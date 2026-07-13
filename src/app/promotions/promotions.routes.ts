@@ -31,6 +31,13 @@ export const Promotions: Routes = [
           import("./promotions-gallery/promotions-gallery").then(
             (m) => m.PromotionsGallery,
           ),
+        data: {
+          title: ConfigDB.wordings.promotion.gallery.title,
+          breadcrumb: ConfigDB.wordings.promotion.gallery.title,
+          parentBreadcrumb: ConfigDB.wordings.promotion.detail.title + " :promotionId",
+          parentPath: "/promotions/:promotionId",
+          pathParameter: "promotionId",
+        },
       },
     ],
   },

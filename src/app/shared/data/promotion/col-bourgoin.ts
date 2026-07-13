@@ -157,6 +157,7 @@ export class ColBourgoinDB {
     gallery: {
       id: "col-bourgoin",
       title: "Galerie",
+      description: "Galerie de la promotion Colonel Bourgoin",
       gallery: [
         {
           image: "assets/images/promotion/col-bourgoin/gallery/14.jpg",

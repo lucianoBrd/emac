@@ -3,6 +3,7 @@ import { GalleryType } from "../../enum/gallery.type";
 export interface Gallery {
   id: Readonly<string>;
   title: string;
+  description: string;
   gallery: Item[];
 }
 

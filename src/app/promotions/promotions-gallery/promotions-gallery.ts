@@ -44,7 +44,7 @@ export class PromotionsGallery implements OnInit, OnDestroy {
   private destroy$: Subject<boolean> = new Subject<boolean>();
 
   public promotion: Promotion | undefined;
-  public wordings = ConfigDB.wordings.general.download;
+  public wordings = ConfigDB.wordings.promotion.gallery;
   public items: GalleryItem[];
   public promotionGallery: GalleryInterface | null = null;
   public galleryType: typeof GalleryType = GalleryType;
@@ -55,11 +55,11 @@ export class PromotionsGallery implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    // const keywords: string = this.wordings.title;
-    //
-    // this.metaService.setKeywords(keywords);
-    // this.metaService.setTitle(keywords);
-    // this.metaService.setDescription(keywords);
+    const keywords: string = this.wordings.title;
+
+    this.metaService.setKeywords(keywords);
+    this.metaService.setTitle(keywords);
+    this.metaService.setDescription(keywords);
 
     this.activatedRoute.params
       .pipe(takeUntil(this.destroy$))
@@ -73,12 +73,11 @@ export class PromotionsGallery implements OnInit, OnDestroy {
           if (this.promotion?.gallery) {
             this.promotionGallery = this.promotion.gallery;
             this.updateNgGallery();
-            // todo meta + breadcrumb
-            // this.metaService.setKeywords(keywords + "," + this.promotion.title);
-            // this.metaService.setTitle(keywords + " " + this.promotion.title);
-            // this.metaService.setDescription(
-            //   this.promotion.info.description.at(0),
-            // );
+            this.metaService.setKeywords(keywords + "," + this.promotionGallery.title);
+            this.metaService.setTitle(keywords + " " + this.promotionGallery.title);
+            this.metaService.setDescription(
+              this.promotionGallery.description,
+            );
           }
         }
       });

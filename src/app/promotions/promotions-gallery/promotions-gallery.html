@@ -8,7 +8,7 @@
       <div class="isotopeContainer row">
         @for (g of promotionGallery.gallery; track g) {
         <figure
-          class="p-width isotopeSelector ng-star-inserted text-center"
+          class="p-width isotopeSelector text-center"
           itemprop="associatedMedia"
         >
           <div class="overlay d-flex flex-column justify-content-between">
@@ -57,16 +57,8 @@
             </a>
             <div class="portfolio-text m-auto text-center">
               @if (g.description) {
-              <p class="head-sub-text mb-2">{{g.description}}</p>
+              <p class="head-sub-text">{{g.description}}</p>
               }
-              <a
-                [href]="g.image"
-                class="btn btn-default primary-btn"
-                target="_blank"
-              >
-                {{wordings}}
-                <span><i class="fa fa-download" aria-hidden="true"></i></span>
-              </a>
             </div>
           </div>
         </figure>

@@ -60,6 +60,9 @@ export class ConfigDB {
       detail: {
         title: "Promotion",
       },
+      gallery: {
+        title: "Galerie",
+      },
       see_all: "Voir toutes",
       current: "Promotion actuelle",
       number: "Promotion n°",
