@@ -12,7 +12,8 @@
             <h2 class="text-white">{{wordings.promotion.list.title}}</h2>
           </div>
           <div class="sub-title">
-            @for (description of wordings.promotion.list.description; track $index) {
+            @for (description of wordings.promotion.list.description; track
+            $index) {
             <p
               class="text-white"
               [innerHTML]="description.replace('{{numberOfPromotion}}', numberOfPromotion.toString())"

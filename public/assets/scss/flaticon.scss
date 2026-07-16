@@ -1,65 +1,72 @@
 $flaticon_music-font: "flaticon_music";
 
 @font-face {
-    font-family: $flaticon_music-font;
-    src: url("../fonts/flaticon_music.woff2?d58bbfe1711e137c90a84892c937e25a") format("woff2"),
-url("../fonts/flaticon_music.woff?d58bbfe1711e137c90a84892c937e25a") format("woff"),
-url("../fonts/flaticon_music.eot?d58bbfe1711e137c90a84892c937e25a#iefix") format("embedded-opentype"),
-url("../fonts/flaticon_music.ttf?d58bbfe1711e137c90a84892c937e25a") format("truetype"),
-url("../fonts/flaticon_music.svg?d58bbfe1711e137c90a84892c937e25a#flaticon_music") format("svg");
+  font-family: $flaticon_music-font;
+  src:
+    url("../fonts/flaticon_music.woff2?d58bbfe1711e137c90a84892c937e25a")
+      format("woff2"),
+    url("../fonts/flaticon_music.woff?d58bbfe1711e137c90a84892c937e25a")
+      format("woff"),
+    url("../fonts/flaticon_music.eot?d58bbfe1711e137c90a84892c937e25a#iefix")
+      format("embedded-opentype"),
+    url("../fonts/flaticon_music.ttf?d58bbfe1711e137c90a84892c937e25a")
+      format("truetype"),
+    url("../fonts/flaticon_music.svg?d58bbfe1711e137c90a84892c937e25a#flaticon_music")
+      format("svg");
 }
 
-i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
-    font-family: flaticon_music !important;
-    font-style: normal;
-    font-weight: normal !important;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+i[class^="flaticon-"]:before,
+i[class*=" flaticon-"]:before {
+  font-family: flaticon_music !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 $flaticon_music-map: (
-    "deezer": "\f101",
-    "amazon-music": "\f102",
-    "tidal": "\f103",
-    "youtube-music": "\f104",
-    "spotify": "\f105",
-    "apple-music": "\f106",
-    "qobuz": "\f107",
-    "youtube": "\f108",
-    "soundclound": "\f109",
-    "disk": "\f10a",
+  "deezer": "\f101",
+  "amazon-music": "\f102",
+  "tidal": "\f103",
+  "youtube-music": "\f104",
+  "spotify": "\f105",
+  "apple-music": "\f106",
+  "qobuz": "\f107",
+  "youtube": "\f108",
+  "soundclound": "\f109",
+  "disk": "\f10a",
 );
 
 .flaticon-deezer:before {
-    content: map-get($flaticon_music-map, "deezer");
+  content: map-get($flaticon_music-map, "deezer");
 }
 .flaticon-amazon-music:before {
-    content: map-get($flaticon_music-map, "amazon-music");
+  content: map-get($flaticon_music-map, "amazon-music");
 }
 .flaticon-tidal:before {
-    content: map-get($flaticon_music-map, "tidal");
+  content: map-get($flaticon_music-map, "tidal");
 }
 .flaticon-youtube-music:before {
-    content: map-get($flaticon_music-map, "youtube-music");
+  content: map-get($flaticon_music-map, "youtube-music");
 }
 .flaticon-spotify:before {
-    content: map-get($flaticon_music-map, "spotify");
+  content: map-get($flaticon_music-map, "spotify");
 }
 .flaticon-apple-music:before {
-    content: map-get($flaticon_music-map, "apple-music");
+  content: map-get($flaticon_music-map, "apple-music");
 }
 .flaticon-qobuz:before {
-    content: map-get($flaticon_music-map, "qobuz");
+  content: map-get($flaticon_music-map, "qobuz");
 }
 .flaticon-youtube:before {
-    content: map-get($flaticon_music-map, "youtube");
+  content: map-get($flaticon_music-map, "youtube");
 }
 .flaticon-soundclound:before {
-    content: map-get($flaticon_music-map, "soundclound");
+  content: map-get($flaticon_music-map, "soundclound");
 }
 .flaticon-disk:before {
-    content: map-get($flaticon_music-map, "disk");
+  content: map-get($flaticon_music-map, "disk");
 }

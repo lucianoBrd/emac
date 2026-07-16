@@ -23,13 +23,17 @@ body {
       .jp-type-playlist {
         .jp-gui {
           .gradient-block {
-            background-image: linear-gradient(rgba($light-color, 0.92) 0%, $dark-color 100%);
+            background-image: linear-gradient(
+              rgba($light-color, 0.92) 0%,
+              $dark-color 100%
+            );
           }
           .girls {
             background-color: $white-4;
           }
           .author-text {
-            h4, h6 {
+            h4,
+            h6 {
               color: $white-2;
             }
             .song-text {
@@ -41,7 +45,9 @@ body {
           }
         }
       }
-      .jp-no-solution, .jp-playlist, .jp-time-holder {
+      .jp-no-solution,
+      .jp-playlist,
+      .jp-time-holder {
         color: $white-4;
       }
       .jp-details,
@@ -53,10 +59,16 @@ body {
       }
       .jp-controls {
         .button-container {
-          button, a {
+          button,
+          a {
             color: $white-3;
-            &.jp-play, &.jp-pause, &.jp-link {
-              background-image: linear-gradient($light-color 0%, $dark-color 100%);
+            &.jp-play,
+            &.jp-pause,
+            &.jp-link {
+              background-image: linear-gradient(
+                $light-color 0%,
+                $dark-color 100%
+              );
               background-color: $white;
             }
           }

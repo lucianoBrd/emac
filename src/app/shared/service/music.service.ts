@@ -1,14 +1,16 @@
-import {inject, Injectable, signal, WritableSignal} from "@angular/core";
-import {ToastrService} from "ngx-toastr";
-import {BehaviorSubject} from "rxjs";
-import {Album} from "../models/shared/album.interface";
-import {Title} from "../models/shared/title.interface";
+import { inject, Injectable, signal, WritableSignal } from "@angular/core";
+
+import { ToastrService } from "ngx-toastr";
+import { BehaviorSubject } from "rxjs";
+
+import { Album } from "../models/shared/album.interface";
+import { Title } from "../models/shared/title.interface";
 
 @Injectable({
   providedIn: "root",
 })
 export class MusicService {
-  private album = new BehaviorSubject<Album|undefined>(undefined);
+  private album = new BehaviorSubject<Album | undefined>(undefined);
   album$ = this.album.asObservable();
 
   private sidebar = new BehaviorSubject<boolean>(false);
@@ -38,12 +40,12 @@ export class MusicService {
     this.loadTrack();
   }
 
-  getAlbum(): Album|undefined {
+  getAlbum(): Album | undefined {
     return this.album.value;
   }
 
   checkAlbum(album: Album): boolean {
-    return (this.getAlbum() === album);
+    return this.getAlbum() === album;
   }
 
   loadTrack() {
@@ -55,9 +57,13 @@ export class MusicService {
 
     this.audio.addEventListener("timeupdate", this.updateProgress.bind(this));
     this.audio.addEventListener("ended", this.handleNext.bind(this));
-    this.audio.addEventListener("canplay", (): void => this.toastrService.clear());
+    this.audio.addEventListener("canplay", (): void =>
+      this.toastrService.clear(),
+    );
     this.audio.addEventListener("error", (): void => {
-      this.toastrService.error("Unable to load audio. Please check the audio source.");
+      this.toastrService.error(
+        "Unable to load audio. Please check the audio source.",
+      );
       this.isPlaying.next(false);
     });
   }
@@ -88,7 +94,7 @@ export class MusicService {
       return;
     }
     this.currentTrackIndex.next(
-        (this.currentTrackIndex.value + 1) % this.getTracks().length,
+      (this.currentTrackIndex.value + 1) % this.getTracks().length,
     );
     this.loadTrack();
     this.isPlaying.next(true);
@@ -101,7 +107,7 @@ export class MusicService {
       return;
     }
     this.currentTrackIndex.next(
-        (this.currentTrackIndex.value - 1 + this.getTracks().length) %
+      (this.currentTrackIndex.value - 1 + this.getTracks().length) %
         this.getTracks().length,
     );
     this.loadTrack();
@@ -140,7 +146,9 @@ export class MusicService {
     if (!this.album.value) {
       return [];
     }
-    return this.album.value.titles.filter((title: Title): boolean => title.file !== undefined);
+    return this.album.value.titles.filter(
+      (title: Title): boolean => title.file !== undefined,
+    );
   }
 
   getCurrentTrack(): Title {
