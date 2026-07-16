@@ -5,17 +5,13 @@
         <div class="song-text-container h-100">
           <div class="d-flex h-100">
             <div class="center-img">
-              <img
-                [src]="album.image"
-                [alt]="album.name"
-                class="img-fluid"
-              />
+              <img [src]="album.image" [alt]="album.name" class="img-fluid" />
             </div>
             <div class="song-text">
               <h5 class="text-white song-head">{{album.name}}</h5>
-                @if (album.subName) {
-                    <h6 class="text-white song-sub-head">{{album.subName}}</h6>
-                }
+              @if (album.subName) {
+              <h6 class="text-white song-sub-head">{{album.subName}}</h6>
+              }
             </div>
           </div>
         </div>

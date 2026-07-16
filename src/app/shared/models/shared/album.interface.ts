@@ -1,12 +1,12 @@
-import {Platform} from "./platform.interface";
-import {Title} from "./title.interface";
+import { Platform } from "./platform.interface";
+import { Title } from "./title.interface";
 
 export interface Album {
-  id: Readonly<number>,
-  name: string,
-  subName?: string,
-  image: string,
-  titles: Title[],
-  platforms: Platform[],
-  slug: string,
+  id: Readonly<number>;
+  name: string;
+  subName?: string;
+  image: string;
+  titles: Title[];
+  platforms: Platform[];
+  slug: string;
 }

@@ -1,4 +1,4 @@
-import {Album} from "./album.interface";
+import { Album } from "./album.interface";
 
 export interface Song {
   id: Readonly<string>;
@@ -6,7 +6,7 @@ export interface Song {
   description: string;
   name: string;
   verse: Verse[];
-  music?: Album,
+  music?: Album;
 }
 
 export interface Verse {

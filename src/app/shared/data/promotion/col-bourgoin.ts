@@ -132,11 +132,13 @@ export class ColBourgoinDB {
         name: "Chant promotion",
         subName: "Colonel Bourgoin",
         image: "assets/images/promotion/col-bourgoin.png",
-        titles: [{
-          id: 0,
-          name: "Chant de la promotion Colonel Bourgoin",
-          file: "assets/music/promotion/col-bourgoin/amarante/02 - Chant de la promotion Colonel Bourgoin.mp3",
-        }],
+        titles: [
+          {
+            id: 0,
+            name: "Chant de la promotion Colonel Bourgoin",
+            file: "assets/music/promotion/col-bourgoin/amarante/02 - Chant de la promotion Colonel Bourgoin.mp3",
+          },
+        ],
         platforms: [],
         slug: "chant-de-la-promotion-colonel-bourgoin",
       },

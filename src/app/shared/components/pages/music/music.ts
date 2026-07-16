@@ -1,6 +1,6 @@
-import {Component, Input, OnInit, signal} from "@angular/core";
+import { Component, Input, OnInit, signal } from "@angular/core";
 
-import {Album} from "../../../models/shared/album.interface";
+import { Album } from "../../../models/shared/album.interface";
 
 @Component({
   selector: "app-music",
@@ -26,11 +26,11 @@ export class Music implements OnInit {
     this.audio?.pause();
     this.audio = new Audio(this.album.titles[this.currentTrackIndex()].file);
 
-    this.audio.addEventListener('timeupdate', this.updateProgress.bind(this));
-    this.audio.addEventListener('ended', this.handleNext.bind(this));
-    this.audio.addEventListener('canplay', (): void => this.error.set(null));
-    this.audio.addEventListener('error', (): void => {
-      this.error.set('Unable to load audio. Please check the audio source.');
+    this.audio.addEventListener("timeupdate", this.updateProgress.bind(this));
+    this.audio.addEventListener("ended", this.handleNext.bind(this));
+    this.audio.addEventListener("canplay", (): void => this.error.set(null));
+    this.audio.addEventListener("error", (): void => {
+      this.error.set("Unable to load audio. Please check the audio source.");
       this.isPlaying.set(false);
     });
   }
@@ -41,7 +41,7 @@ export class Music implements OnInit {
         this.audio.pause();
       } else {
         this.audio.play().catch(() => {
-          this.error.set('Playback failed. Please try again.');
+          this.error.set("Playback failed. Please try again.");
         });
       }
       this.isPlaying.set(!this.isPlaying());
@@ -58,7 +58,7 @@ export class Music implements OnInit {
 
   handleNext() {
     this.currentTrackIndex.set(
-        (this.currentTrackIndex() + 1) % this.album.titles.length
+      (this.currentTrackIndex() + 1) % this.album.titles.length,
     );
     this.loadTrack();
     this.isPlaying.set(true);
@@ -68,7 +68,8 @@ export class Music implements OnInit {
 
   handlePrevious() {
     this.currentTrackIndex.set(
-        (this.currentTrackIndex() - 1 + this.album.titles.length) % this.album.titles.length
+      (this.currentTrackIndex() - 1 + this.album.titles.length) %
+        this.album.titles.length,
     );
     this.loadTrack();
     this.isPlaying.set(true);

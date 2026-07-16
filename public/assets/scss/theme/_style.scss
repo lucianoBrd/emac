@@ -13763,7 +13763,8 @@ error css end
           color: $white;
           border-radius: 100%;
           background-color: #8080804f;
-          &.jp-play, &.jp-pause {
+          &.jp-play,
+          &.jp-pause {
             height: 50px;
             width: 50px;
             background-image: linear-gradient(
@@ -15713,7 +15714,8 @@ footer {
 }
 
 .jp-controls {
-  .jp-play, .jp-pause {
+  .jp-play,
+  .jp-pause {
     border: none;
     cursor: pointer;
     color: white;
