@@ -7653,6 +7653,9 @@
     }
   }
   .event {
+    .music-container {
+      margin-top: unset;
+    }
     .title {
       &.title3 {
         .sub-title {

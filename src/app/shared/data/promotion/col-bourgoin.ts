@@ -139,7 +139,13 @@ export class ColBourgoinDB {
             file: "assets/music/promotion/col-bourgoin/amarante/02 - Chant de la promotion Colonel Bourgoin.mp3",
           },
         ],
-        platforms: [],
+        platforms: [
+          {
+            link: "https://www.deezer.com/fr/",
+            title: "Deezer",
+            icon: "deezer",
+          },
+        ],
         slug: "chant-de-la-promotion-colonel-bourgoin",
       },
     },

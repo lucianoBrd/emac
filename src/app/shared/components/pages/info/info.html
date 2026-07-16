@@ -19,7 +19,7 @@
             <div class="format-sub-text" ngbAccordion [closeOthers]="true">
               <div ngbAccordionItem [collapsed]="true">
                 <div ngbAccordionHeader>
-                  @for (d of info.description.slice(0, 2); track d) {
+                  @for (d of info.description.slice(0, 2); track $index) {
                   <p class="dark about-para text-start" [innerHTML]="d"></p>
                   } @if (info.description.length > 2) {
                   <button
@@ -35,7 +35,7 @@
                   <div ngbAccordionBody>
                     <ng-template>
                       @for (d of info.description.slice(2,
-                      info.description.length); track d) {
+                      info.description.length); track $index) {
                       <p class="dark about-para text-start" [innerHTML]="d"></p>
                       }
                     </ng-template>

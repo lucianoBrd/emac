@@ -12,7 +12,7 @@
       </div>
       <div class="col-12">
         <owl-carousel-o [options]="galleryCarouselOptions">
-          @for (g of gallery.gallery.slice(0, 5); track g) {
+          @for (g of gallery.gallery.slice(0, 5); track $index) {
           <ng-template carouselSlide class="item">
             <div class="img-container" [style.max-height]="'300px'">
               @switch (g.type) { @case (galleryType.video) { @if (g.thumb) {

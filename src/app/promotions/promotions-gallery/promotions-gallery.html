@@ -6,7 +6,7 @@
   <div class="container">
     <div class="p-4col-width">
       <div class="isotopeContainer row">
-        @for (g of promotionGallery.gallery; track g) {
+        @for (g of promotionGallery.gallery; track $index) {
         <figure
           class="p-width isotopeSelector text-center"
           itemprop="associatedMedia"

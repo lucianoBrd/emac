@@ -488,6 +488,9 @@ nav {
 .font-primary {
   color: $primary !important;
 }
+.font-dark {
+  color: $dark !important;
+}
 .font-secondary {
   color: $secondary !important;
 }
@@ -13717,6 +13720,8 @@ error css end
           background-color: $white;
           transform: translate(0, -50%);
           box-shadow: 0 6px 30px 1px rgba(37, 67, 138, 0.18);
+          max-height: 172px;
+          max-width: 172px;
         }
         .author-text {
           z-index: 3;
@@ -13757,14 +13762,20 @@ error css end
     .jp-controls {
       .button-container {
         padding: 20px;
-        button {
+        button, a {
           height: 30px;
           width: 30px;
           color: $white;
           border-radius: 100%;
           background-color: #8080804f;
+          &.jp-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
           &.jp-play,
-          &.jp-pause {
+          &.jp-pause,
+          &.jp-link {
             height: 50px;
             width: 50px;
             background-image: linear-gradient(

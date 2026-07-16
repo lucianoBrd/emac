@@ -1,0 +1,90 @@
+@if (album) {
+    <div id="side-section" class="music side-section" [style.display]="sideBarDisplay">
+        <div class="jp-jplayer"></div>
+        <div class="jp-audio" role="application" aria-label="media player">
+            <div class="jp-type-playlist">
+                <div class="jp-gui jp-interface">
+                    <div class="side-player">
+                        <div class="text-center">
+                            <div class="gradient-block">
+                                <div class="animation-circle-inverse">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                </div>
+                                <h6 class="now-play">{{getCurrentTrack().name}}</h6>
+                            </div>
+                            <img [src]="album.image" [alt]="album.name" class="img-fluid girls" />
+                            <div class="author-text">
+                                <h5 class="m-b-10 song-text">{{album.name}}</h5>
+                                <h6 class="song-sub-text">{{album.subName}}</h6>
+                            </div>
+                        </div>
+                        <div class="container">
+                            @if (album.platforms.length > 0) {
+                                <div class="jp-controls">
+                                    <div class="button-container">
+                                        @for (platform of album.platforms; track $index) {
+                                            <a target="_blank" [href]="platform.link" [title]="platform.title" class="jp-link">
+                                                <i aria-hidden="true" class="flaticon-{{platform.icon}}"></i>
+                                            </a>
+                                        }
+                                    </div>
+                                </div>
+                            }
+                            <div class="jp-controls">
+                                <div class="button-container">
+                                    <button class="jp-previous" role="button" tabindex="0" (click)="handlePrevious()"></button>
+                                    <button [class]="isPlaying() ? 'jp-pause' : 'jp-play'"
+                                            role="button"
+                                            tabindex="0"
+                                            (click)="handlePlayPause()"
+                                    ></button>
+                                    <button class="jp-next" role="button" tabindex="0" (click)="handleNext()"></button>
+                                </div>
+                                <button class="btn-sidebar" (click)="sideBar()">
+                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                </button>
+                            </div>
+
+                            <div class="jp-progress">
+                                <div class="jp-seek-bar">
+                                    <div class="jp-play-bar"></div>
+                                </div>
+                            </div>
+                            <div class="jp-time-holder">
+                                <div class="jp-current-time" role="timer" aria-label="time">12</div>
+                                <div class="jp-duration" role="timer" aria-label="duration">13</div>
+                            </div>
+
+                            <div class="jp-playlist">
+                                <ul>
+                                    @for (title of album.titles; track title.id) {
+                                        @if (title.file) {
+                                            <li>
+                                                <a class="font-primary">
+<!--                                                    todo fix index-->
+                                                    @if (currentTrackIndex() === $index) {
+                                                        <i aria-hidden="true" [class]="(isPlaying() ? 'fa-beat' : '') + ' fa fa-headphones'"></i>
+                                                    }
+                                                    {{title.name}}
+                                                </a>
+                                            </li>
+                                        } @else {
+                                            <li class="font-dark">{{ title.name }}</li>
+                                        }
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                        @if (album.titles.length === 0) {
+                            <div class="jp-no-solution">
+                                {{wordings}}
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

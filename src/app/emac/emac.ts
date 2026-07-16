@@ -13,22 +13,24 @@ import { Song } from "../shared/components/pages/song/song";
 import { TapToTop } from "../shared/components/tap-to-top/tap-to-top";
 import { Emac as EmacInterface } from "../shared/models/emac.interface";
 import { EmacService } from "../shared/service/emac.service";
+import {MusicSidebar} from "../shared/components/pages/music/music-sidebar/music-sidebar";
 
 @Component({
   selector: "emac",
-  imports: [
-    EmacPromotion,
-    EmacTradition,
-    EmacContact,
-    Nav,
-    Header,
-    Copyright,
-    TapToTop,
-    Info,
-    About,
-    Song,
-    Social,
-  ],
+    imports: [
+        EmacPromotion,
+        EmacTradition,
+        EmacContact,
+        Nav,
+        Header,
+        Copyright,
+        TapToTop,
+        Info,
+        About,
+        Song,
+        Social,
+        MusicSidebar,
+    ],
   templateUrl: "./emac.html",
   styleUrls: ["./emac.scss"],
 })

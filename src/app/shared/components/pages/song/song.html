@@ -15,7 +15,7 @@
       </div>
       @if (song.music) {
       <div class="col-12">
-        <app-music [album]="song.music"></app-music>
+        <app-music-player [album]="song.music"></app-music-player>
       </div>
       }
       <div class="col-12">
@@ -26,13 +26,13 @@
         </div>
         <div class="event-container scrollbar">
           <div>
-            @for(verse of song.verse; track verse){
+            @for(verse of song.verse; track $index){
             <div class="cal-time events">
               <div class="row">
                 <div class="col-md-10">
                   <div class="schedule-event">
                     <h5 class="names">{{verse.title}}</h5>
-                    @for(description of verse.description; track description){
+                    @for(description of verse.description; track $index){
                     <p class="schedule-description">{{description}}</p>
                     }
                   </div>

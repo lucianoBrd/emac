@@ -1,0 +1,62 @@
+/*!
+*    ______ _       _   _
+*    |  ____| |     | | (_)
+*    | |__  | | __ _| |_ _  ___ ___  _ __
+*    |  __| | |/ _` | __| |/ __/ _ \| '_ \
+*    | |    | | (_| | |_| | (_| (_) | | | |
+*    |_|    |_|\__,_|\__|_|\___\___/|_| |_|
+*
+*         https://www.flaticon.com
+*/
+
+@font-face {
+    font-family: "flaticon_music";
+    src: url("./flaticon_music.woff2?d58bbfe1711e137c90a84892c937e25a") format("woff2"),
+url("./flaticon_music.woff?d58bbfe1711e137c90a84892c937e25a") format("woff"),
+url("./flaticon_music.eot?d58bbfe1711e137c90a84892c937e25a#iefix") format("embedded-opentype"),
+url("./flaticon_music.ttf?d58bbfe1711e137c90a84892c937e25a") format("truetype"),
+url("./flaticon_music.svg?d58bbfe1711e137c90a84892c937e25a#flaticon_music") format("svg")
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon_music !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-deezer:before {
+    content: "\f101";
+}
+.flaticon-amazon-music:before {
+    content: "\f102";
+}
+.flaticon-tidal:before {
+    content: "\f103";
+}
+.flaticon-youtube-music:before {
+    content: "\f104";
+}
+.flaticon-spotify:before {
+    content: "\f105";
+}
+.flaticon-apple-music:before {
+    content: "\f106";
+}
+.flaticon-qobuz:before {
+    content: "\f107";
+}
+.flaticon-youtube:before {
+    content: "\f108";
+}
+.flaticon-soundclound:before {
+    content: "\f109";
+}
+.flaticon-disk:before {
+    content: "\f10a";
+}
+

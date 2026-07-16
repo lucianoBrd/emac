@@ -12,8 +12,7 @@
             <h2 class="text-white">{{wordings.promotion.list.title}}</h2>
           </div>
           <div class="sub-title">
-            @for (description of wordings.promotion.list.description; track
-            description) {
+            @for (description of wordings.promotion.list.description; track $index) {
             <p
               class="text-white"
               [innerHTML]="description.replace('{{numberOfPromotion}}', numberOfPromotion.toString())"
@@ -27,7 +26,7 @@
           [options]="promotionCarouselOptions"
           class="pricing-slider"
         >
-          @for(promotion of promotions; track promotion){
+          @for(promotion of promotions; track $index){
           <ng-template carouselSlide class="item">
             <div class="price-container shadows bg-white text-center">
               <div class="price-feature-container set-relative">

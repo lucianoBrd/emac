@@ -17,7 +17,7 @@
         @if (social.social.length > 0) {
         <div class="social m-t-20">
           <ul>
-            @for (s of social.social; track s) {
+            @for (s of social.social; track $index) {
             <li>
               <a target="_blank" href="{{s.link}}">
                 <i
