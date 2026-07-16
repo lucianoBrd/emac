@@ -13763,7 +13763,7 @@ error css end
           color: $white;
           border-radius: 100%;
           background-color: #8080804f;
-          &.jp-play {
+          &.jp-play, &.jp-pause {
             height: 50px;
             width: 50px;
             background-image: linear-gradient(
@@ -15713,16 +15713,13 @@ footer {
 }
 
 .jp-controls {
-  .jp-play {
+  .jp-play, .jp-pause {
     border: none;
     cursor: pointer;
     color: white;
     background-color: transparent;
     font: normal normal normal 14px/1 FontAwesome;
     padding: 0;
-    &:before {
-      content: "\f04b";
-    }
   }
   button {
     border: none;
@@ -15739,6 +15736,8 @@ footer {
 }
 .jp-play,
 .jp-play:focus,
+.jp-pause,
+.jp-pause:focus,
 .jp-state-playing .jp-play,
 .jp-state-playing .jp-play:focus,
 .jp-previous,
@@ -15756,6 +15755,14 @@ footer {
 
 .jp-next:before {
   content: "\f051";
+}
+
+.jp-play:before {
+  content: "\f04b";
+}
+
+.jp-pause:before {
+  content: "\f04c";
 }
 
 .top-header-right {

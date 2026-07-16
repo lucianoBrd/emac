@@ -13,9 +13,9 @@
           </div>
         </div>
       </div>
-      @if (true) {
+      @if (song.music) {
       <div class="col-12">
-        <app-music></app-music>
+        <app-music [album]="song.music"></app-music>
       </div>
       }
       <div class="col-12">

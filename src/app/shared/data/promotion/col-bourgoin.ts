@@ -127,6 +127,19 @@ export class ColBourgoinDB {
           ],
         },
       ],
+      music: {
+        id: 0,
+        name: "Chant promotion",
+        subName: "Colonel Bourgoin",
+        image: "assets/images/promotion/col-bourgoin.png",
+        titles: [{
+          id: 0,
+          name: "Chant de la promotion Colonel Bourgoin",
+          file: "assets/music/promotion/col-bourgoin/amarante/02 - Chant de la promotion Colonel Bourgoin.mp3",
+        }],
+        platforms: [],
+        slug: "chant-de-la-promotion-colonel-bourgoin",
+      },
     },
     footer: {
       id: "col-bourgoin",
@@ -179,6 +192,12 @@ export class ColBourgoinDB {
           type: GalleryType.youtube,
           description: "Baptême de la promotion",
           thumb: "assets/images/promotion/col-bourgoin/gallery/bapteme.jpg",
+        },
+        {
+          image: "https://www.youtube.com/embed/mfTEyaPnYiE?start=3124",
+          type: GalleryType.youtube,
+          description: "Défilé du 14 juillet 2026",
+          thumb: "assets/images/promotion/col-bourgoin/gallery/defile.JPG",
         },
         {
           image: "assets/images/promotion/col-bourgoin/gallery/cnec.mp4",

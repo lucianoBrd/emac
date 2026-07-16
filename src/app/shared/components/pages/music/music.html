@@ -6,19 +6,21 @@
           <div class="d-flex h-100">
             <div class="center-img">
               <img
-                src="assets/images/promotion/col-bourgoin.png"
-                alt=""
+                [src]="album.image"
+                [alt]="album.name"
                 class="img-fluid"
               />
             </div>
             <div class="song-text">
-              <h5 class="text-white song-head">Latest Song</h5>
-              <h6 class="text-white song-sub-head">Zrial doj</h6>
+              <h5 class="text-white song-head">{{album.name}}</h5>
+                @if (album.subName) {
+                    <h6 class="text-white song-sub-head">{{album.subName}}</h6>
+                }
             </div>
           </div>
         </div>
         <div class="play-setting m-auto">
-          <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+          <div class="jp-jplayer"></div>
           <div
             id="jp_container_1"
             class="jp-audio"
@@ -29,9 +31,10 @@
               <div class="jp-gui jp-interface p-0 d-flex">
                 <div class="jp-controls">
                   <button
-                    class="jp-play m-r-15"
+                    [class]="(isPlaying() ? 'jp-pause' : 'jp-play') + ' m-r-15'"
                     role="button"
                     tabindex="0"
+                    (click)="handlePlayPause()"
                   ></button>
                 </div>
                 <a><i class="fa fa-ellipsis-v" aria-hidden="true"></i></a>
