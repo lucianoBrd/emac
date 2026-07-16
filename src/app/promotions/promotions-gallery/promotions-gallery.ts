@@ -12,6 +12,7 @@ import {
 } from "ng-gallery";
 import { Lightbox } from "ng-gallery/lightbox";
 import { CarouselModule } from "ngx-owl-carousel-o";
+import { RmNgDeviceDetectionService } from "rm-ng-device-detection";
 import { Subject, takeUntil } from "rxjs";
 
 import { Empty } from "../../shared/components/empty/empty";
@@ -41,6 +42,10 @@ export class PromotionsGallery implements OnInit, OnDestroy {
   private metaService: MetaService = inject(MetaService);
   protected lightbox: Lightbox = inject(Lightbox);
   private gallery: Gallery = inject(Gallery);
+  private readonly deviceService: RmNgDeviceDetectionService = inject(
+    RmNgDeviceDetectionService,
+  );
+
   private destroy$: Subject<boolean> = new Subject<boolean>();
 
   public promotion: Promotion | undefined;
@@ -129,7 +134,9 @@ export class PromotionsGallery implements OnInit, OnDestroy {
 
     const lightboxRef = this.gallery.ref("lightbox");
     lightboxRef.setConfig({
-      imageSize: ImageSize.Cover,
+      imageSize: this.deviceService.isMobile()
+        ? ImageSize.Contain
+        : ImageSize.Cover,
       thumbPosition: ThumbnailsPosition.Top,
       thumbs: false,
     });

@@ -20,10 +20,12 @@ export class App {
   public layoutType: string = "light";
 
   constructor(private router: Router) {
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.url = event.url;
+    this.router.events.subscribe((event): void => {
+      if (!(event instanceof NavigationEnd)) {
+        return;
       }
+      this.url = event.url;
+      window.scrollTo(0, 0);
     });
   }
 
