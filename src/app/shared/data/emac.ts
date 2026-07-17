@@ -101,7 +101,7 @@ export class EmacDB {
         },
       ],
       music: {
-        id: 'chant-emac',
+        id: "chant-emac",
         name: "Chant EMAC",
         subName: "L’audace de servir",
         image: "assets/images/logo/emac.svg",

@@ -16,9 +16,9 @@
                 <i></i>
                 <i></i>
               </div>
-                @if (currentTrack() !== undefined) {
-                    <h6 class="now-play">{{currentTrack()?.name}}</h6>
-                }
+              @if (currentTrack() !== undefined) {
+              <h6 class="now-play">{{currentTrack()?.name}}</h6>
+              }
             </div>
             <img
               [src]="album.image"
@@ -83,7 +83,9 @@
               <ul>
                 @for (title of album.titles; track title.id) { @if (title.file)
                 {
-                <li [class]="(currentTrack() === title ? 'active' : '') + ' list-group-item'">
+                <li
+                  [class]="(currentTrack() === title ? 'active' : '') + ' list-group-item'"
+                >
                   <a (click)="handleTrackSelectByTitle(title)">
                     @if (currentTrack() === title) {
                     <i

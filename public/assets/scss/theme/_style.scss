@@ -7944,7 +7944,8 @@ event css start
     }
   }
   &.artist {
-    .album-artist, .cd-animation {
+    .album-artist,
+    .cd-animation {
       max-width: 426px;
     }
     .album-artist {

@@ -34,13 +34,12 @@
         <span class="theme-layout-version">{{wordingsSettings.dark}}</span>
       </a>
     </li>
+    } @if (currentTrack()) {
+    <li (click)="sideBar()" class="sidebar-btn dark-light-btn">
+      <a href="javascript:void(0)" class="dark-light">
+        <span class="theme-layout-version">{{wordingsSettings.music}}</span>
+      </a>
+    </li>
     }
-      @if (currentTrack()) {
-          <li (click)="sideBar()" class="sidebar-btn dark-light-btn">
-              <a href="javascript:void(0)" class="dark-light">
-                  <span class="theme-layout-version">{{wordingsSettings.music}}</span>
-              </a>
-          </li>
-      }
   </ul>
 </div>

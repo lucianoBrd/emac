@@ -1,4 +1,4 @@
-import { inject, Injectable, signal, WritableSignal } from "@angular/core";
+import { inject, Injectable } from "@angular/core";
 
 import { ToastrService } from "ngx-toastr";
 import { BehaviorSubject } from "rxjs";
@@ -19,7 +19,7 @@ export class MusicService {
   private currentTrackIndex = new BehaviorSubject<number>(0);
   currentTrackIndex$ = this.currentTrackIndex.asObservable();
 
-  private currentTrack = new BehaviorSubject<Title|undefined>(undefined);
+  private currentTrack = new BehaviorSubject<Title | undefined>(undefined);
   currentTrack$ = this.currentTrack.asObservable();
 
   private isPlaying = new BehaviorSubject<boolean>(false);
@@ -121,7 +121,9 @@ export class MusicService {
   }
 
   handleTrackSelectByTitle(title: Title): void {
-    const index: number = this.getTracks().findIndex((t: Title): boolean => title === t);
+    const index: number = this.getTracks().findIndex(
+      (t: Title): boolean => title === t,
+    );
     if (index === -1) {
       return;
     }

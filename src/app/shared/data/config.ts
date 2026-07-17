@@ -51,10 +51,10 @@ export class ConfigDB {
     },
     music: {
       album: {
-        title: 'Album',
-        description: 'Album de la promotion.',
-        listen: 'Écouter',
-      }
+        title: "Album",
+        description: "Album de la promotion.",
+        listen: "Écouter",
+      },
     },
     promotion: {
       list: {

@@ -128,7 +128,7 @@ export class ColBourgoinDB {
         },
       ],
       music: {
-        id: 'chant-promotion',
+        id: "chant-promotion",
         name: "Chant promotion",
         subName: "Colonel Bourgoin",
         image: "assets/images/promotion/col-bourgoin.png",
@@ -144,7 +144,7 @@ export class ColBourgoinDB {
       },
     },
     album: {
-      id: 'amarante',
+      id: "amarante",
       name: "Amarante",
       subName: "Promotion Colonel Bourgoin",
       image: "assets/images/promotion/col-bourgoin/amarante.jpeg",

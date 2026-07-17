@@ -10,9 +10,9 @@ import {
 
 import { Subject, takeUntil } from "rxjs";
 
+import { ConfigDB } from "../../../../data/config";
 import { Album } from "../../../../models/shared/album.interface";
 import { MusicService } from "../../../../service/music.service";
-import {ConfigDB} from "../../../../data/config";
 
 @Component({
   selector: "app-music-album",

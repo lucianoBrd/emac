@@ -1,9 +1,11 @@
 import {
-  Component, ElementRef,
+  Component,
+  ElementRef,
   inject,
   OnDestroy,
   OnInit,
-  signal, ViewChild,
+  signal,
+  ViewChild,
   WritableSignal,
 } from "@angular/core";
 
@@ -24,14 +26,14 @@ export class MusicSidebar implements OnInit, OnDestroy {
   private musicService: MusicService = inject(MusicService);
   private destroy$: Subject<boolean> = new Subject<boolean>();
 
-  @ViewChild('jpProgress') jpProgress: ElementRef<HTMLElement>;
+  @ViewChild("jpProgress") jpProgress: ElementRef<HTMLElement>;
 
   public album: Album;
   public sideBarDisplay: string = "none";
   public wordings = ConfigDB.wordings.general.empty_items;
 
   currentTrackIndex: WritableSignal<number> = signal(0);
-  currentTrack: WritableSignal<Title|undefined> = signal(undefined);
+  currentTrack: WritableSignal<Title | undefined> = signal(undefined);
   isPlaying: WritableSignal<boolean> = signal(false);
   progress: WritableSignal<number> = signal(0);
 
@@ -42,10 +44,10 @@ export class MusicSidebar implements OnInit, OnDestroy {
         this.currentTrackIndex.set(data);
       });
     this.musicService.currentTrack$
-        .pipe(takeUntil(this.destroy$))
-        .subscribe((data: Title|undefined): void => {
-          this.currentTrack.set(data);
-        });
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((data: Title | undefined): void => {
+        this.currentTrack.set(data);
+      });
     this.musicService.isPlaying$
       .pipe(takeUntil(this.destroy$))
       .subscribe((data: boolean): void => {
@@ -103,6 +105,8 @@ export class MusicSidebar implements OnInit, OnDestroy {
 
   handleSeek(event: PointerEvent) {
     const bcr = this.jpProgress.nativeElement.getBoundingClientRect();
-    this.musicService.handleSeek((event.clientX - bcr.left) / bcr.width * 100);
+    this.musicService.handleSeek(
+      ((event.clientX - bcr.left) / bcr.width) * 100,
+    );
   }
 }

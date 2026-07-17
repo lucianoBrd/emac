@@ -13,6 +13,7 @@ import { Filter } from "../../shared/components/pages/filter/filter";
 import { Footer } from "../../shared/components/pages/footer/footer";
 import { Header } from "../../shared/components/pages/header/header";
 import { Info } from "../../shared/components/pages/info/info";
+import { MusicAlbum } from "../../shared/components/pages/music/music-album/music-album";
 import { MusicSidebar } from "../../shared/components/pages/music/music-sidebar/music-sidebar";
 import { Nav } from "../../shared/components/pages/nav/nav";
 import { Social } from "../../shared/components/pages/social/social";
@@ -22,30 +23,29 @@ import { ConfigDB } from "../../shared/data/config";
 import { Promotion } from "../../shared/models/promotion.interface";
 import { MetaService } from "../../shared/service/meta.service";
 import { PromotionService } from "../../shared/service/promotion.service";
-import {MusicAlbum} from "../../shared/components/pages/music/music-album/music-album";
 
 @Component({
   selector: "promotions-detail",
-    imports: [
-        CarouselModule,
-        DatePipe,
-        RouterLink,
-        Filter,
-        Breadcrumb,
-        Nav,
-        RouterOutlet,
-        Header,
-        Info,
-        About,
-        Song,
-        Copyright,
-        TapToTop,
-        Footer,
-        Social,
-        PromotionDetailGallery,
-        MusicSidebar,
-        MusicAlbum,
-    ],
+  imports: [
+    CarouselModule,
+    DatePipe,
+    RouterLink,
+    Filter,
+    Breadcrumb,
+    Nav,
+    RouterOutlet,
+    Header,
+    Info,
+    About,
+    Song,
+    Copyright,
+    TapToTop,
+    Footer,
+    Social,
+    PromotionDetailGallery,
+    MusicSidebar,
+    MusicAlbum,
+  ],
   templateUrl: "./promotions-detail.html",
   styleUrls: ["./promotions-detail.scss"],
 })

@@ -1,49 +1,60 @@
 <!--sponsor section start-->
 <section
-        class="event artist set-relative bg bg-img2 bg-about"
-        [style.background-image]="'url(' + album.image +')'"
+  class="event artist set-relative bg bg-img2 bg-about"
+  [style.background-image]="'url(' + album.image +')'"
 >
-    <div class="circle secondary"></div>
-    <div class="container ">
-        <div class="row">
-            <div class="col-md-10 offset-md-1">
-                <div class="title title3">
-                    <div class="main-title">
-                        <h2 class="text-white">{{wordings.title}}</h2>
-                    </div>
-                    <div class="sub-title">
-                        <p class="text-white" [innerHTML]="wordings.description"></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="d-flex justify-content-center">
-                    <div class="album-artist text-center">
-                        <img [src]="album.image" [alt]="album.name" class="img-fluid set-relative overlay-img img-album">
-                        <div>
-                            <div class="overlay-box2"></div>
-                        </div>
-                        <div class="set-abs bottom-0 w-100 text-left set-z-index">
-                            <div class="singers">
-                                <div class="m-b-10">
-                                    <h5 class="name">{{album.name}}</h5>
-                                    <h6 class="musician">{{album.subName}}</h6>
-                                </div>
-                                <div class="text-center">
-                                    <a (click)="sideBar()" class="btn btn-default primary-btn m-0-auto">
-                                        <i class="fa fa-play mr-1" aria-hidden="true"></i>
-                                        {{wordings.listen}}
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="set-abs cds">
-                            <img src="assets/images/general/cd.svg" alt="cd" class="cd-animation">
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <div class="circle secondary"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <div class="title title3">
+          <div class="main-title">
+            <h2 class="text-white">{{wordings.title}}</h2>
+          </div>
+          <div class="sub-title">
+            <p class="text-white" [innerHTML]="wordings.description"></p>
+          </div>
         </div>
+      </div>
+      <div class="col-12">
+        <div class="d-flex justify-content-center">
+          <div class="album-artist text-center">
+            <img
+              [src]="album.image"
+              [alt]="album.name"
+              class="img-fluid set-relative overlay-img img-album"
+            />
+            <div>
+              <div class="overlay-box2"></div>
+            </div>
+            <div class="set-abs bottom-0 w-100 text-left set-z-index">
+              <div class="singers">
+                <div class="m-b-10">
+                  <h5 class="name">{{album.name}}</h5>
+                  <h6 class="musician">{{album.subName}}</h6>
+                </div>
+                <div class="text-center">
+                  <a
+                    (click)="sideBar()"
+                    class="btn btn-default primary-btn m-0-auto"
+                  >
+                    <i class="fa fa-play mr-1" aria-hidden="true"></i>
+                    {{wordings.listen}}
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="set-abs cds">
+              <img
+                src="assets/images/general/cd.svg"
+                alt="cd"
+                class="cd-animation"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 <!--sponsor section end-->
