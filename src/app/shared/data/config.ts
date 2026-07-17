@@ -14,6 +14,7 @@ export class ConfigDB {
       light: "Clair",
       rtl: "Dag",
       ltr: "Gad",
+      music: "Musique",
     },
     general: {
       goHome: "Retour à l'accueil",
@@ -47,6 +48,13 @@ export class ConfigDB {
       title: "Maintenance",
       description: "Maintenance en cours",
       back_soon: "Nous serons bientôt de retour",
+    },
+    music: {
+      album: {
+        title: 'Album',
+        description: 'Album de la promotion.',
+        listen: 'Écouter',
+      }
     },
     promotion: {
       list: {

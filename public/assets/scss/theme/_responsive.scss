@@ -3354,6 +3354,21 @@
         font-size: 260%;
       }
     }
+    &.artist {
+      .album-artist {
+        .cds {
+          top: 85%;
+          transform: translate(-50%, -35%);
+        }
+      }
+      .artist-text {
+        p {
+          &.text-para {
+            font-size: 125%;
+          }
+        }
+      }
+    }
   }
   .gym,
   .yoga {
@@ -5689,6 +5704,15 @@
       .d-flex {
         justify-content: center;
         margin-bottom: 10px;
+      }
+    }
+    &.artist {
+      .artist-text {
+        p {
+          &.text-para {
+            font-size: 115%;
+          }
+        }
       }
     }
   }

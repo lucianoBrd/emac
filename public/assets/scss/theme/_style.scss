@@ -3952,6 +3952,9 @@ booking section end
   }
   &.artist {
     .album-artist {
+      max-height: 50vh;
+      width: auto !important;
+      max-width: 100%;
       &:hover {
         .overlay-img {
           transition: 0.2s;
@@ -7888,6 +7891,7 @@ event css start
           img {
             max-height: 50px;
             max-width: 50px;
+            height: 100%;
           }
         }
         .song-text {
@@ -7936,6 +7940,88 @@ event css start
       }
       &:after {
         width: 260%;
+      }
+    }
+  }
+  &.artist {
+    .album-artist, .cd-animation {
+      max-width: 426px;
+    }
+    .album-artist {
+      &:hover {
+        .overlay-img {
+          transition: 0.2s;
+          filter: unset;
+        }
+        .cds {
+          filter: unset;
+          opacity: 1;
+          .cd-animation {
+            animation: movebounce 20s linear infinite;
+            transition: all 0.3s ease;
+          }
+        }
+      }
+      position: relative;
+      display: inline-block;
+      margin-bottom: 150px;
+      width: 100%;
+      .overlay-img {
+        z-index: 2;
+        transition: 0.7s;
+        filter: grayscale(100%);
+        box-shadow: 2.5px 4.33px 76px 0 $black;
+      }
+      .singers {
+        padding: 45px;
+        .name {
+          text-transform: uppercase;
+        }
+        .musician {
+          font-weight: 300;
+        }
+      }
+      .set-z-index {
+        z-index: 2;
+      }
+      .cds {
+        transition: all 0.3s ease;
+        filter: grayscale(100%);
+        z-index: 1;
+        opacity: 0.2;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -25%);
+        .cd-animation {
+          transition: all 0.3s ease;
+          //height: 40vh;
+        }
+        .elipse {
+          display: inline;
+          width: auto;
+          top: 50%;
+          transform: translate(80%, -50%);
+          //height: 6vh;
+        }
+        img {
+          display: inline;
+          width: auto;
+        }
+      }
+    }
+    .artist-text {
+      padding: 0 15px;
+      p {
+        &.text-para {
+          margin-bottom: 15px;
+          font-size: 140%;
+          font-weight: 300;
+          letter-spacing: 0.5px;
+          line-height: 1.8;
+        }
+      }
+      .dummy-text {
+        font-weight: 400;
       }
     }
   }

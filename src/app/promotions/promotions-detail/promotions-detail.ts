@@ -22,28 +22,30 @@ import { ConfigDB } from "../../shared/data/config";
 import { Promotion } from "../../shared/models/promotion.interface";
 import { MetaService } from "../../shared/service/meta.service";
 import { PromotionService } from "../../shared/service/promotion.service";
+import {MusicAlbum} from "../../shared/components/pages/music/music-album/music-album";
 
 @Component({
   selector: "promotions-detail",
-  imports: [
-    CarouselModule,
-    DatePipe,
-    RouterLink,
-    Filter,
-    Breadcrumb,
-    Nav,
-    RouterOutlet,
-    Header,
-    Info,
-    About,
-    Song,
-    Copyright,
-    TapToTop,
-    Footer,
-    Social,
-    PromotionDetailGallery,
-    MusicSidebar,
-  ],
+    imports: [
+        CarouselModule,
+        DatePipe,
+        RouterLink,
+        Filter,
+        Breadcrumb,
+        Nav,
+        RouterOutlet,
+        Header,
+        Info,
+        About,
+        Song,
+        Copyright,
+        TapToTop,
+        Footer,
+        Social,
+        PromotionDetailGallery,
+        MusicSidebar,
+        MusicAlbum,
+    ],
   templateUrl: "./promotions-detail.html",
   styleUrls: ["./promotions-detail.scss"],
 })
