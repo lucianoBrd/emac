@@ -13743,6 +13743,19 @@ error css end
     }
     .jp-playlist {
       margin-top: 30px;
+      .list-group-item {
+        background-color: $white !important;
+        border-color: $gray12 !important;
+        color: $dark;
+        &.active {
+          background-color: $dark !important;
+          border-color: $dark !important;
+          color: $white;
+        }
+        &.disabled {
+          color: $gray7;
+        }
+      }
     }
     .jp-details,
     .jp-playlist {
@@ -15701,7 +15714,14 @@ footer {
   }
   .jp-progress {
     top: 32px;
-    height: 4px;
+    height: 6px;
+    .jp-seek-bar {
+      width: 0%;
+      background-color: $secondary;
+      position: relative;
+      display: block;
+      height: 6px;
+    }
   }
 }
 .jp-progress {

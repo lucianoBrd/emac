@@ -128,7 +128,7 @@ export class ColBourgoinDB {
         },
       ],
       music: {
-        id: 0,
+        id: 'chant-promotion',
         name: "Chant promotion",
         subName: "Colonel Bourgoin",
         image: "assets/images/promotion/col-bourgoin.png",

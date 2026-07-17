@@ -1,14 +1,12 @@
 import {
-  Component,
+  Component, ElementRef,
   inject,
-  Input,
   OnDestroy,
   OnInit,
-  signal,
+  signal, ViewChild,
   WritableSignal,
 } from "@angular/core";
 
-import { ToastrService } from "ngx-toastr";
 import { Subject, takeUntil } from "rxjs";
 
 import { ConfigDB } from "../../../../data/config";
@@ -26,11 +24,14 @@ export class MusicSidebar implements OnInit, OnDestroy {
   private musicService: MusicService = inject(MusicService);
   private destroy$: Subject<boolean> = new Subject<boolean>();
 
+  @ViewChild('jpProgress') jpProgress: ElementRef<HTMLElement>;
+
   public album: Album;
   public sideBarDisplay: string = "none";
   public wordings = ConfigDB.wordings.general.empty_items;
 
   currentTrackIndex: WritableSignal<number> = signal(0);
+  currentTrack: WritableSignal<Title|undefined> = signal(undefined);
   isPlaying: WritableSignal<boolean> = signal(false);
   progress: WritableSignal<number> = signal(0);
 
@@ -40,6 +41,11 @@ export class MusicSidebar implements OnInit, OnDestroy {
       .subscribe((data: number): void => {
         this.currentTrackIndex.set(data);
       });
+    this.musicService.currentTrack$
+        .pipe(takeUntil(this.destroy$))
+        .subscribe((data: Title|undefined): void => {
+          this.currentTrack.set(data);
+        });
     this.musicService.isPlaying$
       .pipe(takeUntil(this.destroy$))
       .subscribe((data: boolean): void => {
@@ -79,20 +85,8 @@ export class MusicSidebar implements OnInit, OnDestroy {
       : (this.sideBarDisplay = "none");
   }
 
-  getCurrentTrack(): Title {
-    return this.musicService.getCurrentTrack();
-  }
-
   handlePlayPause() {
     this.musicService.handlePlayPause();
-  }
-
-  scrollToCurrentTrack() {
-    // const container = this.trackListContainer.nativeElement;
-    // const selectedTrack = container.children[this.currentTrackIndex()];
-    // if (selectedTrack) {
-    //   selectedTrack.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    // }
   }
 
   handleNext() {
@@ -103,15 +97,12 @@ export class MusicSidebar implements OnInit, OnDestroy {
     this.musicService.handlePrevious();
   }
 
-  handleTrackSelect(index: number) {
-    this.musicService.handleTrackSelect(index);
+  handleTrackSelectByTitle(title: Title): void {
+    this.musicService.handleTrackSelectByTitle(title);
   }
 
-  handleSeek(event: Event) {
-    this.musicService.handleSeek(event);
-  }
-
-  updateProgress() {
-    this.musicService.updateProgress();
+  handleSeek(event: PointerEvent) {
+    const bcr = this.jpProgress.nativeElement.getBoundingClientRect();
+    this.musicService.handleSeek((event.clientX - bcr.left) / bcr.width * 100);
   }
 }

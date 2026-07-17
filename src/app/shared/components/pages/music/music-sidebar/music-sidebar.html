@@ -16,7 +16,9 @@
                 <i></i>
                 <i></i>
               </div>
-              <h6 class="now-play">{{getCurrentTrack().name}}</h6>
+                @if (currentTrack() !== undefined) {
+                    <h6 class="now-play">{{currentTrack()?.name}}</h6>
+                }
             </div>
             <img
               [src]="album.image"
@@ -71,28 +73,19 @@
               </button>
             </div>
 
-            <div class="jp-progress">
-              <div class="jp-seek-bar">
+            <div class="jp-progress" #jpProgress (click)="handleSeek($event)">
+              <div class="jp-seek-bar" [style.width]="progress() + '%'">
                 <div class="jp-play-bar"></div>
               </div>
             </div>
-            <div class="jp-time-holder">
-              <div class="jp-current-time" role="timer" aria-label="time">
-                12
-              </div>
-              <div class="jp-duration" role="timer" aria-label="duration">
-                13
-              </div>
-            </div>
 
-            <div class="jp-playlist">
+            <div class="jp-playlist py-4 list-group list-group-flush">
               <ul>
                 @for (title of album.titles; track title.id) { @if (title.file)
                 {
-                <li>
-                  <a class="font-primary">
-                    <!--                                                    todo fix index-->
-                    @if (currentTrackIndex() === $index) {
+                <li [class]="(currentTrack() === title ? 'active' : '') + ' list-group-item'">
+                  <a (click)="handleTrackSelectByTitle(title)">
+                    @if (currentTrack() === title) {
                     <i
                       aria-hidden="true"
                       [class]="(isPlaying() ? 'fa-beat' : '') + ' fa fa-headphones'"
@@ -101,7 +94,7 @@
                   </a>
                 </li>
                 } @else {
-                <li class="font-dark">{{ title.name }}</li>
+                <li class="list-group-item disabled">{{ title.name }}</li>
                 } }
               </ul>
             </div>

@@ -50,6 +50,21 @@ body {
       .jp-time-holder {
         color: $white-4;
       }
+      .jp-playlist {
+        .list-group-item {
+          background-color: $dark !important;
+          border-color: $white-5 !important;
+          color: $white-4;
+          &.active {
+            background-color: $white-4 !important;
+            border-color: $white-4 !important;
+            color: $dark;
+          }
+          &.disabled {
+             color: $gray7;
+           }
+        }
+      }
       .jp-details,
       .jp-playlist {
         border-top: 1px solid $white-5;

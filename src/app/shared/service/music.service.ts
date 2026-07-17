@@ -19,6 +19,9 @@ export class MusicService {
   private currentTrackIndex = new BehaviorSubject<number>(0);
   currentTrackIndex$ = this.currentTrackIndex.asObservable();
 
+  private currentTrack = new BehaviorSubject<Title|undefined>(undefined);
+  currentTrack$ = this.currentTrack.asObservable();
+
   private isPlaying = new BehaviorSubject<boolean>(false);
   isPlaying$ = this.isPlaying.asObservable();
 
@@ -35,6 +38,7 @@ export class MusicService {
   setAlbum(album: Album): void {
     this.album.next(album);
     this.currentTrackIndex.next(0);
+    this.currentTrack.next(this.getCurrentTrack());
     this.isPlaying.next(false);
     this.progress.next(0);
     this.loadTrack();
@@ -81,14 +85,6 @@ export class MusicService {
     }
   }
 
-  scrollToCurrentTrack() {
-    // const container = this.trackListContainer.nativeElement;
-    // const selectedTrack = container.children[this.currentTrackIndex()];
-    // if (selectedTrack) {
-    //   selectedTrack.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    // }
-  }
-
   handleNext() {
     if (!this.album.value) {
       return;
@@ -96,10 +92,10 @@ export class MusicService {
     this.currentTrackIndex.next(
       (this.currentTrackIndex.value + 1) % this.getTracks().length,
     );
+    this.currentTrack.next(this.getCurrentTrack());
     this.loadTrack();
     this.isPlaying.next(true);
     this.audio?.play();
-    this.scrollToCurrentTrack();
   }
 
   handlePrevious() {
@@ -110,23 +106,29 @@ export class MusicService {
       (this.currentTrackIndex.value - 1 + this.getTracks().length) %
         this.getTracks().length,
     );
+    this.currentTrack.next(this.getCurrentTrack());
     this.loadTrack();
     this.isPlaying.next(true);
     this.audio?.play();
-    this.scrollToCurrentTrack();
   }
 
   handleTrackSelect(index: number) {
     this.currentTrackIndex.next(index);
+    this.currentTrack.next(this.getCurrentTrack());
     this.loadTrack();
     this.isPlaying.next(true);
     this.audio?.play();
-    this.scrollToCurrentTrack();
   }
 
-  handleSeek(event: Event) {
-    const input = event.target as HTMLInputElement;
-    const value = parseFloat(input.value);
+  handleTrackSelectByTitle(title: Title): void {
+    const index: number = this.getTracks().findIndex((t: Title): boolean => title === t);
+    if (index === -1) {
+      return;
+    }
+    this.handleTrackSelect(index);
+  }
+
+  handleSeek(value: number) {
     this.progress.next(value);
 
     if (this.audio) {

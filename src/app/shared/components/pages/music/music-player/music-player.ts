@@ -54,7 +54,10 @@ export class MusicPlayer implements OnInit, OnDestroy {
   }
 
   sideBar(): void {
-    this.musicService.setAlbum(this.album);
+    if (!this.musicService.checkAlbum(this.album)) {
+      this.musicService.setAlbum(this.album);
+    }
+
     this.musicService.sideBar();
   }
 }
