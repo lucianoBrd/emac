@@ -19,6 +19,77 @@ body {
         color: $white-4;
       }
     }
+    .side-section {
+      .jp-type-playlist {
+        .jp-gui {
+          .gradient-block {
+            background-image: linear-gradient(
+              rgba($light-color, 0.92) 0%,
+              $dark-color 100%
+            );
+          }
+          .girls {
+            background-color: $white-4;
+          }
+          .author-text {
+            h4,
+            h6 {
+              color: $white-2;
+            }
+            .song-text {
+              color: $white-3;
+            }
+            .song-sub-text {
+              color: $white-5;
+            }
+          }
+        }
+      }
+      .jp-no-solution,
+      .jp-playlist,
+      .jp-time-holder {
+        color: $white-4;
+      }
+      .jp-playlist {
+        .list-group-item {
+          background-color: $dark !important;
+          border-color: $white-5 !important;
+          color: $white-4;
+          &.active {
+            background-color: $white-4 !important;
+            border-color: $white-4 !important;
+            color: $dark;
+          }
+          &.disabled {
+            color: $gray7;
+          }
+        }
+      }
+      .jp-details,
+      .jp-playlist {
+        border-top: 1px solid $white-5;
+      }
+      .side-player {
+        background-color: $light-color;
+      }
+      .jp-controls {
+        .button-container {
+          button,
+          a {
+            color: $white-3;
+            &.jp-play,
+            &.jp-pause,
+            &.jp-link {
+              background-image: linear-gradient(
+                $light-color 0%,
+                $dark-color 100%
+              );
+              background-color: $white;
+            }
+          }
+        }
+      }
+    }
     ngb-modal-window {
       .modal-content {
         background-color: $light-color;

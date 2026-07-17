@@ -488,6 +488,9 @@ nav {
 .font-primary {
   color: $primary !important;
 }
+.font-dark {
+  color: $dark !important;
+}
 .font-secondary {
   color: $secondary !important;
 }
@@ -3949,6 +3952,9 @@ booking section end
   }
   &.artist {
     .album-artist {
+      max-height: 50vh;
+      width: auto !important;
+      max-width: 100%;
       &:hover {
         .overlay-img {
           transition: 0.2s;
@@ -7859,6 +7865,165 @@ event css start
     .bg-white {
       border-radius: 0 15px 15px 0;
       overflow: hidden;
+    }
+  }
+  .music-container {
+    margin-bottom: 50px;
+    .play-bg {
+      border-radius: 32px;
+      background-image: linear-gradient(90deg, $dark 0%, $light 100%);
+      height: 67px;
+      margin: 0 auto;
+      width: 276px;
+      position: relative;
+      z-index: 1;
+      .song-text-container {
+        border-radius: 32px;
+        background-image: linear-gradient(90deg, $dark 0%, $light 100%);
+        display: inline-block;
+
+        .center-img {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          padding-left: 10px;
+          margin-right: 15px;
+          img {
+            max-height: 50px;
+            max-width: 50px;
+            height: 100%;
+          }
+        }
+        .song-text {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          margin-right: 25px;
+          .song-head,
+          .song-sub-head {
+            font-family: "PT Sans", sans-serif;
+          }
+          .song-head {
+            font-size: calc(14px + (16 - 14) * (100vw - 330px) / (1920 - 330));
+            margin-bottom: 2px;
+          }
+          .song-sub-head {
+            font-size: 13px;
+            text-transform: none;
+            opacity: 0.3;
+          }
+        }
+      }
+      .play-setting {
+        margin-right: 15px;
+        a {
+          &:hover {
+            color: $white;
+            opacity: 0.7;
+          }
+        }
+      }
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        /* right: 210%; */
+        background-image: linear-gradient(90deg, $dark 0%, $light 100%);
+        height: 100%;
+        width: 180%;
+        z-index: -1;
+        opacity: 0.2;
+        border-radius: 36px;
+      }
+      &:after {
+        width: 260%;
+      }
+    }
+  }
+  &.artist {
+    .album-artist,
+    .cd-animation {
+      max-width: 426px;
+    }
+    .album-artist {
+      &:hover {
+        .overlay-img {
+          transition: 0.2s;
+          filter: unset;
+        }
+        .cds {
+          filter: unset;
+          opacity: 1;
+          .cd-animation {
+            animation: movebounce 20s linear infinite;
+            transition: all 0.3s ease;
+          }
+        }
+      }
+      position: relative;
+      display: inline-block;
+      margin-bottom: 150px;
+      width: 100%;
+      .overlay-img {
+        z-index: 2;
+        transition: 0.7s;
+        filter: grayscale(100%);
+        box-shadow: 2.5px 4.33px 76px 0 $black;
+      }
+      .singers {
+        padding: 45px;
+        .name {
+          text-transform: uppercase;
+        }
+        .musician {
+          font-weight: 300;
+        }
+      }
+      .set-z-index {
+        z-index: 2;
+      }
+      .cds {
+        transition: all 0.3s ease;
+        filter: grayscale(100%);
+        z-index: 1;
+        opacity: 0.2;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -25%);
+        .cd-animation {
+          transition: all 0.3s ease;
+          //height: 40vh;
+        }
+        .elipse {
+          display: inline;
+          width: auto;
+          top: 50%;
+          transform: translate(80%, -50%);
+          //height: 6vh;
+        }
+        img {
+          display: inline;
+          width: auto;
+        }
+      }
+    }
+    .artist-text {
+      padding: 0 15px;
+      p {
+        &.text-para {
+          margin-bottom: 15px;
+          font-size: 140%;
+          font-weight: 300;
+          letter-spacing: 0.5px;
+          line-height: 1.8;
+        }
+      }
+      .dummy-text {
+        font-weight: 400;
+      }
     }
   }
 }
@@ -13642,6 +13807,8 @@ error css end
           background-color: $white;
           transform: translate(0, -50%);
           box-shadow: 0 6px 30px 1px rgba(37, 67, 138, 0.18);
+          max-height: 172px;
+          max-width: 172px;
         }
         .author-text {
           z-index: 3;
@@ -13663,6 +13830,19 @@ error css end
     }
     .jp-playlist {
       margin-top: 30px;
+      .list-group-item {
+        background-color: $white !important;
+        border-color: $gray12 !important;
+        color: $dark;
+        &.active {
+          background-color: $dark !important;
+          border-color: $dark !important;
+          color: $white;
+        }
+        &.disabled {
+          color: $gray7;
+        }
+      }
     }
     .jp-details,
     .jp-playlist {
@@ -13682,13 +13862,21 @@ error css end
     .jp-controls {
       .button-container {
         padding: 20px;
-        button {
+        button,
+        a {
           height: 30px;
           width: 30px;
           color: $white;
           border-radius: 100%;
           background-color: #8080804f;
-          &.jp-play {
+          &.jp-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          &.jp-play,
+          &.jp-pause,
+          &.jp-link {
             height: 50px;
             width: 50px;
             background-image: linear-gradient(
@@ -15613,7 +15801,14 @@ footer {
   }
   .jp-progress {
     top: 32px;
-    height: 4px;
+    height: 6px;
+    .jp-seek-bar {
+      width: 0%;
+      background-color: $secondary;
+      position: relative;
+      display: block;
+      height: 6px;
+    }
   }
 }
 .jp-progress {
@@ -15638,16 +15833,14 @@ footer {
 }
 
 .jp-controls {
-  .jp-play {
+  .jp-play,
+  .jp-pause {
     border: none;
     cursor: pointer;
     color: white;
     background-color: transparent;
     font: normal normal normal 14px/1 FontAwesome;
     padding: 0;
-    &:before {
-      content: "\f04b";
-    }
   }
   button {
     border: none;
@@ -15664,6 +15857,8 @@ footer {
 }
 .jp-play,
 .jp-play:focus,
+.jp-pause,
+.jp-pause:focus,
 .jp-state-playing .jp-play,
 .jp-state-playing .jp-play:focus,
 .jp-previous,
@@ -15681,6 +15876,14 @@ footer {
 
 .jp-next:before {
   content: "\f051";
+}
+
+.jp-play:before {
+  content: "\f04b";
+}
+
+.jp-pause:before {
+  content: "\f04c";
 }
 
 .top-header-right {

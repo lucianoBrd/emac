@@ -3354,6 +3354,21 @@
         font-size: 260%;
       }
     }
+    &.artist {
+      .album-artist {
+        .cds {
+          top: 85%;
+          transform: translate(-50%, -35%);
+        }
+      }
+      .artist-text {
+        p {
+          &.text-para {
+            font-size: 125%;
+          }
+        }
+      }
+    }
   }
   .gym,
   .yoga {
@@ -5691,6 +5706,15 @@
         margin-bottom: 10px;
       }
     }
+    &.artist {
+      .artist-text {
+        p {
+          &.text-para {
+            font-size: 115%;
+          }
+        }
+      }
+    }
   }
   .schedule {
     .event-container {
@@ -7653,6 +7677,9 @@
     }
   }
   .event {
+    .music-container {
+      margin-top: unset;
+    }
     .title {
       &.title3 {
         .sub-title {
