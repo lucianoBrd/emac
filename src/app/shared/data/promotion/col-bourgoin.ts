@@ -127,6 +127,132 @@ export class ColBourgoinDB {
           ],
         },
       ],
+      music: {
+        id: "chant-promotion",
+        name: "Chant promotion",
+        subName: "Colonel Bourgoin",
+        image: "assets/images/promotion/col-bourgoin.png",
+        titles: [
+          {
+            id: 0,
+            name: "Chant de la promotion Colonel Bourgoin",
+            file: "assets/music/promotion/col-bourgoin/amarante/02 - Chant de la promotion Colonel Bourgoin.mp3",
+          },
+        ],
+        platforms: [],
+        slug: "chant-de-la-promotion-colonel-bourgoin",
+      },
+    },
+    album: {
+      id: "amarante",
+      name: "Amarante",
+      subName: "Promotion Colonel Bourgoin",
+      image: "assets/images/promotion/col-bourgoin/amarante.jpeg",
+      titles: [
+        {
+          id: 1,
+          name: "01 - L'audace de Servir",
+          file: "assets/music/promotion/col-bourgoin/amarante/01 - L'audace de Servir.mp3",
+        },
+        {
+          id: 2,
+          name: "02 - Chant de la promotion Colonel Bourgoin",
+          file: "assets/music/promotion/col-bourgoin/amarante/02 - Chant de la promotion Colonel Bourgoin.mp3",
+        },
+        {
+          id: 3,
+          name: "03 - Chant de la promotion Capitaine Bergot",
+          file: "assets/music/promotion/col-bourgoin/amarante/03 - Chant de la promotion Capitaine Bergot.mp3",
+        },
+        {
+          id: 4,
+          name: "04 - Monsieur de Turenne",
+          file: "assets/music/promotion/col-bourgoin/amarante/04 - Monsieur de Turenne.mp3",
+        },
+        {
+          id: 5,
+          name: "05 - Chant de la promotion Division Marocaine",
+          file: "assets/music/promotion/col-bourgoin/amarante/05 - Chant de la promotion Division Marocaine.mp3",
+        },
+        {
+          id: 6,
+          name: "06 - Chant de la promotion Victoire de la Marne",
+          file: "assets/music/promotion/col-bourgoin/amarante/06 - Chant de la promotion Victoire de la Marne.mp3",
+        },
+        {
+          id: 7,
+          name: "07 - Verdun",
+          file: "assets/music/promotion/col-bourgoin/amarante/07 - Verdun.mp3",
+        },
+        {
+          id: 8,
+          name: "08 - Qui ose gagne",
+          file: "assets/music/promotion/col-bourgoin/amarante/08 - Qui ose gagne.mp3",
+        },
+        {
+          id: 9,
+          name: "09 - Chant de bataillon de marche de l'Oubangui-Chari",
+          file: "assets/music/promotion/col-bourgoin/amarante/09 - Chant de bataillon de marche de l'Oubangui-Chari.mp3",
+        },
+        {
+          id: 10,
+          name: "10 - Chant des Tirailleurs",
+          file: "assets/music/promotion/col-bourgoin/amarante/10 - Chant des Tirailleurs.mp3",
+        },
+        {
+          id: 11,
+          name: "11 - Les oies sauvages",
+          file: "assets/music/promotion/col-bourgoin/amarante/11 - Les oies sauvages.mp3",
+        },
+        {
+          id: 12,
+          name: "12 - It’s a long way to Tipperary",
+          file: "assets/music/promotion/col-bourgoin/amarante/12 - It’s a long way to Tipperary.mp3",
+        },
+        {
+          id: 13,
+          name: "13 - Agni Parthene",
+          file: "assets/music/promotion/col-bourgoin/amarante/13 - Agni Parthene.mp3",
+        },
+        {
+          id: 14,
+          name: "14 - Rappelle toi Jeanne",
+          file: "assets/music/promotion/col-bourgoin/amarante/14 - Rappelle toi Jeanne.mp3",
+        },
+        {
+          id: 15,
+          name: "15 - Salve Regina des bergers du Rouergue",
+          file: "assets/music/promotion/col-bourgoin/amarante/15 - Salve Regina des bergers du Rouergue.mp3",
+        },
+        {
+          id: 16,
+          name: "16 - Omni die dic Mariae",
+          file: "assets/music/promotion/col-bourgoin/amarante/16 - Omni die dic Mariae.mp3",
+        },
+        {
+          id: 17,
+          name: "17 - Je ne l’ose dire",
+          file: "assets/music/promotion/col-bourgoin/amarante/17 - Je ne l’ose dire.mp3",
+        },
+        {
+          id: 18,
+          name: "18 - Le tourdion",
+          file: "assets/music/promotion/col-bourgoin/amarante/18 - Le tourdion.mp3",
+        },
+        {
+          id: 19,
+          name: "19 - Prêt dès ce soir",
+          file: "assets/music/promotion/col-bourgoin/amarante/19 - Prêt dès ce soir.mp3",
+        },
+      ],
+      platforms: [
+        {
+          link: "https://www.deezer.com/fr/",
+          title: "Deezer",
+          icon: "deezer",
+        },
+      ],
+      slug: "amarante-promotion-colonel-bourgoin",
     },
     footer: {
       id: "col-bourgoin",
@@ -179,6 +305,12 @@ export class ColBourgoinDB {
           type: GalleryType.youtube,
           description: "Baptême de la promotion",
           thumb: "assets/images/promotion/col-bourgoin/gallery/bapteme.jpg",
+        },
+        {
+          image: "https://www.youtube.com/embed/mfTEyaPnYiE?start=3124",
+          type: GalleryType.youtube,
+          description: "Défilé du 14 juillet 2026",
+          thumb: "assets/images/promotion/col-bourgoin/gallery/defile.JPG",
         },
         {
           image: "assets/images/promotion/col-bourgoin/gallery/cnec.mp4",

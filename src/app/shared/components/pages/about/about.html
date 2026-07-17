@@ -48,7 +48,7 @@
             <div class="format-sub-text" ngbAccordion [closeOthers]="true">
               <div ngbAccordionItem [collapsed]="true">
                 <div ngbAccordionHeader>
-                  @for (d of about.description.slice(0, 2); track d) {
+                  @for (d of about.description.slice(0, 2); track $index) {
                   <p class="about-para p-light" [innerHTML]="d"></p>
                   } @if (about.description.length > 2) {
                   <button class="btn btn-default" ngbAccordionButton>
@@ -61,7 +61,7 @@
                   <div ngbAccordionBody>
                     <ng-template>
                       @for (d of about.description.slice(2,
-                      about.description.length); track d) {
+                      about.description.length); track $index) {
                       <p class="about-para p-light" [innerHTML]="d"></p>
                       }
                     </ng-template>

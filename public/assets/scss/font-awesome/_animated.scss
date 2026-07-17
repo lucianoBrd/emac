@@ -11,6 +11,15 @@
   animation: fa-spin 1s infinite steps(8);
 }
 
+.#{$fa-css-prefix}-beat {
+  animation-name: fa-beat;
+  animation-delay: 0s;
+  animation-direction: normal;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
 @keyframes fa-spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -19,5 +28,23 @@
   100% {
     -webkit-transform: rotate(359deg);
     transform: rotate(359deg);
+  }
+}
+
+@keyframes fa-beat {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(calc(1.25 * 1.25));
+  }
+  45% {
+    transform: scale(calc(1.22 * 1.22));
+  }
+  65% {
+    transform: scale(calc(1.25 * 1.25));
+  }
+  90% {
+    transform: scale(1);
   }
 }

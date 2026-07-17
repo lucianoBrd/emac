@@ -13,6 +13,8 @@ import { Filter } from "../../shared/components/pages/filter/filter";
 import { Footer } from "../../shared/components/pages/footer/footer";
 import { Header } from "../../shared/components/pages/header/header";
 import { Info } from "../../shared/components/pages/info/info";
+import { MusicAlbum } from "../../shared/components/pages/music/music-album/music-album";
+import { MusicSidebar } from "../../shared/components/pages/music/music-sidebar/music-sidebar";
 import { Nav } from "../../shared/components/pages/nav/nav";
 import { Social } from "../../shared/components/pages/social/social";
 import { Song } from "../../shared/components/pages/song/song";
@@ -41,6 +43,8 @@ import { PromotionService } from "../../shared/service/promotion.service";
     Footer,
     Social,
     PromotionDetailGallery,
+    MusicSidebar,
+    MusicAlbum,
   ],
   templateUrl: "./promotions-detail.html",
   styleUrls: ["./promotions-detail.scss"],

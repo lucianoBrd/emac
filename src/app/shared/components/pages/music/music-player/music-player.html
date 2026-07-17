@@ -1,0 +1,46 @@
+<div class="container music-container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <div class="play-bg d-flex">
+        <div class="song-text-container h-100">
+          <div class="d-flex h-100">
+            <div class="center-img">
+              <img [src]="album.image" [alt]="album.name" class="img-fluid" />
+            </div>
+            <div class="song-text">
+              <h5 class="text-white song-head">{{album.name}}</h5>
+              @if (album.subName) {
+              <h6 class="text-white song-sub-head">{{album.subName}}</h6>
+              }
+            </div>
+          </div>
+        </div>
+        <div class="play-setting m-auto">
+          <div class="jp-jplayer"></div>
+          <div
+            id="jp_container_1"
+            class="jp-audio"
+            role="application"
+            aria-label="media player"
+          >
+            <div class="jp-type-playlist">
+              <div class="jp-gui jp-interface p-0 d-flex">
+                <div class="jp-controls">
+                  <button
+                    [class]="(isPlaying() ? 'jp-pause' : 'jp-play') + ' m-r-15'"
+                    role="button"
+                    tabindex="0"
+                    (click)="handlePlayPause()"
+                  ></button>
+                </div>
+                <a (click)="sideBar()"
+                  ><i class="fa fa-ellipsis-v" aria-hidden="true"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

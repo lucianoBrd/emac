@@ -5,7 +5,7 @@
       <div class="col-md-6">
         <div class="link-horizontal d-flex align-content-lg-center h-100">
           <ul>
-            @for (s of social.social; track s) {
+            @for (s of social.social; track $index) {
             <li>
               <a href="{{s.link}}" target="_blank" class="center-content">
                 <i

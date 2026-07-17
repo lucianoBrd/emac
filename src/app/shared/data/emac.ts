@@ -100,6 +100,21 @@ export class EmacDB {
           title: "III",
         },
       ],
+      music: {
+        id: "chant-emac",
+        name: "Chant EMAC",
+        subName: "L’audace de servir",
+        image: "assets/images/logo/emac.svg",
+        titles: [
+          {
+            id: 0,
+            name: "L’audace de servir",
+            file: "assets/music/promotion/col-bourgoin/amarante/01 - L'audace de Servir.mp3",
+          },
+        ],
+        platforms: [],
+        slug: "chant-de-l-emac",
+      },
     },
     tradition: {
       id: "emac",

@@ -1,4 +1,5 @@
 import { About } from "./shared/about.interface";
+import { Album } from "./shared/album.interface";
 import { Footer } from "./shared/footer.interface";
 import { Gallery } from "./shared/gallery.interface";
 import { Header } from "./shared/header.interface";
@@ -20,4 +21,5 @@ export interface Promotion {
   footer?: Footer;
   social?: Social;
   gallery?: Gallery;
+  album?: Album;
 }
