@@ -5,39 +5,73 @@
 <div class="theme-pannel-main">
   <ul>
     @if (customize.data.settings.layout_type === 'ltr') {
-    <li id="rtl_btn" (click)="customizeLayoutType('rtl')">
-      <a href="javascript:void(0)" class="btn setting_btn">
-        <span class="rtl-txt">{{wordingsSettings.rtl}}</span>
+    <li id="rtl_btn" class="position-relative" [title]="wordingsSettings.rtl">
+      <a
+        (click)="customizeLayoutType('rtl')"
+        class="btn setting_btn stretched-link"
+      >
+        <span class="rtl-txt" [aria-label]="wordingsSettings.rtl">
+          <i aria-hidden="true" class="flaticon-setting-rtl"></i>
+        </span>
       </a>
     </li>
     } @if (customize.data.settings.layout_type === 'rtl') {
-    <li id="ltr_btn" (click)="customizeLayoutType('ltr')">
-      <a href="javascript:void(0)" class="btn setting_btn">
-        <span class="rtl-txt">{{wordingsSettings.ltr}}</span>
+    <li id="ltr_btn" class="position-relative" [title]="wordingsSettings.rtl">
+      <a
+        (click)="customizeLayoutType('ltr')"
+        class="btn setting_btn stretched-link"
+      >
+        <span class="rtl-txt" [aria-label]="wordingsSettings.ltr">
+          <i aria-hidden="true" class="flaticon-setting-ltr"></i>
+        </span>
       </a>
     </li>
     } @if (customize.data.settings.layout_version === 'dark') {
     <li
-      class="sidebar-btn dark-light-btn"
-      (click)="customizeLayoutVersion('light')"
+      class="sidebar-btn dark-light-btn position-relative"
+      [title]="wordingsSettings.light"
     >
-      <a href="javascript:void(0)" class="dark-light">
-        <span class="theme-layout-version">{{wordingsSettings.light}}</span>
+      <a
+        (click)="customizeLayoutVersion('light')"
+        class="dark-light stretched-link"
+      >
+        <span
+          class="theme-layout-version"
+          [aria-label]="wordingsSettings.light"
+        >
+          <i aria-hidden="true" class="flaticon-setting-sun"></i>
+        </span>
       </a>
     </li>
     } @if (customize.data.settings.layout_version === 'light') {
     <li
-      class="sidebar-btn dark-light-btn"
-      (click)="customizeLayoutVersion('dark')"
+      class="sidebar-btn dark-light-btn position-relative"
+      [title]="wordingsSettings.dark"
     >
-      <a href="javascript:void(0)" class="dark-light">
-        <span class="theme-layout-version">{{wordingsSettings.dark}}</span>
+      <a
+        (click)="customizeLayoutVersion('dark')"
+        class="dark-light stretched-link"
+      >
+        <span class="theme-layout-version" [aria-label]="wordingsSettings.dark">
+          <i aria-hidden="true" class="flaticon-setting-moon"></i>
+        </span>
       </a>
     </li>
     } @if (currentTrack()) {
-    <li (click)="sideBar()" class="sidebar-btn dark-light-btn">
-      <a href="javascript:void(0)" class="dark-light">
-        <span class="theme-layout-version">{{wordingsSettings.music}}</span>
+    <li
+      class="sidebar-btn dark-light-btn position-relative"
+      [title]="wordingsSettings.music"
+    >
+      <a (click)="sideBar()" class="dark-light stretched-link">
+        <span
+          class="theme-layout-version"
+          [aria-label]="wordingsSettings.music"
+        >
+          <i
+            aria-hidden="true"
+            [class]="(isPlaying() ? 'fa-beat' : '') + ' fa fa-headphones'"
+          ></i>
+        </span>
       </a>
     </li>
     }

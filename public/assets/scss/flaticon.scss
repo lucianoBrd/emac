@@ -1,4 +1,5 @@
 $flaticon_music-font: "flaticon_music";
+$flaticon_setting-font: "flaticon_setting";
 
 @font-face {
   font-family: $flaticon_music-font;
@@ -14,10 +15,36 @@ $flaticon_music-font: "flaticon_music";
     url("../fonts/flaticon_music.svg?d58bbfe1711e137c90a84892c937e25a#flaticon_music")
       format("svg");
 }
+@font-face {
+  font-family: $flaticon_setting-font;
+  src:
+    url("../fonts/flaticon_setting.woff2?43bc625de7461db3fbcfb5f1dde41c54")
+      format("woff2"),
+    url("../fonts/flaticon_setting.woff?43bc625de7461db3fbcfb5f1dde41c54")
+      format("woff"),
+    url("../fonts/flaticon_setting.eot?43bc625de7461db3fbcfb5f1dde41c54#iefix")
+      format("embedded-opentype"),
+    url("../fonts/flaticon_setting.ttf?43bc625de7461db3fbcfb5f1dde41c54")
+      format("truetype"),
+    url("../fonts/flaticon_setting.svg?43bc625de7461db3fbcfb5f1dde41c54#flaticon_setting")
+      format("svg");
+}
 
-i[class^="flaticon-"]:before,
-i[class*=" flaticon-"]:before {
+i[class^="flaticon-music-"]:before,
+i[class*=" flaticon-music-"]:before {
   font-family: flaticon_music !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+i[class^="flaticon-setting-"]:before,
+i[class*=" flaticon-setting-"]:before {
+  font-family: flaticon_setting !important;
   font-style: normal;
   font-weight: normal !important;
   font-variant: normal;
@@ -40,33 +67,53 @@ $flaticon_music-map: (
   "disk": "\f10a",
 );
 
-.flaticon-deezer:before {
+$flaticon_setting-map: (
+  "rtl": "\f101",
+  "ltr": "\f102",
+  "sun": "\f103",
+  "moon": "\f104",
+);
+
+.flaticon-music-deezer:before {
   content: map-get($flaticon_music-map, "deezer");
 }
-.flaticon-amazon-music:before {
+.flaticon-music-amazon-music:before {
   content: map-get($flaticon_music-map, "amazon-music");
 }
-.flaticon-tidal:before {
+.flaticon-music-tidal:before {
   content: map-get($flaticon_music-map, "tidal");
 }
-.flaticon-youtube-music:before {
+.flaticon-music-youtube-music:before {
   content: map-get($flaticon_music-map, "youtube-music");
 }
-.flaticon-spotify:before {
+.flaticon-music-spotify:before {
   content: map-get($flaticon_music-map, "spotify");
 }
-.flaticon-apple-music:before {
+.flaticon-music-apple-music:before {
   content: map-get($flaticon_music-map, "apple-music");
 }
-.flaticon-qobuz:before {
+.flaticon-music-qobuz:before {
   content: map-get($flaticon_music-map, "qobuz");
 }
-.flaticon-youtube:before {
+.flaticon-music-youtube:before {
   content: map-get($flaticon_music-map, "youtube");
 }
-.flaticon-soundclound:before {
+.flaticon-music-soundclound:before {
   content: map-get($flaticon_music-map, "soundclound");
 }
-.flaticon-disk:before {
+.flaticon-music-disk:before {
   content: map-get($flaticon_music-map, "disk");
+}
+
+.flaticon-setting-rtl:before {
+  content: map-get($flaticon_setting-map, "rtl");
+}
+.flaticon-setting-ltr:before {
+  content: map-get($flaticon_setting-map, "ltr");
+}
+.flaticon-setting-sun:before {
+  content: map-get($flaticon_setting-map, "sun");
+}
+.flaticon-setting-moon:before {
+  content: map-get($flaticon_setting-map, "moon");
 }

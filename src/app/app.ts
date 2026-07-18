@@ -23,6 +23,7 @@ export class App {
   public url: string;
   public layoutType: string = "light";
   currentTrack: WritableSignal<Title | undefined> = signal(undefined);
+  isPlaying: WritableSignal<boolean> = signal(false);
 
   constructor(private router: Router) {
     this.router.events.subscribe((event): void => {
@@ -37,6 +38,9 @@ export class App {
         this.currentTrack.set(data);
       },
     );
+    this.musicService.isPlaying$.subscribe((data: boolean): void => {
+      this.isPlaying.set(data);
+    });
   }
 
   customizeLayoutVersion(val: string) {
