@@ -17,11 +17,17 @@ $flaticon_setting-font: "flaticon_setting";
 }
 @font-face {
   font-family: $flaticon_setting-font;
-  src: url("../fonts/flaticon_setting.woff2?43bc625de7461db3fbcfb5f1dde41c54") format("woff2"),
-  url("../fonts/flaticon_setting.woff?43bc625de7461db3fbcfb5f1dde41c54") format("woff"),
-  url("../fonts/flaticon_setting.eot?43bc625de7461db3fbcfb5f1dde41c54#iefix") format("embedded-opentype"),
-  url("../fonts/flaticon_setting.ttf?43bc625de7461db3fbcfb5f1dde41c54") format("truetype"),
-  url("../fonts/flaticon_setting.svg?43bc625de7461db3fbcfb5f1dde41c54#flaticon_setting") format("svg");
+  src:
+    url("../fonts/flaticon_setting.woff2?43bc625de7461db3fbcfb5f1dde41c54")
+      format("woff2"),
+    url("../fonts/flaticon_setting.woff?43bc625de7461db3fbcfb5f1dde41c54")
+      format("woff"),
+    url("../fonts/flaticon_setting.eot?43bc625de7461db3fbcfb5f1dde41c54#iefix")
+      format("embedded-opentype"),
+    url("../fonts/flaticon_setting.ttf?43bc625de7461db3fbcfb5f1dde41c54")
+      format("truetype"),
+    url("../fonts/flaticon_setting.svg?43bc625de7461db3fbcfb5f1dde41c54#flaticon_setting")
+      format("svg");
 }
 
 i[class^="flaticon-music-"]:before,
@@ -36,7 +42,8 @@ i[class*=" flaticon-music-"]:before {
   -moz-osx-font-smoothing: grayscale;
 }
 
-i[class^="flaticon-setting-"]:before, i[class*=" flaticon-setting-"]:before {
+i[class^="flaticon-setting-"]:before,
+i[class*=" flaticon-setting-"]:before {
   font-family: flaticon_setting !important;
   font-style: normal;
   font-weight: normal !important;
@@ -61,10 +68,10 @@ $flaticon_music-map: (
 );
 
 $flaticon_setting-map: (
-        "rtl": "\f101",
-        "ltr": "\f102",
-        "sun": "\f103",
-        "moon": "\f104",
+  "rtl": "\f101",
+  "ltr": "\f102",
+  "sun": "\f103",
+  "moon": "\f104",
 );
 
 .flaticon-music-deezer:before {

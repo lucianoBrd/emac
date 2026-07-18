@@ -38,10 +38,9 @@ export class App {
         this.currentTrack.set(data);
       },
     );
-    this.musicService.isPlaying$
-        .subscribe((data: boolean): void => {
-          this.isPlaying.set(data);
-        });
+    this.musicService.isPlaying$.subscribe((data: boolean): void => {
+      this.isPlaying.set(data);
+    });
   }
 
   customizeLayoutVersion(val: string) {
