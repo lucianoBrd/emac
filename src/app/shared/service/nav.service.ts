@@ -25,19 +25,19 @@ export class NavService {
     promotionsMenu.push({
       title: lastPromotion?.id,
       type: "sub",
-      icon: "comments-smiley",
+      icon: "table-list",
       children: [
         {
           path: lastPromotionPath,
           title: lastPromotion?.title,
           type: "link",
-          icon: "info-alt",
+          icon: "info",
         },
         {
           path: lastPromotionPath + "/gallery",
           title: ConfigDB.wordings.general.gallery,
           type: "link",
-          icon: "gallery",
+          icon: "image",
         },
       ],
     });

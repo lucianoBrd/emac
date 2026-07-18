@@ -23,8 +23,8 @@
       format("svg");
 }
 
-i[class^="flaticon-"]:before,
-i[class*=" flaticon-"]:before {
+i[class^="flaticon-music-"]:before,
+i[class*=" flaticon-music-"]:before {
   font-family: flaticon_music !important;
   font-style: normal;
   font-weight: normal !important;
@@ -35,33 +35,33 @@ i[class*=" flaticon-"]:before {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.flaticon-deezer:before {
+.flaticon-music-deezer:before {
   content: "\f101";
 }
-.flaticon-amazon-music:before {
+.flaticon-music-amazon-music:before {
   content: "\f102";
 }
-.flaticon-tidal:before {
+.flaticon-music-tidal:before {
   content: "\f103";
 }
-.flaticon-youtube-music:before {
+.flaticon-music-youtube-music:before {
   content: "\f104";
 }
-.flaticon-spotify:before {
+.flaticon-music-spotify:before {
   content: "\f105";
 }
-.flaticon-apple-music:before {
+.flaticon-music-apple-music:before {
   content: "\f106";
 }
-.flaticon-qobuz:before {
+.flaticon-music-qobuz:before {
   content: "\f107";
 }
-.flaticon-youtube:before {
+.flaticon-music-youtube:before {
   content: "\f108";
 }
-.flaticon-soundclound:before {
+.flaticon-music-soundclound:before {
   content: "\f109";
 }
-.flaticon-disk:before {
+.flaticon-music-disk:before {
   content: "\f10a";
 }
