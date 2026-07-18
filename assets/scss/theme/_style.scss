@@ -5772,10 +5772,12 @@ counter css end
     }
   }
   .plane {
+    max-height: 300px;
     right: 18%;
     z-index: -1;
   }
   .plane2 {
+    max-height: 300px;
     opacity: 0.5;
     z-index: 1;
     top: 0;
