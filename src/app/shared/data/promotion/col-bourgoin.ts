@@ -241,7 +241,7 @@ export class ColBourgoinDB {
         },
         {
           id: 19,
-          name: "19 - Prêt dès ce soir",
+          name: "19 - Prêts dès ce soir",
           file: "assets/music/promotion/col-bourgoin/amarante/19 - Prêt dès ce soir.mp3",
         },
       ],
