@@ -3628,8 +3628,8 @@ booking section end
       border-radius: 32px;
       background-image: linear-gradient(
         90deg,
-        $music-dark 0%,
-        $music-light 100%
+        $dark 0%,
+        $light 100%
       );
       height: 67px;
       margin: 0 auto;
@@ -3640,8 +3640,8 @@ booking section end
         border-radius: 32px;
         background-image: linear-gradient(
           90deg,
-          $music-dark 0%,
-          $music-light 100%
+          $dark 0%,
+          $light 100%
         );
         display: inline-block;
 
@@ -3690,8 +3690,8 @@ booking section end
         /* right: 210%; */
         background-image: linear-gradient(
           90deg,
-          $music-dark 0%,
-          $music-light 100%
+          $dark 0%,
+          $light 100%
         );
         height: 100%;
         width: 180%;
@@ -13747,8 +13747,8 @@ error css end
   }
   ::-webkit-scrollbar-thumb {
     background-image: linear-gradient(
-      rgba($music-light, 0.92) 0%,
-      $music-dark 100%
+      rgba($light, 0.92) 0%,
+      $dark 100%
     );
     border-radius: 25px;
   }
@@ -13766,8 +13766,8 @@ error css end
       .jp-gui {
         .gradient-block {
           background-image: linear-gradient(
-            rgba($music-light, 0.92) 0%,
-            $music-dark 100%
+            rgba($light, 0.92) 0%,
+            $dark 100%
           );
           position: relative;
           overflow: hidden;
@@ -13858,7 +13858,11 @@ error css end
         justify-content: center;
       }
       .jp-progress {
+        margin-top: 20px;
+      }
+      .jp-time-holder {
         margin-top: 35px;
+        text-align: center;
       }
     }
     .jp-controls {
@@ -13882,8 +13886,8 @@ error css end
             height: 50px;
             width: 50px;
             background-image: linear-gradient(
-              $music-light 0%,
-              $music-dark 100%
+              $light 0%,
+              $dark 100%
             );
             background-color: white;
             box-shadow: 0 3px 15px 3px rgba(46, 97, 220, 0.25);
@@ -15790,12 +15794,17 @@ footer {
   height: 3px;
 }
 .jp-audio {
+  min-height: 100%;
   .jp-controls {
     width: 100%;
     display: flex;
     justify-content: center;
   }
   .jp-type-playlist {
+    min-height: 100%;
+    .jp-interface, .side-player {
+      min-height: 100%;
+    }
     .jp-progress {
       left: 166px;
       width: 100%;
