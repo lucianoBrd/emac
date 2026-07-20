@@ -17,7 +17,7 @@
                 <i></i>
               </div>
               @if (currentTrack() !== undefined) {
-              <h6 class="now-play">{{currentTrack()?.name}}</h6>
+              <h6 class="now-play text-white">{{currentTrack()?.name}}</h6>
               }
             </div>
             <img
@@ -49,7 +49,18 @@
                 }
               </div>
             </div>
+            } @if (currentTrack() !== undefined) {
+            <div class="jp-time-holder">
+              <div role="timer" aria-label="time" class="jp-current-time">
+                {{currentTrack()?.name}}
+              </div>
+            </div>
             }
+            <div class="jp-progress" #jpProgress (click)="handleSeek($event)">
+              <div class="jp-seek-bar" [style.width]="progress() + '%'">
+                <div class="jp-play-bar"></div>
+              </div>
+            </div>
             <div class="jp-controls">
               <div class="button-container">
                 <button
@@ -75,13 +86,6 @@
                 <i class="fa fa-times" aria-hidden="true"></i>
               </button>
             </div>
-
-            <div class="jp-progress" #jpProgress (click)="handleSeek($event)">
-              <div class="jp-seek-bar" [style.width]="progress() + '%'">
-                <div class="jp-play-bar"></div>
-              </div>
-            </div>
-
             <div class="jp-playlist py-4 list-group list-group-flush">
               <ul>
                 @for (title of album.titles; track title.id) { @if (title.file)
