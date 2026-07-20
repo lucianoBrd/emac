@@ -3626,11 +3626,7 @@ booking section end
     margin-bottom: 50px;
     .play-bg {
       border-radius: 32px;
-      background-image: linear-gradient(
-        90deg,
-        $dark 0%,
-        $light 100%
-      );
+      background-image: linear-gradient(90deg, $dark 0%, $light 100%);
       height: 67px;
       margin: 0 auto;
       width: 276px;
@@ -3638,11 +3634,7 @@ booking section end
       z-index: 1;
       .song-text-container {
         border-radius: 32px;
-        background-image: linear-gradient(
-          90deg,
-          $dark 0%,
-          $light 100%
-        );
+        background-image: linear-gradient(90deg, $dark 0%, $light 100%);
         display: inline-block;
 
         .center-img {
@@ -3688,11 +3680,7 @@ booking section end
         left: 50%;
         transform: translate(-50%, 0);
         /* right: 210%; */
-        background-image: linear-gradient(
-          90deg,
-          $dark 0%,
-          $light 100%
-        );
+        background-image: linear-gradient(90deg, $dark 0%, $light 100%);
         height: 100%;
         width: 180%;
         z-index: -1;
@@ -13746,10 +13734,7 @@ error css end
     width: 10px;
   }
   ::-webkit-scrollbar-thumb {
-    background-image: linear-gradient(
-      rgba($light, 0.92) 0%,
-      $dark 100%
-    );
+    background-image: linear-gradient(rgba($light, 0.92) 0%, $dark 100%);
     border-radius: 25px;
   }
   &.side-section {
@@ -13765,10 +13750,7 @@ error css end
     .jp-type-playlist {
       .jp-gui {
         .gradient-block {
-          background-image: linear-gradient(
-            rgba($light, 0.92) 0%,
-            $dark 100%
-          );
+          background-image: linear-gradient(rgba($light, 0.92) 0%, $dark 100%);
           position: relative;
           overflow: hidden;
           height: 30vh;
@@ -13885,10 +13867,7 @@ error css end
           &.jp-link {
             height: 50px;
             width: 50px;
-            background-image: linear-gradient(
-              $light 0%,
-              $dark 100%
-            );
+            background-image: linear-gradient($light 0%, $dark 100%);
             background-color: white;
             box-shadow: 0 3px 15px 3px rgba(46, 97, 220, 0.25);
           }
@@ -15802,7 +15781,8 @@ footer {
   }
   .jp-type-playlist {
     min-height: 100%;
-    .jp-interface, .side-player {
+    .jp-interface,
+    .side-player {
       min-height: 100%;
     }
     .jp-progress {

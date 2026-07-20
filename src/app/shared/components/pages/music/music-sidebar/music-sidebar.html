@@ -49,42 +49,43 @@
                 }
               </div>
             </div>
+            } @if (currentTrack() !== undefined) {
+            <div class="jp-time-holder">
+              <div role="timer" aria-label="time" class="jp-current-time">
+                {{currentTrack()?.name}}
+              </div>
+            </div>
             }
-              @if (currentTrack() !== undefined) {
-                  <div class="jp-time-holder">
-                      <div role="timer" aria-label="time" class="jp-current-time">{{currentTrack()?.name}}</div>
-                  </div>
-              }
             <div class="jp-progress" #jpProgress (click)="handleSeek($event)">
               <div class="jp-seek-bar" [style.width]="progress() + '%'">
                 <div class="jp-play-bar"></div>
               </div>
             </div>
-              <div class="jp-controls">
-                  <div class="button-container">
-                      <button
-                              class="jp-previous"
-                              role="button"
-                              tabindex="0"
-                              (click)="handlePrevious()"
-                      ></button>
-                      <button
-                              [class]="isPlaying() ? 'jp-pause' : 'jp-play'"
-                              role="button"
-                              tabindex="0"
-                              (click)="handlePlayPause()"
-                      ></button>
-                      <button
-                              class="jp-next"
-                              role="button"
-                              tabindex="0"
-                              (click)="handleNext()"
-                      ></button>
-                  </div>
-                  <button class="btn-sidebar" (click)="sideBar()">
-                      <i class="fa fa-times" aria-hidden="true"></i>
-                  </button>
+            <div class="jp-controls">
+              <div class="button-container">
+                <button
+                  class="jp-previous"
+                  role="button"
+                  tabindex="0"
+                  (click)="handlePrevious()"
+                ></button>
+                <button
+                  [class]="isPlaying() ? 'jp-pause' : 'jp-play'"
+                  role="button"
+                  tabindex="0"
+                  (click)="handlePlayPause()"
+                ></button>
+                <button
+                  class="jp-next"
+                  role="button"
+                  tabindex="0"
+                  (click)="handleNext()"
+                ></button>
               </div>
+              <button class="btn-sidebar" (click)="sideBar()">
+                <i class="fa fa-times" aria-hidden="true"></i>
+              </button>
+            </div>
             <div class="jp-playlist py-4 list-group list-group-flush">
               <ul>
                 @for (title of album.titles; track title.id) { @if (title.file)
