@@ -131,7 +131,7 @@ export class EmacDB {
         {
           title: "La remise des « Alphas »",
           description:
-            "L’Alpha est le premier galon que reçoivent les élèvesofficiers. Hautement symbolique, cette remise marque la fin de la période d’incorporation des recrues, dans les premières semaines. Cette cérémonie marque ainsi l’entrée des élèves au sein de l’Académie militaire. La cérémonie est précédée d’une marche durant laquelle les instructeurs présentent les hauts lieux de tradition du camp de Coëtquidan. Cette marche est l’occasion pour les futurs officiers de réfléchir au sens de leur engagement.",
+            "L’Alpha est le premier galon que reçoivent les élèves officiers. Hautement symbolique, cette remise marque la fin de la période d’incorporation des recrues, dans les premières semaines. Cette cérémonie marque ainsi l’entrée des élèves au sein de l’Académie militaire. La cérémonie est précédée d’une marche durant laquelle les instructeurs présentent les hauts lieux de tradition du camp de Coëtquidan. Cette marche est l’occasion pour les futurs officiers de réfléchir au sens de leur engagement.",
           image: "assets/images/emac/alpha.jpg",
         },
         {
