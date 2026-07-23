@@ -66,6 +66,9 @@
           },
           "defaultConfiguration": "production"
         },
+        "generate-seo": {
+          "builder": "@emac/command-seo:command"
+        },
         "serve": {
           "builder": "@angular/build:dev-server",
           "configurations": {

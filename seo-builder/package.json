@@ -1,0 +1,21 @@
+{
+  "name": "@emac/command-seo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "command/index.js",
+  "builders": "builders.json",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "luciano brd",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^26.0.1",
+    "fast-xml-parser": "^5.10.1",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@angular-devkit/architect": "0.2102.17"
+  }
+}
