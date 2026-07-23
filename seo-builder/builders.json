@@ -1,9 +1,9 @@
 {
   "builders": {
-    "command": {
-      "implementation": "./command",
-      "schema": "./command/schema.json",
-      "description": "Generates a sitemap.xml, robots.txt and MPA-style directories for Angular projects."
+    "generate-mpa": {
+      "implementation": "./dist/generate-mpa",
+      "schema": "./src/generate-mpa/schema.json",
+      "description": "Generates MPA-style directories for Angular projects."
     }
   }
 }

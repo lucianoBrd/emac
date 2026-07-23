@@ -1,9 +1,0 @@
-{
-  "builders": {
-    "generate-seo": {
-      "description": "Generates a sitemap.xml, robots.txt and MPA-style directories for Angular projects",
-      "implementation": "./dist/generate-seo",
-      "schema": "./dist/generate-seo/schema.json"
-    }
-  }
-}
