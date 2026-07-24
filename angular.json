@@ -66,6 +66,13 @@
           },
           "defaultConfiguration": "production"
         },
+        "generate-mpa": {
+          "builder": "./seo-builder:generate-mpa",
+          "options": {
+            "outputPath": "dist/emac/browser",
+            "baseUrl": "https://st-cyr-emac.org/"
+          }
+        },
         "serve": {
           "builder": "@angular/build:dev-server",
           "configurations": {

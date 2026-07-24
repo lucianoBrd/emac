@@ -18,6 +18,8 @@ jobs:
         run: npm install
       - name: GitHub Build
         run: npm run github-build
+      - name: Generate MPA
+        run: npm run generate-mpa
       - name: GitHub Deploy
         run: npm run github-deploy
         env:
