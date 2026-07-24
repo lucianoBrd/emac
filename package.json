@@ -1,6 +1,7 @@
 {
   "name": "emac",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": "luciano bdt",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,6 +11,7 @@
     "lint": "eslint . --ext .ts,.html",
     "lint:fix": "eslint . --ext .ts,.html --fix",
     "format": "prettier --write \"**/*.{ts,html,scss,css,js,json,md}\"",
+    "generate-mpa": "ng run emac:generate-mpa",
     "github-build": "ng build --configuration production",
     "github-deploy": "npx angular-cli-ghpages --dir=dist/emac/browser --no-silent --repo=https://github.com/lucianoBrd/emac.git --name=\"lucianoBrd\" --email=lucien.burdet@gmail.com"
   },
