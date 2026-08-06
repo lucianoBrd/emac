@@ -33,13 +33,13 @@
           <div class="container">
             @if (album.platforms.length > 0) {
             <div class="jp-controls">
-              <div class="button-container">
+              <div class="button-container d-flex">
                 @for (platform of album.platforms; track $index) {
                 <a
                   target="_blank"
                   [href]="platform.link"
                   [title]="platform.title"
-                  class="jp-link"
+                  class="jp-link m-r-10"
                 >
                   <i
                     aria-hidden="true"
