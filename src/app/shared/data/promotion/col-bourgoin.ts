@@ -247,9 +247,24 @@ export class ColBourgoinDB {
       ],
       platforms: [
         {
-          link: "https://www.deezer.com/fr/",
+          link: "https://link.deezer.com/s/342reD0qnj6iQdICKeZ8b",
           title: "Deezer",
           icon: "deezer",
+        },
+        {
+          link: "https://music.apple.com/fr/album/amarante-promotion-colonel-bourgoin/6797830359",
+          title: "Apple Music",
+          icon: "apple-music",
+        },
+        {
+          link: "https://open.spotify.com/intl-fr/album/3iW5r86ncGyF9qUfejRRfK?si=Mja8vQF_TrKF80DhyWe4wQ",
+          title: "Spotify",
+          icon: "spotify",
+        },
+        {
+          link: "https://music.youtube.com/playlist?list=OLAK5uy_lkdVmkqia-h-8fLcxcqyCekOnUKEVlii0&si=SoaomxP56e_XAS0H",
+          title: "Youtube Music",
+          icon: "youtube-music",
         },
       ],
       slug: "amarante-promotion-colonel-bourgoin",
