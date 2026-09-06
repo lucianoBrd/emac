@@ -105,5 +105,25 @@ export class PromotionDB {
       },
     },
     ColBourgoinDB.promotion,
+    {
+      id: "promotion-7",
+      title: "Promotion n°7",
+      number: 7,
+      logo: "assets/images/logo/emac.svg",
+      startDate: new Date(2026, 1, 1),
+      endDate: new Date(2027, 1, 1),
+      header: {
+        id: "promotion-7",
+        logo: "assets/images/logo/emac.svg",
+        background: null,
+        text: [],
+      },
+      info: {
+        id: "promotion-7",
+        title: "Promotion <span>n°7</span>",
+        subTitle: "<span>L'</span>" + EmacDB.emac.info.title,
+        description: [],
+      },
+    },
   ];
 }
