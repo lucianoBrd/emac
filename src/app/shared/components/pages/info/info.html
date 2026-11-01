@@ -36,7 +36,10 @@
                     <ng-template>
                       @for (d of info.description.slice(2,
                       info.description.length); track $index) {
-                      <div class="dark about-para text-start" [innerHTML]="d"></div>
+                      <div
+                        class="dark about-para text-start"
+                        [innerHTML]="d"
+                      ></div>
                       }
                     </ng-template>
                   </div>

@@ -19,10 +19,7 @@
   ],
   "header": {
     "background": "assets/images/promotion/col-bourgoin/header.jpg",
-    "text": [
-      "Colonel Pierre-Louis",
-      "Bourgoin"
-    ]
+    "text": ["Colonel Pierre-Louis", "Bourgoin"]
   },
   "about": {
     "title": "L’insigne de promotion",
