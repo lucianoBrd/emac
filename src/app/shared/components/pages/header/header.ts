@@ -6,9 +6,9 @@ import {
   Input,
 } from "@angular/core";
 
-import type { HTMLVanillaTiltElement } from "vanilla-tilt";
-
 import { Header as HeaderInterface } from "../../../models/shared/header.interface";
+
+import type { HTMLVanillaTiltElement } from "vanilla-tilt";
 
 @Component({
   selector: "app-header",

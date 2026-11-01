@@ -6,12 +6,12 @@ import {
   Input,
 } from "@angular/core";
 
-import type { HTMLVanillaTiltElement } from "vanilla-tilt";
-
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 import { ConfigDB } from "../../../data/config";
 import { About as AboutInterface } from "../../../models/shared/about.interface";
+
+import type { HTMLVanillaTiltElement } from "vanilla-tilt";
 
 @Component({
   selector: "app-about",
