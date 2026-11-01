@@ -14,7 +14,7 @@ const escape = (value) =>
   );
 
 // Optional sections created by a CMS can contain only empty defaults.
-function clean(value) {
+export function clean(value) {
   if (value === null || value === undefined || value === "") return undefined;
   if (Array.isArray(value))
     return value.map(clean).filter((item) => item !== undefined);
@@ -30,7 +30,7 @@ function clean(value) {
   return value;
 }
 
-function validateFields(data, fields, location) {
+export function validateFields(data, fields, location) {
   if (!data || typeof data !== "object" || Array.isArray(data))
     throw new Error(`${location}: expected an object`);
   for (const key of Object.keys(data))
@@ -118,7 +118,7 @@ function validateMedia(value, location, publicRoot, kind) {
     throw new Error(`${location}: unsupported ${kind} format`);
 }
 
-function validateResources(data, fields, location, publicRoot) {
+export function validateResources(data, fields, location, publicRoot) {
   for (const field of fields) {
     if (data[field.name] === undefined) continue;
     const values = field.list ? data[field.name] : [data[field.name]];
@@ -138,7 +138,7 @@ function validateResources(data, fields, location, publicRoot) {
   }
 }
 
-function paragraphs(values = []) {
+export function paragraphs(values = []) {
   return values.map((value) =>
     /^<(p|div|ul|ol|blockquote|h[1-6])(?:\s|>)/i.test(value.trim())
       ? value
@@ -146,7 +146,7 @@ function paragraphs(values = []) {
   );
 }
 
-function makeAlbum(value, id, logo, suffix) {
+export function makeAlbum(value, id, logo, suffix) {
   if (!value) return undefined;
   return {
     ...value,
@@ -299,8 +299,7 @@ export function loadPromotions({
   return records.sort((a, b) => a.number - b.number);
 }
 
-export function generatePromotions() {
-  const records = loadPromotions();
+export function generatePromotions(records = loadPromotions()) {
   const output = resolve("src/app/shared/data/promotions.generated.json");
   const content = JSON.stringify(records, null, 2) + "\n";
   if (!existsSync(output) || readFileSync(output, "utf8") !== content)

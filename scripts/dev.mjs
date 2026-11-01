@@ -1,15 +1,16 @@
 import { watch } from "node:fs";
 import { spawn } from "node:child_process";
-import { generatePromotions, CONTENT_ROOT } from "./generate-promotions.mjs";
+import { CONTENT_ROOT } from "./generate-promotions.mjs";
+import { generateContent } from "./generate-content.mjs";
 
-generatePromotions();
+generateContent();
 let timer;
-const watchers = [CONTENT_ROOT, ".pages.yml"].map((path) =>
+const watchers = [CONTENT_ROOT, "content", ".pages.yml"].map((path) =>
   watch(path, () => {
     clearTimeout(timer);
     timer = setTimeout(() => {
       try {
-        generatePromotions();
+        generateContent();
       } catch (error) {
         console.error(`Content not updated: ${error.message}`);
       }

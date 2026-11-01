@@ -16,7 +16,7 @@ jobs:
           node-version: '24.x'
       - name: Install
         run: npm ci
-      - name: Verify promotion content
+      - name: Verify CMS content
         run: npm run test:content
       - name: GitHub Build
         run: npm run github-build

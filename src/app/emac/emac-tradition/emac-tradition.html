@@ -9,7 +9,7 @@
             <h2 [innerHTML]="tradition.title"></h2>
           </div>
           <div class="sub-title">
-            <p class="dark" [innerHTML]="tradition.description"></p>
+            <div class="dark" [innerHTML]="tradition.description"></div>
           </div>
         </div>
       </div>
@@ -46,7 +46,7 @@
                     alt="{{t.title}}"
                     class="img-fluid m-b-20"
                   />
-                  <p>{{t.description}}</p>
+                  <div [innerHTML]="t.description"></div>
                   <a
                     class="btn btn-default primary-btn m-t-20"
                     (click)="modal.dismiss('Cross click')"

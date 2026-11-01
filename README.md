@@ -70,9 +70,31 @@ La configuration accepte les images, vidéos locales et fichiers audio selon le
 champ utilisé. Une validation contrôle les fichiers manquants, leur format et
 la casse des noms avant publication.
 
+### Modifier les informations de l'EMAC
+
+Dans Pages CMS, ouvrir la fiche **EMAC**. Elle regroupe les titres et descriptions
+SEO, les mots-clés, la bannière et son insigne, la présentation de l'école,
+l'histoire, le chant et son enregistrement, les traditions et les liens sociaux.
+Les textes longs utilisent l'éditeur de texte mis en forme ; les images et
+fichiers audio utilisent les mêmes bibliothèques que les promotions.
+
+Enregistrer la fiche sur `main` déclenche les vérifications et la publication
+GitHub Actions. Les champs obligatoires, les fichiers référencés et les liens
+sont contrôlés avant la compilation. L'URL de l'accueil reste `/`.
+Les identifiants de l'école, des sections et des couplets sont automatiques.
+
+Le contenu est conservé dans `content/emac.json`. Le fichier TypeScript
+`src/app/shared/data/emac.ts` charge les données générées ; il n'est plus
+nécessaire de le modifier pour changer les informations de l'école.
+`npm start` surveille aussi ce contenu et le recharge après validation.
+
 ### Organisation pour les développeurs
 
 - `content/promotions/*.json` : une fiche par promotion, source du contenu.
+- `content/emac.json` : la fiche de l’école.
+- `scripts/generate-content.mjs` : validation et génération de tous les contenus.
+- `scripts/generate-emac.mjs` : adaptation de la fiche EMAC aux composants.
+- `src/app/shared/data/emac.generated.json` : contenu EMAC généré et ignoré par Git.
 - `.pages.yml` : formulaires, médias et droits de modification dans Pages CMS.
 - `scripts/generate-promotions.mjs` : validation et adaptation aux modèles Angular.
 - `src/app/shared/data/promotions.generated.json` : fichier généré et ignoré par Git.
