@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { afterNextRender, Injectable } from "@angular/core";
 
 import { ConfigDB } from "../data/config";
 import { Cookie } from "../data/cookie";
@@ -8,19 +8,25 @@ import { Cookie } from "../data/cookie";
 })
 export class CustomizerService {
   // Configuration Layout
-  public data = ConfigDB.data;
+  public data = { ...ConfigDB.data, settings: { ...ConfigDB.data.settings } };
 
   constructor() {
-    const layoutVersion =
-      localStorage.getItem(Cookie.layoutVersion) ||
-      this.data.settings.layout_version;
-    const layoutType =
-      localStorage.getItem(Cookie.layoutType) || this.data.settings.layout_type;
-    if (layoutVersion) {
-      document.body.classList.add(layoutVersion);
-      this.data.settings.layout_version = layoutVersion;
-    }
-    if (layoutType) document.body.classList.add(layoutType);
+    afterNextRender(() => {
+      const layoutVersion =
+        localStorage.getItem(Cookie.layoutVersion) ||
+        this.data.settings.layout_version;
+      const layoutType =
+        localStorage.getItem(Cookie.layoutType) ||
+        this.data.settings.layout_type;
+      if (layoutVersion) {
+        document.body.classList.add(layoutVersion);
+        this.data.settings.layout_version = layoutVersion;
+      }
+      if (layoutType) {
+        document.body.classList.add(layoutType);
+        this.data.settings.layout_type = layoutType;
+      }
+    });
   }
 
   // Set Customize layout Version

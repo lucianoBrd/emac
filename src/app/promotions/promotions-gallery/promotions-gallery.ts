@@ -27,7 +27,6 @@ import {
   Item,
   Gallery as GalleryInterface,
 } from "../../shared/models/shared/gallery.interface";
-import { MetaService } from "../../shared/service/meta.service";
 import { PromotionService } from "../../shared/service/promotion.service";
 
 @Component({
@@ -39,7 +38,6 @@ import { PromotionService } from "../../shared/service/promotion.service";
 export class PromotionsGallery implements OnInit, OnDestroy {
   private promotionService: PromotionService = inject(PromotionService);
   private activatedRoute: ActivatedRoute = inject(ActivatedRoute);
-  private metaService: MetaService = inject(MetaService);
   protected lightbox: Lightbox = inject(Lightbox);
   private gallery: Gallery = inject(Gallery);
   private readonly deviceService: RmNgDeviceDetectionService = inject(
@@ -60,12 +58,6 @@ export class PromotionsGallery implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    const keywords: string = this.wordings.title;
-
-    this.metaService.setKeywords(keywords);
-    this.metaService.setTitle(keywords);
-    this.metaService.setDescription(keywords);
-
     this.activatedRoute.params
       .pipe(takeUntil(this.destroy$))
       .subscribe((params) => {
@@ -78,13 +70,6 @@ export class PromotionsGallery implements OnInit, OnDestroy {
           if (this.promotion?.gallery) {
             this.promotionGallery = this.promotion.gallery;
             this.updateNgGallery();
-            this.metaService.setKeywords(
-              keywords + "," + this.promotionGallery.title,
-            );
-            this.metaService.setTitle(
-              keywords + " " + this.promotionGallery.title,
-            );
-            this.metaService.setDescription(this.promotionGallery.description);
           }
         }
       });

@@ -1,57 +1,31 @@
-import { Component, inject } from "@angular/core";
-import {
-  ActivatedRoute,
-  NavigationEnd,
-  PRIMARY_OUTLET,
-  Router,
-  RouterModule,
-} from "@angular/router";
+import { Component, DestroyRef, inject } from "@angular/core";
+import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
+import { NavigationEnd, Router } from "@angular/router";
 
-import { map } from "rxjs";
-import { filter } from "rxjs/operators";
+import { filter } from "rxjs";
 
 import { MetaService } from "../../service/meta.service";
 
 @Component({
   selector: "app-meta",
-  imports: [RouterModule],
   templateUrl: "./meta.html",
   styleUrls: ["./meta.scss"],
 })
 export class Meta {
   private metaService = inject(MetaService);
-  private activatedRoute = inject(ActivatedRoute);
   private router = inject(Router);
-
-  public url: string = "";
+  private destroyRef = inject(DestroyRef);
 
   constructor() {
     this.router.events
       .pipe(
-        filter((event) => {
-          if (event instanceof NavigationEnd) {
-            this.url = event.url;
-          }
-          return event instanceof NavigationEnd;
-        }),
+        filter(
+          (event): event is NavigationEnd => event instanceof NavigationEnd,
+        ),
+        takeUntilDestroyed(this.destroyRef),
       )
-      .pipe(map(() => this.activatedRoute))
-      .pipe(
-        map((route) => {
-          while (route.firstChild) {
-            route = route.firstChild;
-          }
-          return route;
-        }),
-      )
-      .pipe(filter((route) => route.outlet === PRIMARY_OUTLET))
-      .subscribe((event) => {
-        const title = event.snapshot.data["title"];
-        const description = event.snapshot.data["description"];
-        const keywords = event.snapshot.data["keywords"];
-        this.metaService.setTitle(title);
-        this.metaService.setDescription(description);
-        this.metaService.setKeywords(keywords);
-      });
+      .subscribe((event) =>
+        this.metaService.updatePage(event.urlAfterRedirects),
+      );
   }
 }

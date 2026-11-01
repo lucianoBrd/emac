@@ -14,7 +14,12 @@
         data-tilt-perspective="400"
       >
         <div class="img-height">
-          <img [src]="header.logo" alt="logo" class="img-fluid" />
+          <img
+            [src]="header.logo"
+            [alt]="'Insigne ' + header.id"
+            fetchpriority="high"
+            class="img-fluid"
+          />
         </div>
       </div>
     </div>

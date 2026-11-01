@@ -1,0 +1,48 @@
+{
+  "$schema": "./node_modules/@angular/service-worker/config/schema.json",
+  "index": "/index.html",
+  "navigationRequestStrategy": "freshness",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/index.html",
+          "/*.js",
+          "/*.css",
+          "/manifest.webmanifest",
+          "/icons/**"
+        ]
+      }
+    },
+    {
+      "name": "images-and-fonts",
+      "installMode": "lazy",
+      "updateMode": "lazy",
+      "resources": {
+        "files": [
+          "/assets/**/*.svg",
+          "/assets/**/*.png",
+          "/assets/**/*.PNG",
+          "/assets/**/*.jpg",
+          "/assets/**/*.jpeg",
+          "/assets/**/*.webp",
+          "/assets/**/*.ico",
+          "/assets/**/*.woff",
+          "/assets/**/*.woff2"
+        ]
+      }
+    }
+  ],
+  "navigationUrls": [
+    "/**",
+    "!/**/*.*",
+    "!/**/*__*",
+    "!/**/*__*/**",
+    "!/404",
+    "!/404/**",
+    "!/maintenance",
+    "!/maintenance/**"
+  ]
+}

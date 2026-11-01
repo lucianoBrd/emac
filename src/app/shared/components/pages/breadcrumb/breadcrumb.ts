@@ -4,6 +4,7 @@ import { ActivatedRoute, Router, RouterModule } from "@angular/router";
 import { Subject, takeUntil } from "rxjs";
 
 import { ConfigDB } from "../../../data/config";
+import { PromotionDB } from "../../../data/promotion";
 
 @Component({
   selector: "app-breadcrumb",
@@ -46,9 +47,16 @@ export class Breadcrumb implements OnInit, OnDestroy {
             .subscribe((params) => {
               const parameter: string = params[pathParameter];
               if (parameter) {
+                const promotion = PromotionDB.list.find(
+                  (item) => item.id === parameter,
+                );
+                if (promotion) {
+                  this.title = this.title + ` promotion ${promotion.title}`;
+                  this.childBreadcrumb = this.title;
+                }
                 this.parentBreadcrumb = parentBreadcrumb.replace(
                   ":" + pathParameter,
-                  parameter,
+                  promotion?.title ?? parameter,
                 );
                 this.parentPath = parentPath.replace(
                   ":" + pathParameter,

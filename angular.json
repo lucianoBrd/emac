@@ -40,7 +40,9 @@
               }
             ],
             "styles": ["src/styles.scss"],
-            "scripts": []
+            "scripts": [],
+            "server": "src/main.server.ts",
+            "outputMode": "static"
           },
           "configurations": {
             "production": {
@@ -56,7 +58,13 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "optimization": {
+                "scripts": true,
+                "styles": true,
+                "fonts": false
+              },
+              "serviceWorker": "ngsw-config.json"
             },
             "development": {
               "optimization": false,
@@ -65,13 +73,6 @@
             }
           },
           "defaultConfiguration": "production"
-        },
-        "generate-mpa": {
-          "builder": "./seo-builder:generate-mpa",
-          "options": {
-            "outputPath": "dist/emac/browser",
-            "baseUrl": "https://st-cyr-emac.org/"
-          }
         },
         "serve": {
           "builder": "@angular/build:dev-server",
