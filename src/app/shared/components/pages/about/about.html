@@ -46,10 +46,10 @@
             }
 
             <div class="format-sub-text" ngbAccordion [closeOthers]="true">
-              <div ngbAccordionItem [collapsed]="true">
+              <div ngbAccordionItem [collapsed]="true" [destroyOnHide]="false">
                 <div ngbAccordionHeader>
                   @for (d of about.description.slice(0, 2); track $index) {
-                  <p class="about-para p-light" [innerHTML]="d"></p>
+                  <div class="about-para p-light" [innerHTML]="d"></div>
                   } @if (about.description.length > 2) {
                   <button class="btn btn-default" ngbAccordionButton>
                     <div class="fa fa-angle-right rotate"></div>
@@ -62,7 +62,7 @@
                     <ng-template>
                       @for (d of about.description.slice(2,
                       about.description.length); track $index) {
-                      <p class="about-para p-light" [innerHTML]="d"></p>
+                      <div class="about-para p-light" [innerHTML]="d"></div>
                       }
                     </ng-template>
                   </div>

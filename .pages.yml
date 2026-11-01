@@ -1,0 +1,401 @@
+media:
+  - name: images
+    label: Images
+    input: public/assets/images
+    output: /assets/images
+    categories:
+      - image
+    rename: safe
+  - name: audio
+    label: Chants
+    input: public/assets/music
+    output: /assets/music
+    extensions:
+      - mp3
+      - ogg
+      - wav
+      - m4a
+      - aac
+      - flac
+      - opus
+    rename: safe
+  - name: gallery
+    label: Photos et vidéos
+    input: public/assets/images
+    output: /assets/images
+    categories:
+      - image
+      - video
+    rename: safe
+content:
+  - name: promotions
+    label: Promotions
+    type: collection
+    path: content/promotions
+    format: json
+    subfolders: false
+    filename:
+      template: "{fields.title}.json"
+      field: create
+    operations:
+      create: true
+      rename: false
+      delete: false
+    view:
+      primary: title
+      fields:
+        - title
+        - number
+        - published
+      sort: number
+      order: desc
+    fields:
+      - name: title
+        label: Nom de la promotion
+        type: string
+        required: true
+      - name: published
+        label: Publier sur le site
+        type: boolean
+        default: false
+      - name: number
+        label: Numéro de promotion
+        type: number
+        required: true
+        options:
+          min: 1
+          step: 1
+      - name: startDate
+        label: Date de début
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: endDate
+        label: Date de fin
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: logo
+        label: Insigne
+        type: image
+        options:
+          media: images
+        required: true
+      - name: description
+        label: "Présentation : paragraphes"
+        type: rich-text
+        options:
+          format: html
+          media: false
+          switcher: false
+        list: true
+      - name: header
+        label: Bannière
+        type: object
+        fields:
+          - name: background
+            label: Image de fond
+            type: image
+            options:
+              media: images
+          - name: text
+            label: Lignes de texte
+            type: string
+            list: true
+      - name: about
+        label: Histoire de l’insigne
+        type: object
+        fields:
+          - name: title
+            label: Titre de la section
+            type: string
+            required: true
+          - name: image
+            label: Image
+            type: image
+            options:
+              media: images
+            required: true
+          - name: background
+            label: Fond
+            type: image
+            options:
+              media: images
+          - name: smallText
+            label: Petit titre
+            type: string
+          - name: headText
+            label: Sous-titre
+            type: string
+          - name: description
+            label: Paragraphes
+            type: rich-text
+            options:
+              format: html
+              media: false
+              switcher: false
+            list: true
+      - name: song
+        label: Chant de promotion
+        type: object
+        fields:
+          - name: name
+            label: Nom du chant
+            type: string
+            required: true
+          - name: title
+            label: Titre de la section
+            type: string
+          - name: description
+            label: Introduction
+            type: rich-text
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: verse
+            label: Couplets et refrain
+            type: object
+            fields:
+              - name: title
+                label: Titre
+                type: string
+                required: true
+              - name: description
+                label: Vers
+                type: string
+                list: true
+            list: true
+          - name: music
+            label: Enregistrement du chant
+            type: object
+            fields:
+              - name: name
+                label: Nom
+                type: string
+                required: true
+              - name: subName
+                label: Sous-titre
+                type: string
+              - name: image
+                label: Pochette
+                type: image
+                options:
+                  media: images
+                required: true
+              - name: slug
+                label: Identifiant du lecteur (facultatif)
+                type: string
+                description: Laisser vide pour le générer automatiquement.
+              - name: titles
+                label: Morceaux
+                type: object
+                fields:
+                  - name: name
+                    label: Titre
+                    type: string
+                    required: true
+                  - name: file
+                    label: Fichier audio (facultatif)
+                    type: file
+                    options:
+                      media: audio
+                list: true
+              - name: platforms
+                label: Plateformes d’écoute
+                type: object
+                fields:
+                  - name: title
+                    label: Nom
+                    type: string
+                    required: true
+                  - name: link
+                    label: Lien
+                    type: string
+                    required: true
+                    pattern: ^https://
+                  - name: icon
+                    label: Icône
+                    type: select
+                    options:
+                      values:
+                        - deezer
+                        - apple-music
+                        - spotify
+                        - youtube-music
+                        - soundcloud
+                        - qobuz
+                        - tidal
+                        - amazon-music
+                        - disk
+                    required: true
+                list: true
+      - name: album
+        label: Album musical
+        type: object
+        fields:
+          - name: name
+            label: Nom
+            type: string
+            required: true
+          - name: subName
+            label: Sous-titre
+            type: string
+          - name: image
+            label: Pochette
+            type: image
+            options:
+              media: images
+            required: true
+          - name: slug
+            label: Identifiant du lecteur (facultatif)
+            type: string
+            description: Laisser vide pour le générer automatiquement.
+          - name: titles
+            label: Morceaux
+            type: object
+            fields:
+              - name: name
+                label: Titre
+                type: string
+                required: true
+              - name: file
+                label: Fichier audio (facultatif)
+                type: file
+                options:
+                  media: audio
+            list: true
+          - name: platforms
+            label: Plateformes d’écoute
+            type: object
+            fields:
+              - name: title
+                label: Nom
+                type: string
+                required: true
+              - name: link
+                label: Lien
+                type: string
+                required: true
+                pattern: ^https://
+              - name: icon
+                label: Icône
+                type: select
+                options:
+                  values:
+                    - deezer
+                    - apple-music
+                    - spotify
+                    - youtube-music
+                    - soundcloud
+                    - qobuz
+                    - tidal
+                    - amazon-music
+                    - disk
+                required: true
+            list: true
+      - name: gallery
+        label: Galerie
+        type: object
+        fields:
+          - name: title
+            label: Titre
+            type: string
+          - name: description
+            label: Description
+            type: text
+          - name: gallery
+            label: Images et vidéos
+            type: object
+            fields:
+              - name: type
+                label: Type
+                type: select
+                required: true
+                default: image
+                options:
+                  values:
+                    - name: image
+                      label: Photo
+                    - name: video
+                      label: Vidéo locale
+                    - name: youtube
+                      label: YouTube
+              - name: image
+                label: Photo ou vidéo locale
+                type: file
+                options:
+                  media: gallery
+              - name: youtubeUrl
+                label: Lien YouTube intégré (type YouTube)
+                type: string
+                description: "Exemple : https://www.youtube.com/embed/IDENTIFIANT"
+              - name: thumb
+                label: Miniature
+                type: image
+                options:
+                  media: images
+              - name: description
+                label: Légende
+                type: string
+              - name: mimeType
+                label: Format vidéo (ex. video/mp4)
+                type: string
+            list: true
+      - name: social
+        label: Réseaux sociaux
+        type: object
+        fields:
+          - name: background
+            label: Fond
+            type: image
+            options:
+              media: images
+          - name: social
+            label: Liens
+            type: object
+            fields:
+              - name: title
+                label: Nom
+                type: string
+                required: true
+              - name: link
+                label: Lien
+                type: string
+                required: true
+                pattern: ^https://
+              - name: icon
+                label: Icône (ex. instagram)
+                type: string
+                required: true
+            list: true
+      - name: footer
+        label: Décorations et pied de page
+        type: object
+        fields:
+          - name: title
+            label: Titre
+            type: string
+            required: true
+          - name: image
+            label: Illustration
+            type: image
+            options:
+              media: images
+            required: true
+          - name: background
+            label: Fond
+            type: image
+            options:
+              media: images
+          - name: logo
+            label: Logo
+            type: image
+            options:
+              media: images
+          - name: text
+            label: Décorations
+            type: string
+            list: true

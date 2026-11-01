@@ -1,129 +1,23 @@
 import { EmacDB } from "./emac";
+import records from "./promotions.generated.json";
 import { Promotion } from "../models/promotion.interface";
-import { ColBourgoinDB } from "./promotion/col-bourgoin";
 
+type SerializedPromotion = Omit<Promotion, "startDate" | "endDate"> & {
+  startDate: string;
+  endDate: string;
+};
+
+// Input is validated by scripts/generate-promotions.mjs before Angular starts.
 export class PromotionDB {
-  static readonly list: Promotion[] = [
-    {
-      id: "slt-maurice-genevoix",
-      title: "Sous-lieutenant Maurice GENEVOIX",
-      number: 1,
-      logo: "assets/images/promotion/slt-maurice-genevoix.PNG",
-      startDate: new Date(2020, 1, 1),
-      endDate: new Date(2021, 1, 1),
-      header: {
-        id: "slt-maurice-genevoix",
-        logo: "assets/images/promotion/slt-maurice-genevoix.PNG",
-        background: null,
-        text: [],
-      },
-      info: {
-        id: "slt-maurice-genevoix",
-        title: "Promotion <span>Sous-lieutenant Maurice GENEVOIX</span>",
-        subTitle: "<span>L'</span>" + EmacDB.emac.info.title,
-        description: [],
-      },
+  static readonly list: Promotion[] = (
+    records as unknown as SerializedPromotion[]
+  ).map((record) => ({
+    ...record,
+    startDate: new Date(`${record.startDate}T12:00:00`),
+    endDate: new Date(`${record.endDate}T12:00:00`),
+    info: {
+      ...record.info,
+      subTitle: "<span>L'</span>" + EmacDB.emac.info.title,
     },
-    {
-      id: "gal-bellec",
-      title: "Général Jean-Charles BELLEC",
-      number: 2,
-      logo: "assets/images/promotion/gal-bellec.png",
-      startDate: new Date(2021, 1, 1),
-      endDate: new Date(2022, 1, 1),
-      header: {
-        id: "gal-bellec",
-        logo: "assets/images/promotion/gal-bellec.png",
-        background: null,
-        text: [],
-      },
-      info: {
-        id: "gal-bellec",
-        title: "Promotion <span>Général Jean-Charles BELLEC</span>",
-        subTitle: "<span>L'</span>" + EmacDB.emac.info.title,
-        description: [],
-      },
-    },
-    {
-      id: "gal-morel",
-      title: "Général René MOREL",
-      number: 3,
-      logo: "assets/images/promotion/gal-morel.PNG",
-      startDate: new Date(2022, 1, 1),
-      endDate: new Date(2023, 1, 1),
-      header: {
-        id: "gal-morel",
-        logo: "assets/images/promotion/gal-morel.PNG",
-        background: null,
-        text: [],
-      },
-      info: {
-        id: "gal-morel",
-        title: "Promotion <span>Général René MOREL</span>",
-        subTitle: "<span>L'</span>" + EmacDB.emac.info.title,
-        description: [],
-      },
-    },
-    {
-      id: "ltn-michard",
-      title: "Lieutenant MICHARD",
-      number: 4,
-      logo: "assets/images/promotion/ltn-michard.PNG",
-      startDate: new Date(2023, 1, 1),
-      endDate: new Date(2024, 1, 1),
-      header: {
-        id: "ltn-michard",
-        logo: "assets/images/promotion/ltn-michard.PNG",
-        background: null,
-        text: [],
-      },
-      info: {
-        id: "ltn-michard",
-        title: "Promotion <span>Lieutenant MICHARD</span>",
-        subTitle: "<span>L'</span>" + EmacDB.emac.info.title,
-        description: [],
-      },
-    },
-    {
-      id: "ces-chomel-de-jarnieu",
-      title: "Chef d’escadrons CHOMEL de JARNIEU",
-      number: 5,
-      logo: "assets/images/promotion/ces-chomel-de-jarnieu.PNG",
-      startDate: new Date(2024, 1, 1),
-      endDate: new Date(2025, 1, 1),
-      header: {
-        id: "ces-chomel-de-jarnieu",
-        logo: "assets/images/promotion/ces-chomel-de-jarnieu.PNG",
-        background: null,
-        text: [],
-      },
-      info: {
-        id: "ces-chomel-de-jarnieu",
-        title: "Promotion <span>Chef d’escadrons CHOMEL de JARNIEU</span>",
-        subTitle: "<span>L'</span>" + EmacDB.emac.info.title,
-        description: [],
-      },
-    },
-    ColBourgoinDB.promotion,
-    {
-      id: "promotion-7",
-      title: "Promotion n°7",
-      number: 7,
-      logo: "assets/images/logo/emac.svg",
-      startDate: new Date(2026, 1, 1),
-      endDate: new Date(2027, 1, 1),
-      header: {
-        id: "promotion-7",
-        logo: "assets/images/logo/emac.svg",
-        background: null,
-        text: [],
-      },
-      info: {
-        id: "promotion-7",
-        title: "Promotion <span>n°7</span>",
-        subTitle: "<span>L'</span>" + EmacDB.emac.info.title,
-        description: [],
-      },
-    },
-  ];
+  }));
 }

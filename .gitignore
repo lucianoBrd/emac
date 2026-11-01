@@ -47,3 +47,6 @@ Thumbs.db
 
 # Deploy
 /dist
+
+# Generated from content/promotions by npm install / npm run build
+/src/app/shared/data/promotions.generated.json

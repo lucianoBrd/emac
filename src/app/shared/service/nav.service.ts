@@ -23,7 +23,7 @@ export class NavService {
     let promotionsMenu: Menu[] = [];
 
     promotionsMenu.push({
-      title: lastPromotion?.id,
+      title: lastPromotion?.title,
       type: "sub",
       icon: "table-list",
       children: [
@@ -33,12 +33,16 @@ export class NavService {
           type: "link",
           icon: "info",
         },
-        {
-          path: lastPromotionPath + "/gallery",
-          title: ConfigDB.wordings.general.gallery,
-          type: "link",
-          icon: "image",
-        },
+        ...(lastPromotion?.gallery?.gallery.length
+          ? [
+              {
+                path: lastPromotionPath + "/gallery",
+                title: ConfigDB.wordings.general.gallery,
+                type: "link" as const,
+                icon: "image",
+              },
+            ]
+          : []),
       ],
     });
 
