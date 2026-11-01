@@ -6,7 +6,7 @@
       <div class="col-md-10 offset-md-1">
         <div class="title title3">
           <div class="main-title">
-            <h2 [innerHTML]="info.title"></h2>
+            <h1 class="h2" [innerHTML]="info.title"></h1>
             @if (info.subTitle) {
             <h6 class="mt-2">
               <span>{{wordings.of}}</span>
@@ -17,7 +17,7 @@
 
           <div class="format">
             <div class="format-sub-text" ngbAccordion [closeOthers]="true">
-              <div ngbAccordionItem [collapsed]="true">
+              <div ngbAccordionItem [collapsed]="true" [destroyOnHide]="false">
                 <div ngbAccordionHeader>
                   @for (d of info.description.slice(0, 2); track $index) {
                   <p class="dark about-para text-start" [innerHTML]="d"></p>

@@ -1,7 +1,13 @@
-import { Component, inject, signal, WritableSignal } from "@angular/core";
+import { isPlatformBrowser } from "@angular/common";
+import {
+  PLATFORM_ID,
+  Component,
+  inject,
+  signal,
+  WritableSignal,
+} from "@angular/core";
 import { NavigationEnd, Router, RouterOutlet } from "@angular/router";
 
-import { Loader } from "./shared/components/loader/loader";
 import { Meta } from "./shared/components/meta/meta";
 import { MusicSidebar } from "./shared/components/pages/music/music-sidebar/music-sidebar";
 import { ConfigDB } from "./shared/data/config";
@@ -11,11 +17,12 @@ import { MusicService } from "./shared/service/music.service";
 
 @Component({
   selector: "app-root",
-  imports: [RouterOutlet, Loader, Meta, MusicSidebar],
+  imports: [RouterOutlet, Meta, MusicSidebar],
   templateUrl: "./app.html",
   styleUrl: "./app.scss",
 })
 export class App {
+  private isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
   private musicService: MusicService = inject(MusicService);
   public customize: CustomizerService = inject(CustomizerService);
   public wordingsSettings = ConfigDB.wordings.settings;
@@ -31,7 +38,7 @@ export class App {
         return;
       }
       this.url = event.url;
-      window.scrollTo(0, 0);
+      if (this.isBrowser) window.scrollTo(0, 0);
     });
     this.musicService.currentTrack$.subscribe(
       (data: Title | undefined): void => {

@@ -1,15 +1,17 @@
-import { inject, Injectable } from "@angular/core";
+import { isPlatformBrowser } from "@angular/common";
+import { inject, PLATFORM_ID, Injectable, OnDestroy } from "@angular/core";
 
 import { ToastrService } from "ngx-toastr";
 import { BehaviorSubject } from "rxjs";
 
+import { AudioCache } from "./audio-cache";
 import { Album } from "../models/shared/album.interface";
 import { Title } from "../models/shared/title.interface";
 
 @Injectable({
   providedIn: "root",
 })
-export class MusicService {
+export class MusicService implements OnDestroy {
   private album = new BehaviorSubject<Album | undefined>(undefined);
   album$ = this.album.asObservable();
 
@@ -28,7 +30,11 @@ export class MusicService {
   private progress = new BehaviorSubject<number>(0);
   progress$ = this.progress.asObservable();
 
+  private isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
   private audio: HTMLAudioElement | null = null;
+  private audioCache = new AudioCache();
+  private objectUrl: string | undefined;
+  private trackReady: Promise<void> = Promise.resolve();
   private toastrService: ToastrService = inject(ToastrService);
 
   sideBar(): void {
@@ -52,37 +58,74 @@ export class MusicService {
     return this.getAlbum() === album;
   }
 
-  loadTrack() {
-    if (!this.album.value) {
+  loadTrack(): void {
+    if (!this.isBrowser || !this.album.value) return;
+    this.audio?.pause();
+    this.progress.next(0);
+    if (this.objectUrl) URL.revokeObjectURL(this.objectUrl);
+    this.objectUrl = undefined;
+    const file = this.getCurrentTrack()?.file;
+    if (!file) {
+      this.audio = null;
+      this.isPlaying.next(false);
       return;
     }
-    this.audio?.pause();
-    this.audio = new Audio(this.getTracks()[this.currentTrackIndex.value].file);
-
-    this.audio.addEventListener("timeupdate", this.updateProgress.bind(this));
-    this.audio.addEventListener("ended", this.handleNext.bind(this));
-    this.audio.addEventListener("canplay", (): void =>
-      this.toastrService.clear(),
+    const audio = new Audio();
+    audio.preload = "metadata";
+    this.audio = audio;
+    this.trackReady = this.audioCache.get(file).then((blob) => {
+      if (this.audio !== audio) return;
+      if (blob) this.objectUrl = URL.createObjectURL(blob);
+      audio.src = this.objectUrl ?? file;
+    });
+    audio.addEventListener("timeupdate", this.updateProgress.bind(this));
+    audio.addEventListener("ended", this.handleNext.bind(this));
+    audio.addEventListener("canplay", () => this.toastrService.clear());
+    audio.addEventListener(
+      "playing",
+      () => {
+        if (this.audio === audio) void this.audioCache.store(file);
+      },
+      { once: true },
     );
-    this.audio.addEventListener("error", (): void => {
+    audio.addEventListener("error", () => {
+      if (this.audio !== audio) return;
       this.toastrService.error(
-        "Unable to load audio. Please check the audio source.",
+        "Impossible de charger ce chant. Hors connexion, il doit avoir été mis en cache auparavant.",
       );
       this.isPlaying.next(false);
     });
   }
 
-  handlePlayPause() {
-    if (this.audio) {
-      if (this.isPlaying.value) {
-        this.audio.pause();
-      } else {
-        this.audio.play().catch(() => {
-          this.toastrService.error("Playback failed. Please try again.");
-        });
-      }
-      this.isPlaying.next(!this.isPlaying.value);
+  handlePlayPause(): void {
+    if (!this.audio) return;
+    if (this.isPlaying.value) {
+      this.isPlaying.next(false);
+      this.audio.pause();
+    } else {
+      void this.playCurrentTrack();
     }
+  }
+
+  private async playCurrentTrack(): Promise<void> {
+    const audio = this.audio;
+    if (!audio) return;
+    this.isPlaying.next(true);
+    try {
+      await this.trackReady;
+      if (this.audio !== audio || !this.isPlaying.value) return;
+      await audio.play();
+    } catch {
+      if (this.audio !== audio || !this.isPlaying.value) return;
+      this.isPlaying.next(false);
+      this.toastrService.error("La lecture a échoué. Veuillez réessayer.");
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.audio?.pause();
+    this.audio = null;
+    if (this.objectUrl) URL.revokeObjectURL(this.objectUrl);
   }
 
   handleNext() {
@@ -94,8 +137,7 @@ export class MusicService {
     );
     this.currentTrack.next(this.getCurrentTrack());
     this.loadTrack();
-    this.isPlaying.next(true);
-    this.audio?.play();
+    void this.playCurrentTrack();
   }
 
   handlePrevious() {
@@ -108,16 +150,14 @@ export class MusicService {
     );
     this.currentTrack.next(this.getCurrentTrack());
     this.loadTrack();
-    this.isPlaying.next(true);
-    this.audio?.play();
+    void this.playCurrentTrack();
   }
 
   handleTrackSelect(index: number) {
     this.currentTrackIndex.next(index);
     this.currentTrack.next(this.getCurrentTrack());
     this.loadTrack();
-    this.isPlaying.next(true);
-    this.audio?.play();
+    void this.playCurrentTrack();
   }
 
   handleTrackSelectByTitle(title: Title): void {
@@ -130,12 +170,18 @@ export class MusicService {
     this.handleTrackSelect(index);
   }
 
-  handleSeek(value: number) {
-    this.progress.next(value);
-
-    if (this.audio) {
-      this.audio.currentTime = (value / 100) * this.audio.duration;
-    }
+  handleSeek(value: number): void {
+    const duration = this.audio?.duration;
+    if (
+      !this.audio ||
+      !duration ||
+      !Number.isFinite(duration) ||
+      !Number.isFinite(value)
+    )
+      return;
+    const progress = Math.min(100, Math.max(0, value));
+    this.audio.currentTime = (progress / 100) * duration;
+    this.progress.next(progress);
   }
 
   updateProgress() {

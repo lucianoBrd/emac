@@ -15,11 +15,15 @@ jobs:
         with:
           node-version: '24.x'
       - name: Install
-        run: npm install
+        run: npm ci
       - name: GitHub Build
         run: npm run github-build
-      - name: Generate MPA
-        run: npm run generate-mpa
+      - name: Verify SEO
+        run: npm run test:seo
+      - name: Verify PWA
+        run: npm run test:pwa
+      - name: Verify audio cache
+        run: npm run test:audio
       - name: GitHub Deploy
         run: npm run github-deploy
         env:

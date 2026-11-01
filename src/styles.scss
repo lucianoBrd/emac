@@ -1,3 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "../public/assets/scss/app.scss";
+
+// Semantic page titles retain the existing h2 theme styles in every layout.
+h1.h2 {
+  @extend h2;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  letter-spacing: normal;
+}

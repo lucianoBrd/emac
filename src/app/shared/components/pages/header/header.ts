@@ -1,8 +1,14 @@
-import { Component, ElementRef, Input } from "@angular/core";
-
-import VanillaTilt from "vanilla-tilt";
+import {
+  afterNextRender,
+  Component,
+  DestroyRef,
+  ElementRef,
+  Input,
+} from "@angular/core";
 
 import { Header as HeaderInterface } from "../../../models/shared/header.interface";
+
+import type { HTMLVanillaTiltElement } from "vanilla-tilt";
 
 @Component({
   selector: "app-header",
@@ -14,13 +20,25 @@ export class Header {
   @Input()
   public header: HeaderInterface;
 
-  constructor(private el: ElementRef) {}
-
-  ngOnInit(): void {
-    VanillaTilt.init(this.el.nativeElement.querySelectorAll("[data-tilt]"), {
-      max: 3,
-      speed: 400,
-      perspective: 400,
+  constructor(el: ElementRef<HTMLElement>, destroyRef: DestroyRef) {
+    let destroyed = false;
+    let elements: NodeListOf<HTMLVanillaTiltElement> | undefined;
+    afterNextRender(async () => {
+      const { default: VanillaTilt } = await import("vanilla-tilt");
+      if (destroyed) return;
+      elements =
+        el.nativeElement.querySelectorAll<HTMLVanillaTiltElement>(
+          "[data-tilt]",
+        );
+      VanillaTilt.init(Array.from(elements), {
+        max: 3,
+        speed: 400,
+        perspective: 400,
+      });
+    });
+    destroyRef.onDestroy(() => {
+      destroyed = true;
+      elements?.forEach((element) => element.vanillaTilt?.destroy());
     });
   }
 }

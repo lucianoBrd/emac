@@ -50,7 +50,7 @@ export const routes: Routes = [
   },
   {
     path: "**",
-    redirectTo: "/404",
-    pathMatch: "full",
+    loadComponent: () =>
+      import("./page-not-found/page-not-found").then((m) => m.PageNotFound),
   },
 ];

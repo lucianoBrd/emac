@@ -23,7 +23,13 @@
                   <i class="fa fa-play" aria-hidden="true"></i>
                 </div>
                 @if (g.thumb) {
-                <img [src]="g.thumb" [alt]="g.description" class="img-fluid" />
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  [src]="g.thumb"
+                  [alt]="g.description"
+                  class="img-fluid"
+                />
                 } @else {
                 <video
                   onloadedmetadata="
@@ -45,9 +51,17 @@
                 <div class="overlay-icon">
                   <i class="fa fa-play" aria-hidden="true"></i>
                 </div>
-                <img [src]="g.thumb" [alt]="g.description" class="img-fluid" />
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  [src]="g.thumb"
+                  [alt]="g.description"
+                  class="img-fluid"
+                />
                 } @default {
                 <img
+                  loading="lazy"
+                  decoding="async"
                   [src]="g.thumb ? g.thumb : g.image"
                   [alt]="g.description"
                   class="img-fluid"

@@ -1,6 +1,7 @@
 import { Routes } from "@angular/router";
 
 import { ConfigDB } from "../shared/data/config";
+import { promotionGuard } from "../shared/service/promotion.guard";
 
 export const Promotions: Routes = [
   {
@@ -20,6 +21,7 @@ export const Promotions: Routes = [
       },
       {
         path: ":promotionId",
+        canActivate: [promotionGuard],
         loadComponent: () =>
           import("./promotions-detail/promotions-detail").then(
             (m) => m.PromotionsDetail,
@@ -27,6 +29,7 @@ export const Promotions: Routes = [
       },
       {
         path: ":promotionId/gallery",
+        canActivate: [promotionGuard],
         loadComponent: () =>
           import("./promotions-gallery/promotions-gallery").then(
             (m) => m.PromotionsGallery,

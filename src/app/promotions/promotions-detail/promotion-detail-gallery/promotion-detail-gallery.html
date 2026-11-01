@@ -16,7 +16,13 @@
           <ng-template carouselSlide class="item">
             <div class="img-container" [style.max-height]="'300px'">
               @switch (g.type) { @case (galleryType.video) { @if (g.thumb) {
-              <img [src]="g.thumb" [alt]="g.description" class="img-fluid" />
+              <img
+                loading="lazy"
+                decoding="async"
+                [src]="g.thumb"
+                [alt]="g.description"
+                class="img-fluid"
+              />
               } @else {
               <video
                 onloadedmetadata="
@@ -35,9 +41,17 @@
                 <source [src]="g.image" type="{{g.mimeType}}" />
               </video>
               } } @case (galleryType.youtube) {
-              <img [src]="g.thumb" [alt]="g.description" class="img-fluid" />
+              <img
+                loading="lazy"
+                decoding="async"
+                [src]="g.thumb"
+                [alt]="g.description"
+                class="img-fluid"
+              />
               } @default {
               <img
+                loading="lazy"
+                decoding="async"
                 [src]="g.thumb ? g.thumb : g.image"
                 [alt]="g.description"
                 class="img-fluid"

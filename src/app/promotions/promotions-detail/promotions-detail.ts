@@ -21,7 +21,6 @@ import { Song } from "../../shared/components/pages/song/song";
 import { TapToTop } from "../../shared/components/tap-to-top/tap-to-top";
 import { ConfigDB } from "../../shared/data/config";
 import { Promotion } from "../../shared/models/promotion.interface";
-import { MetaService } from "../../shared/service/meta.service";
 import { PromotionService } from "../../shared/service/promotion.service";
 
 @Component({
@@ -52,7 +51,6 @@ import { PromotionService } from "../../shared/service/promotion.service";
 export class PromotionsDetail implements OnInit, OnDestroy {
   private promotionService: PromotionService = inject(PromotionService);
   private activatedRoute: ActivatedRoute = inject(ActivatedRoute);
-  private metaService: MetaService = inject(MetaService);
   private destroy$: Subject<boolean> = new Subject<boolean>();
 
   public promotion: Promotion | undefined;
@@ -64,12 +62,6 @@ export class PromotionsDetail implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    const keywords: string = this.wordings.title;
-
-    this.metaService.setKeywords(keywords);
-    this.metaService.setTitle(keywords);
-    this.metaService.setDescription(keywords);
-
     this.activatedRoute.params
       .pipe(takeUntil(this.destroy$))
       .subscribe((params) => {
@@ -78,14 +70,6 @@ export class PromotionsDetail implements OnInit, OnDestroy {
 
         if (promotionId) {
           this.promotion = this.promotionService.getPromotion(promotionId);
-
-          if (this.promotion) {
-            this.metaService.setKeywords(keywords + "," + this.promotion.title);
-            this.metaService.setTitle(keywords + " " + this.promotion.title);
-            this.metaService.setDescription(
-              this.promotion.info.description.at(0),
-            );
-          }
         }
       });
   }
