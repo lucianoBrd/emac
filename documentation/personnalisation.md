@@ -8,6 +8,10 @@ Les styles globaux sont définis dans `src/styles.scss`, qui importe le thème
 `public/assets/scss/app.scss`. Les composants possèdent aussi leurs propres
 fichiers SCSS.
 
+`app.scss` charge Bootstrap, les styles du carrousel Owl, les icônes, le thème
+EMAC et les notifications Toastr. `inner-page.scss` charge les variables et les
+règles du thème, y compris les variantes responsive, sombre et RTL.
+
 Pour modifier le rendu, partir de ces fichiers et vérifier le résultat sur les
 pages de l'école, des promotions et des galeries, sur ordinateur et mobile.
 
