@@ -107,17 +107,16 @@ content:
       - name: about
         label: Histoire de l’insigne
         type: object
+        description: "Facultatif : laisser la section vide, ou renseigner au moins son titre et son image."
         fields:
           - name: title
             label: Titre de la section
             type: string
-            required: true
           - name: image
             label: Image
             type: image
             options:
               media: images
-            required: true
           - name: background
             label: Fond
             type: image
@@ -140,11 +139,11 @@ content:
       - name: song
         label: Chant de promotion
         type: object
+        description: "Facultatif : laisser la section vide si aucun chant n'est disponible. Un chant renseigné doit avoir un nom."
         fields:
           - name: name
             label: Nom du chant
             type: string
-            required: true
           - name: title
             label: Titre de la section
             type: string
@@ -171,11 +170,11 @@ content:
           - name: music
             label: Enregistrement du chant
             type: object
+            description: "Facultatif : laisser vide en l'absence d'enregistrement. Sinon, renseigner son nom et sa pochette."
             fields:
               - name: name
                 label: Nom
                 type: string
-                required: true
               - name: subName
                 label: Sous-titre
                 type: string
@@ -184,7 +183,6 @@ content:
                 type: image
                 options:
                   media: images
-                required: true
               - name: slug
                 label: Identifiant du lecteur (facultatif)
                 type: string
@@ -235,11 +233,11 @@ content:
       - name: album
         label: Album musical
         type: object
+        description: "Facultatif : laisser la section vide, ou renseigner au moins son nom et sa pochette."
         fields:
           - name: name
             label: Nom
             type: string
-            required: true
           - name: subName
             label: Sous-titre
             type: string
@@ -248,7 +246,6 @@ content:
             type: image
             options:
               media: images
-            required: true
           - name: slug
             label: Identifiant du lecteur (facultatif)
             type: string
@@ -374,17 +371,16 @@ content:
       - name: footer
         label: Décorations et pied de page
         type: object
+        description: "Facultatif : laisser la section vide, ou renseigner au moins son titre et son illustration."
         fields:
           - name: title
             label: Titre
             type: string
-            required: true
           - name: image
             label: Illustration
             type: image
             options:
               media: images
-            required: true
           - name: background
             label: Fond
             type: image
@@ -538,7 +534,6 @@ content:
               - name: name
                 label: Nom
                 type: string
-                required: true
               - name: subName
                 label: Sous-titre
                 type: string
@@ -547,7 +542,6 @@ content:
                 type: image
                 options:
                   media: images
-                required: true
               - name: slug
                 label: Identifiant du lecteur (facultatif)
                 type: string
@@ -595,6 +589,7 @@ content:
                         - disk
                     required: true
                 list: true
+            description: "Facultatif : laisser vide en absence d’enregistrement. Sinon, renseigner son nom et sa pochette."
         required: true
       - name: tradition
         label: Traditions

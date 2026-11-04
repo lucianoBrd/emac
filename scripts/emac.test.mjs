@@ -94,6 +94,19 @@ test("missing required text, empty headings and unknown fields stop publication"
   }
 });
 
+test("school song recording is optional but a populated recording must be complete", (t) => {
+  const { data, write, load } = fixture(t);
+  data.song.music = { name: "", image: "", titles: [], platforms: [] };
+  write();
+  assert.equal(load().song.music, undefined);
+  data.song.music = { name: "Enregistrement" };
+  write();
+  assert.throws(load, /song\.music\.image: required field/);
+  data.song.music = { image: data.header.logo };
+  write();
+  assert.throws(load, /song\.music\.name: required field/);
+});
+
 test("missing images, unsafe links and invalid audio references stop publication", (t) => {
   const { data, write, load } = fixture(t);
   write({

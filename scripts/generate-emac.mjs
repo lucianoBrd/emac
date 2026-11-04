@@ -5,6 +5,7 @@ import { parse } from "yaml";
 import {
   clean,
   validateFields,
+  validationFields,
   validateResources,
   makeAlbum,
   paragraphs,
@@ -31,7 +32,7 @@ export function loadEmac({
   if (!fields)
     throw new Error("Missing EMAC editor configuration in .pages.yml");
   const data = clean(JSON.parse(readFileSync(contentFile, "utf8")));
-  validateFields(data, fields, "content/emac.json");
+  validateFields(data, validationFields(fields), "content/emac.json");
   validateResources(data, fields, "content/emac.json", publicRoot);
   if (
     data.song.music?.slug &&

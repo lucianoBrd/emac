@@ -16,6 +16,14 @@ const escape = (value) =>
 // Optional sections created by a CMS can contain only empty defaults.
 export function clean(value) {
   if (value === null || value === undefined || value === "") return undefined;
+  if (
+    typeof value === "string" &&
+    !value
+      .replace(/<[^>]*>/g, "")
+      .replace(/&nbsp;|&#160;|&#xa0;/gi, " ")
+      .trim()
+  )
+    return undefined;
   if (Array.isArray(value))
     return value.map(clean).filter((item) => item !== undefined);
   if (typeof value === "object") {
@@ -28,6 +36,31 @@ export function clean(value) {
     return entries.length ? Object.fromEntries(entries) : undefined;
   }
   return value;
+}
+
+// Keep optional CMS objects editable without requiring their empty children.
+// Once a section is populated, its model still requires these fields.
+const requiredSectionFields = {
+  about: ["title", "image"],
+  song: ["name"],
+  "song.music": ["name", "image"],
+  album: ["name", "image"],
+  footer: ["title", "image"],
+};
+
+export function validationFields(fields, parent = "") {
+  return fields.map((field) => ({
+    ...field,
+    ...(requiredSectionFields[parent]?.includes(field.name) && {
+      required: true,
+    }),
+    ...(field.fields && {
+      fields: validationFields(
+        field.fields,
+        parent ? `${parent}.${field.name}` : field.name,
+      ),
+    }),
+  }));
 }
 
 export function validateFields(data, fields, location) {
@@ -167,9 +200,10 @@ export function loadPromotions({
   configPath = resolve(".pages.yml"),
 } = {}) {
   const config = parse(readFileSync(configPath, "utf8"));
-  const fields = config.content.find(
-    (collection) => collection.name === "promotions",
-  ).fields;
+  const fields = validationFields(
+    config.content.find((collection) => collection.name === "promotions")
+      .fields,
+  );
   const records = [],
     numbers = new Set();
   for (const filename of readdirSync(contentRoot)
