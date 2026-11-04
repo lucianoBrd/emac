@@ -54,10 +54,14 @@ Voir le [guide officiel de connexion](https://pagescms.org/docs/quick-start/).
    la branche de travail. Une nouvelle fiche est un brouillon par défaut ; elle
    peut être complétée avant publication. Enregistrer ne modifie pas encore le
    site en ligne.
-7. Dans GitHub, ouvrir une pull request de cette branche vers `main`. Attendre la
-   réussite de `format:check`, `lint` et `Tests`, puis fusionner la PR.
-8. Vérifier le déploiement dans l'onglet **Actions** du dépôt. Pour le lot de
-   modifications suivant, repartir d'une nouvelle branche créée depuis `main`.
+7. Si la [publication automatique CMS](documentation/publication-cms.md) est
+   configurée, la PR et sa fusion après validation de la CI sont automatiques.
+   Sinon, ouvrir une PR de cette branche vers `main`, attendre la réussite de
+   `format:check`, `lint` et `Tests`, puis la fusionner.
+8. Vérifier le déploiement dans l'onglet **Actions** du dépôt. Avec l'automatisation,
+   conserver `cms/contenu` pour les modifications suivantes ; elle sera remise à
+   jour si nécessaire. Sans automatisation, repartir d'une nouvelle branche
+   créée depuis `main`.
 
 Si Pages CMS affiche **This repository requires changes through a pull request**,
 la sauvegarde vise une branche protégée, généralement `main`. Conserver une copie
@@ -115,6 +119,7 @@ affichée dans le terminal ; la dernière version valide est conservée.
 ## Documentation
 
 - [Contribuer et vérifier les changements](documentation/contribution.md)
+- [Configurer la publication automatique depuis Pages CMS](documentation/publication-cms.md)
 - [Développement, commandes et structure du projet](documentation/developpement.md)
 - [Organisation et génération du contenu](documentation/contenu.md)
 - [Personnalisation du thème et de la navigation](documentation/personnalisation.md)

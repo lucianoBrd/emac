@@ -1,0 +1,66 @@
+name: CMS Publication
+
+on:
+  push:
+    branches: ["cms/**"]
+  workflow_run:
+    workflows: ["Pull Request Checks"]
+    types: [completed]
+    branches: ["cms/**"]
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: Branche CMS à publier
+        required: true
+        default: cms/contenu
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cms-publication-${{ github.event.workflow_run.head_branch || inputs.branch || github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: >-
+      github.event_name != 'workflow_run' ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.event == 'pull_request' &&
+       github.event.workflow_run.head_repository.full_name == github.repository)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check GitHub App configuration
+        env:
+          CLIENT_ID: ${{ vars.CMS_APP_CLIENT_ID }}
+          PRIVATE_KEY: ${{ secrets.CMS_APP_PRIVATE_KEY }}
+        run: |
+          if [ -z "$CLIENT_ID" ] || [ -z "$PRIVATE_KEY" ]; then
+            echo "::error::Configure CMS_APP_CLIENT_ID and CMS_APP_PRIVATE_KEY. See documentation/publication-cms.md."
+            exit 1
+          fi
+      - name: Create GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ vars.CMS_APP_CLIENT_ID }}
+          private-key: ${{ secrets.CMS_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: ${{ github.event.repository.name }}
+          permission-contents: write
+          permission-pull-requests: write
+          permission-checks: read
+      - name: Checkout trusted automation from main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          persist-credentials: false
+      - name: Prepare PR or publish checked content
+        uses: actions/github-script@v9
+        with:
+          github-token: ${{ steps.app-token.outputs.token }}
+          script: |
+            const automate = require('./.github/scripts/cms-publication.cjs');
+            await automate({ github, context, core });

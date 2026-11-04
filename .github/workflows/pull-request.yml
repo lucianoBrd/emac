@@ -50,6 +50,8 @@ jobs:
         run: npm run test:content
       - name: Verify audio cache
         run: npm run test:audio
+      - name: Verify CMS publication automation
+        run: npm run test:cms
       - name: Build
         run: npm run build
       - name: Verify SEO
