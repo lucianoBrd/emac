@@ -43,6 +43,5 @@ Le déploiement utilise `--no-notfound` pour conserver cette page personnalisée
 
 `npm run generate-mpa` reste disponible pour régénérer les fichiers SEO après
 une compilation ; cette commande ne copie plus l'accueil sur les autres pages.
-Le dossier historique `seo-builder` n'est plus utilisé par la compilation.
 Pour changer de domaine, mettre à jour `SITE_URL` dans `meta.service.ts` et
 `base` dans `scripts/finalize-static.mjs`.
