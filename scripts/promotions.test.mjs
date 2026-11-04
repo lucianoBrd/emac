@@ -6,6 +6,8 @@ import {
   writeFileSync,
   rmSync,
   readFileSync,
+  readdirSync,
+  existsSync,
 } from "node:fs";
 import { join, resolve, sep } from "node:path";
 import { parse } from "yaml";
@@ -145,4 +147,53 @@ test("real published content and editor configuration load together", () => {
 test("a name already beginning with Promotion is not prefixed twice", (t) => {
   const { load } = fixture(t);
   assert.equal(load()[0].info.title, "Promotion <span>Exemple</span>");
+});
+
+test("CMS media paths map from public URLs to existing repository files", () => {
+  const config = parse(readFileSync(".pages.yml", "utf8"));
+  let checked = 0;
+  function checkFields(data, fields, location) {
+    for (const field of fields) {
+      const value = data[field.name];
+      if (value == null) continue;
+      const values = field.list ? value : [value];
+      for (const item of values) {
+        const fieldPath = `${location}.${field.name}`;
+        if (field.type === "object") {
+          checkFields(item, field.fields, fieldPath);
+        } else if (["image", "file"].includes(field.type)) {
+          const media = config.media.find(
+            (source) => source.name === field.options?.media,
+          );
+          assert(media, `${fieldPath}: missing CMS media source`);
+          // Pages CMS only swaps output for input when the prefix matches exactly.
+          assert(
+            item.startsWith(`${media.output}/`),
+            `${fieldPath}: ${item} must start with ${media.output}/ for CMS previews`,
+          );
+          const repositoryPath = join(
+            media.input,
+            item.slice(media.output.length + 1),
+          );
+          assert(
+            existsSync(repositoryPath),
+            `${fieldPath}: missing ${repositoryPath}`,
+          );
+          checked++;
+        }
+      }
+    }
+  }
+  for (const entry of config.content) {
+    const files =
+      entry.type === "file"
+        ? [entry.path]
+        : readdirSync(entry.path)
+            .filter((file) => file.endsWith(".json"))
+            .map((file) => join(entry.path, file));
+    for (const file of files) {
+      checkFields(JSON.parse(readFileSync(file, "utf8")), entry.fields, file);
+    }
+  }
+  assert(checked > 0, "Expected media fields in the real CMS content");
 });

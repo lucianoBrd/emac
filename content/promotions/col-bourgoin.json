@@ -4,7 +4,7 @@
   "number": 6,
   "startDate": "2025-02-01",
   "endDate": "2026-02-01",
-  "logo": "assets/images/promotion/col-bourgoin.png",
+  "logo": "/assets/images/promotion/col-bourgoin.png",
   "description": [
     "Le colonel Pierre-Louis Bourgoin naît le 4 décembre 1907 à Cherchell, en Algérie. À sa sortie de l’École normale d’instituteurs d’Alger, il demande à être muté en Afrique noire pour pouvoir s’adonner à son activité favorite : la chasse aux grands fauves. Il effectue alors son service militaire au 3e régiment de tirailleurs algériens en tant que sous-lieutenant de réserve, en 1929. Rien, sinon son tempérament hors du commun, ne le prédispose alors aux honneurs qu’il recevra plus tard.",
     "À l’été 1940, lieutenant de réserve, il prend part au ralliement de l’Oubangui-Chari à la France Libre. Incorporé au bataillon de marche n°2 du commandant de Roux, il y commande le Groupe franc. Condamné à mort par le régime de Vichy pour faits de résistance, il est promu capitaine dans la foulée.",
@@ -18,13 +18,13 @@
     "Chef d’un courage indomptable, il exerçait un ascendant naturel sur ses troupes, car il avait le don du commandement et la passion de servir. De l’Afrique au maquis breton, du ciel d’Angleterre aux plaines de France, Pierre-Louis Bourgoin a incarné l’audace, la fidélité et le dévouement. Son parcours, marqué par le sacrifice et la foi dans la France Libre, illustre pleinement la devise de notre école : « L’audace de servir. »"
   ],
   "header": {
-    "background": "assets/images/promotion/col-bourgoin/header.jpg",
+    "background": "/assets/images/promotion/col-bourgoin/header.jpg",
     "text": ["Colonel Pierre-Louis", "Bourgoin"]
   },
   "about": {
     "title": "L’insigne de promotion",
-    "background": "assets/images/promotion/col-bourgoin/bg2.jpg",
-    "image": "assets/images/promotion/col-bourgoin.png",
+    "background": "/assets/images/promotion/col-bourgoin/bg2.jpg",
+    "image": "/assets/images/promotion/col-bourgoin.png",
     "description": [
       "Bouclier à la lisière d’or parti d’hermine et de sable broché d’une épée haute d’argent à la lame chargée du grade et du nom en lettres capitales de sable aussi « COL BOURGOIN », accompagnée à dextre d’une Croix de Lorraine de sable mouvant de la lame et à senestre d’une partie de l’écusson aux armes du « Special Air Service » (SAS) ; sur le tout banderole d’azur surlignée de gueules chargée de la devise en anglais des SAS « WHO DARES WINS » (qui ose gagne) en lettres capitales d’or, en pointe brochant la garde d’or plaque de Grand-croix de la Légion d’honneur.",
       "<i class=\"fa fa-angle-double-right font-secondary\"></i> L’écu reprend la forme traditionnelle des insignes de promotion de l’EMAC.",
@@ -110,11 +110,11 @@
     "music": {
       "name": "Chant promotion",
       "subName": "Colonel Bourgoin",
-      "image": "assets/images/promotion/col-bourgoin.png",
+      "image": "/assets/images/promotion/col-bourgoin.png",
       "titles": [
         {
           "name": "Chant de la promotion Colonel Bourgoin",
-          "file": "assets/music/promotion/col-bourgoin/amarante/02 - Chant de la promotion Colonel Bourgoin.mp3"
+          "file": "/assets/music/promotion/col-bourgoin/amarante/02 - Chant de la promotion Colonel Bourgoin.mp3"
         }
       ],
       "platforms": [],
@@ -124,83 +124,83 @@
   "album": {
     "name": "Amarante",
     "subName": "Promotion Colonel Bourgoin",
-    "image": "assets/images/promotion/col-bourgoin/amarante.jpeg",
+    "image": "/assets/images/promotion/col-bourgoin/amarante.jpeg",
     "titles": [
       {
         "name": "01 - L'audace de Servir",
-        "file": "assets/music/promotion/col-bourgoin/amarante/01 - L'audace de Servir.mp3"
+        "file": "/assets/music/promotion/col-bourgoin/amarante/01 - L'audace de Servir.mp3"
       },
       {
         "name": "02 - Chant de la promotion Colonel Bourgoin",
-        "file": "assets/music/promotion/col-bourgoin/amarante/02 - Chant de la promotion Colonel Bourgoin.mp3"
+        "file": "/assets/music/promotion/col-bourgoin/amarante/02 - Chant de la promotion Colonel Bourgoin.mp3"
       },
       {
         "name": "03 - Chant de la promotion Capitaine Bergot",
-        "file": "assets/music/promotion/col-bourgoin/amarante/03 - Chant de la promotion Capitaine Bergot.mp3"
+        "file": "/assets/music/promotion/col-bourgoin/amarante/03 - Chant de la promotion Capitaine Bergot.mp3"
       },
       {
         "name": "04 - Monsieur de Turenne",
-        "file": "assets/music/promotion/col-bourgoin/amarante/04 - Monsieur de Turenne.mp3"
+        "file": "/assets/music/promotion/col-bourgoin/amarante/04 - Monsieur de Turenne.mp3"
       },
       {
         "name": "05 - Chant de la promotion Division Marocaine",
-        "file": "assets/music/promotion/col-bourgoin/amarante/05 - Chant de la promotion Division Marocaine.mp3"
+        "file": "/assets/music/promotion/col-bourgoin/amarante/05 - Chant de la promotion Division Marocaine.mp3"
       },
       {
         "name": "06 - Chant de la promotion Victoire de la Marne",
-        "file": "assets/music/promotion/col-bourgoin/amarante/06 - Chant de la promotion Victoire de la Marne.mp3"
+        "file": "/assets/music/promotion/col-bourgoin/amarante/06 - Chant de la promotion Victoire de la Marne.mp3"
       },
       {
         "name": "07 - Verdun",
-        "file": "assets/music/promotion/col-bourgoin/amarante/07 - Verdun.mp3"
+        "file": "/assets/music/promotion/col-bourgoin/amarante/07 - Verdun.mp3"
       },
       {
         "name": "08 - Qui ose gagne",
-        "file": "assets/music/promotion/col-bourgoin/amarante/08 - Qui ose gagne.mp3"
+        "file": "/assets/music/promotion/col-bourgoin/amarante/08 - Qui ose gagne.mp3"
       },
       {
         "name": "09 - Chant de bataillon de marche de l'Oubangui-Chari",
-        "file": "assets/music/promotion/col-bourgoin/amarante/09 - Chant de bataillon de marche de l'Oubangui-Chari.mp3"
+        "file": "/assets/music/promotion/col-bourgoin/amarante/09 - Chant de bataillon de marche de l'Oubangui-Chari.mp3"
       },
       {
         "name": "10 - Chant des Tirailleurs",
-        "file": "assets/music/promotion/col-bourgoin/amarante/10 - Chant des Tirailleurs.mp3"
+        "file": "/assets/music/promotion/col-bourgoin/amarante/10 - Chant des Tirailleurs.mp3"
       },
       {
         "name": "11 - Les oies sauvages",
-        "file": "assets/music/promotion/col-bourgoin/amarante/11 - Les oies sauvages.mp3"
+        "file": "/assets/music/promotion/col-bourgoin/amarante/11 - Les oies sauvages.mp3"
       },
       {
         "name": "12 - It’s a long way to Tipperary",
-        "file": "assets/music/promotion/col-bourgoin/amarante/12 - It’s a long way to Tipperary.mp3"
+        "file": "/assets/music/promotion/col-bourgoin/amarante/12 - It’s a long way to Tipperary.mp3"
       },
       {
         "name": "13 - Agni Parthene",
-        "file": "assets/music/promotion/col-bourgoin/amarante/13 - Agni Parthene.mp3"
+        "file": "/assets/music/promotion/col-bourgoin/amarante/13 - Agni Parthene.mp3"
       },
       {
         "name": "14 - Rappelle toi Jeanne",
-        "file": "assets/music/promotion/col-bourgoin/amarante/14 - Rappelle toi Jeanne.mp3"
+        "file": "/assets/music/promotion/col-bourgoin/amarante/14 - Rappelle toi Jeanne.mp3"
       },
       {
         "name": "15 - Salve Regina des bergers du Rouergue",
-        "file": "assets/music/promotion/col-bourgoin/amarante/15 - Salve Regina des bergers du Rouergue.mp3"
+        "file": "/assets/music/promotion/col-bourgoin/amarante/15 - Salve Regina des bergers du Rouergue.mp3"
       },
       {
         "name": "16 - Omni die dic Mariae",
-        "file": "assets/music/promotion/col-bourgoin/amarante/16 - Omni die dic Mariae.mp3"
+        "file": "/assets/music/promotion/col-bourgoin/amarante/16 - Omni die dic Mariae.mp3"
       },
       {
         "name": "17 - Je ne l’ose dire",
-        "file": "assets/music/promotion/col-bourgoin/amarante/17 - Je ne l’ose dire.mp3"
+        "file": "/assets/music/promotion/col-bourgoin/amarante/17 - Je ne l’ose dire.mp3"
       },
       {
         "name": "18 - Le tourdion",
-        "file": "assets/music/promotion/col-bourgoin/amarante/18 - Le tourdion.mp3"
+        "file": "/assets/music/promotion/col-bourgoin/amarante/18 - Le tourdion.mp3"
       },
       {
         "name": "19 - Prêts dès ce soir",
-        "file": "assets/music/promotion/col-bourgoin/amarante/19 - Prêt dès ce soir.mp3"
+        "file": "/assets/music/promotion/col-bourgoin/amarante/19 - Prêt dès ce soir.mp3"
       }
     ],
     "platforms": [
@@ -232,50 +232,50 @@
     "description": "Galerie de la promotion Colonel Bourgoin",
     "gallery": [
       {
-        "image": "assets/images/promotion/col-bourgoin/gallery/14.jpg",
+        "image": "/assets/images/promotion/col-bourgoin/gallery/14.jpg",
         "type": "image",
         "description": "14 compagnie"
       },
       {
-        "image": "assets/images/promotion/col-bourgoin/gallery/15.jpg",
+        "image": "/assets/images/promotion/col-bourgoin/gallery/15.jpg",
         "type": "image",
         "description": "15 compagnie"
       },
       {
-        "image": "assets/images/promotion/col-bourgoin/gallery/13.jpg",
+        "image": "/assets/images/promotion/col-bourgoin/gallery/13.jpg",
         "type": "image",
         "description": "13 compagnie"
       },
       {
         "type": "youtube",
         "description": "Baptême de la promotion",
-        "thumb": "assets/images/promotion/col-bourgoin/gallery/bapteme.jpg",
+        "thumb": "/assets/images/promotion/col-bourgoin/gallery/bapteme.jpg",
         "youtubeUrl": "https://www.youtube.com/embed/YpYa_hMUw9I"
       },
       {
         "type": "youtube",
         "description": "Défilé du 14 juillet 2026",
-        "thumb": "assets/images/promotion/col-bourgoin/gallery/defile.JPG",
+        "thumb": "/assets/images/promotion/col-bourgoin/gallery/defile.JPG",
         "youtubeUrl": "https://www.youtube.com/embed/mfTEyaPnYiE?start=3124"
       },
       {
-        "image": "assets/images/promotion/col-bourgoin/gallery/cnec.mp4",
+        "image": "/assets/images/promotion/col-bourgoin/gallery/cnec.mp4",
         "type": "video",
         "mimeType": "video/mp4",
         "description": "Cérémonie de remise des brevets CNEC"
       },
       {
-        "image": "assets/images/promotion/col-bourgoin/gallery/necropole.jpg",
+        "image": "/assets/images/promotion/col-bourgoin/gallery/necropole.jpg",
         "type": "image"
       },
       {
-        "image": "assets/images/promotion/col-bourgoin/gallery/verdun.jpg",
+        "image": "/assets/images/promotion/col-bourgoin/gallery/verdun.jpg",
         "type": "image"
       }
     ]
   },
   "social": {
-    "background": "assets/images/promotion/col-bourgoin/logo.png",
+    "background": "/assets/images/promotion/col-bourgoin/logo.png",
     "social": [
       {
         "link": "https://www.instagram.com/promotion_bourgoin/",
@@ -286,9 +286,9 @@
   },
   "footer": {
     "title": "Décorations",
-    "background": "assets/images/promotion/col-bourgoin/bg2.jpg",
-    "image": "assets/images/promotion/col-bourgoin/about.jpg",
-    "logo": "assets/images/promotion/col-bourgoin/logo.png",
+    "background": "/assets/images/promotion/col-bourgoin/bg2.jpg",
+    "image": "/assets/images/promotion/col-bourgoin/about.jpg",
+    "logo": "/assets/images/promotion/col-bourgoin/logo.png",
     "text": [
       "Grand-croix de la Légion d’honneur",
       "Compagnon de la Libération (décret du 8 juillet 1943)",

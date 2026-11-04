@@ -1,10 +1,5 @@
 import { Injectable, inject } from "@angular/core";
-import {
-  ActivatedRouteSnapshot,
-  CanActivateFn,
-  Router,
-  RouterStateSnapshot,
-} from "@angular/router";
+import { CanActivateFn, Router } from "@angular/router";
 
 import { ConfigDB } from "../data/config";
 
@@ -32,15 +27,9 @@ export class PermissionsService {
   }
 }
 
-export const AuthGuardMaintenance: CanActivateFn = (
-  route: ActivatedRouteSnapshot,
-  state: RouterStateSnapshot,
-): boolean => {
+export const AuthGuardMaintenance: CanActivateFn = (): boolean => {
   return inject(PermissionsService).canActivateMaintenance();
 };
-export const AuthGuarNotdMaintenance: CanActivateFn = (
-  route: ActivatedRouteSnapshot,
-  state: RouterStateSnapshot,
-): boolean => {
+export const AuthGuarNotdMaintenance: CanActivateFn = (): boolean => {
   return inject(PermissionsService).cannotActivateMaintenance();
 };

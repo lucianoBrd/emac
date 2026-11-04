@@ -4,6 +4,6 @@
   "number": 2,
   "startDate": "2021-02-01",
   "endDate": "2022-02-01",
-  "logo": "assets/images/promotion/gal-bellec.png",
+  "logo": "/assets/images/promotion/gal-bellec.png",
   "description": []
 }

@@ -1,7 +1,7 @@
 {
   "header": {
-    "logo": "assets/images/logo/emac.svg",
-    "background": "assets/images/emac/header.jpg",
+    "logo": "/assets/images/logo/emac.svg",
+    "background": "/assets/images/emac/header.jpg",
     "text": ["École militaire", "des aspirants", "de Coëtquidan"]
   },
   "info": {
@@ -15,8 +15,8 @@
     "title": "Histoire de l’<span>EMAC</span>",
     "headText": "« L’Audace de Servir »",
     "smallText": "Devise",
-    "background": "assets/images/emac/bg2.jpg",
-    "image": "assets/images/emac/emac.jpg",
+    "background": "/assets/images/emac/bg2.jpg",
+    "image": "/assets/images/emac/emac.jpg",
     "description": [
       "Le corps des officiers de réserve est officiellement créé en 1875, par la loi du 13 mars. Il subit des pertes colossales pendant la Première Guerre mondiale, à hauteur de 27 000 officiers de réserve, Morts pour la France. À partir de 1919, l’instruction des officiers de réserve se fait aux Écoles de Saint-Cyr et à Saint-Maixent l’École grâce au Bataillon EOR (Élèves-Officiers de Réserve).",
       "Pour son action durant la Grande Guerre, le Bataillon EOR est officiellement rattaché à l’École spéciale militaire (ESM) de Saint-Cyr en 1931, et prend le nom de 3e Bataillon de l’ESM de Saint-Cyr. Pour marquer cette intégration à la vie de l’école, un EOR est présent dans la garde au drapeau l’année suivante.",
@@ -89,11 +89,11 @@
     "music": {
       "name": "Chant EMAC",
       "subName": "L’audace de servir",
-      "image": "assets/images/logo/emac.svg",
+      "image": "/assets/images/logo/emac.svg",
       "titles": [
         {
           "name": "L’audace de servir",
-          "file": "assets/music/promotion/col-bourgoin/amarante/01 - L'audace de Servir.mp3"
+          "file": "/assets/music/promotion/col-bourgoin/amarante/01 - L'audace de Servir.mp3"
         }
       ],
       "platforms": [],
@@ -107,37 +107,37 @@
       {
         "title": "La remise des calots de tradition",
         "description": "À la fin de la guerre d’Algérie, le calot est la coiffe règlementaire des unités terrestres françaises. Celui-ci est par la suite remplacé par le béret. Le calot reste cependant un symbole fort de cohésion, porté dans de nombreux régiments. Ce couvre-chef, à la couleur bleu horizon de l’école, est porté par les élèves-officiers lors des évènements de tradition et de vie de promotion. La cérémonie de remise des calots est l’occasion d’échanges entre promotions, les élèves-officiers se voyant remettre leur calot par la génération précédente.",
-        "image": "assets/images/emac/calot.jpg"
+        "image": "/assets/images/emac/calot.jpg"
       },
       {
         "title": "La remise des « Alphas »",
         "description": "L’Alpha est le premier galon que reçoivent les élèves officiers. Hautement symbolique, cette remise marque la fin de la période d’incorporation des recrues, dans les premières semaines. Cette cérémonie marque ainsi l’entrée des élèves au sein de l’Académie militaire. La cérémonie est précédée d’une marche durant laquelle les instructeurs présentent les hauts lieux de tradition du camp de Coëtquidan. Cette marche est l’occasion pour les futurs officiers de réfléchir au sens de leur engagement.",
-        "image": "assets/images/emac/alpha.jpg"
+        "image": "/assets/images/emac/alpha.jpg"
       },
       {
         "title": "L’adoubement",
         "description": "La remise des sabres symbolise l’accès à l’état d’officier, notamment à travers la symbolique de la chevalerie médiévale. Selon cette tradition, tout écuyer qui aspire au statut de chevalier reçoit ses armes et son armure au cours de l’adoubement. Le sabre représente l’état d’officier et est le symbole du commandement. L’ancien insigne de grade d’élève-officier de réserve (EOR), aussi appelé la « crevette », statut dont les aspirants de l’EMAC sont héritiers depuis la Première Guerre mondiale, est toujours porté par les stagiaires appartenant à la réserve opérationnelle.",
-        "image": "assets/images/emac/adoubement.jpg"
+        "image": "/assets/images/emac/adoubement.jpg"
       },
       {
         "title": "La présentation au Drapeau",
         "description": "Depuis la création de l’École militaire des aspirants de Coëtquidan, les officiers sous-contrat disposent d’un drapeau qui leur est propre et dont ils ont la garde partagée avec leurs cadres. Cette cérémonie est un rite marquant dans la vie de tout soldat. La présentation au Drapeau est d’abord la présentation d’un héritage, qu’il faut préserver et entretenir. Il s’agit également d’un lien fort entre les membres d’une même unité, qui se rassemblent autour de ses couleurs. La prise d’armes est précédée d’une veillée au Drapeau au Musée de l’Officier, où toute la promotion se relaie en section pour honorer les couleurs de la Nation ainsi que ses ainés.",
-        "image": "assets/images/emac/drapeau.jpg"
+        "image": "/assets/images/emac/drapeau.jpg"
       },
       {
         "title": "La remise des képis",
         "description": "La remise des képis est un moment charnière dans le parcours de tradition des élèves-officiers. Tout d’abord parce que celui-ci se mérite. Les aspirants se voient remettre leur képi par leurs cadres, après une marche aux alentours du camp de Coëtquidan. Ce moment unique est l’occasion pour les élèves-officiers de marquer un peu plus leur appartenance au corps des officiers.",
-        "image": "assets/images/emac/kepi.jpg"
+        "image": "/assets/images/emac/kepi.jpg"
       },
       {
         "title": "Le baptême de promotion",
         "description": "La cérémonie majeure de l’EMAC est, comme pour les autres écoles, le baptême de promotion. Depuis la monarchie de Juillet, il est de coutume de donner un parrain aux promotions des écoles d’officiers de l’armée de Terre. Ce parrain est choisi pour ses qualités d’officier, de soldat et d’homme, qui ont valeur d’exemple pour la nouvelle promotion. Les promotions précédentes ont ainsi choisi pour parrains : Maurice Genevoix, Général Morel, Général Bellec, Lieutenant Michard, Chef d’escadrons Chomel de Jarnieu.",
-        "image": "assets/images/emac/bapteme.jpg"
+        "image": "/assets/images/emac/bapteme.jpg"
       }
     ]
   },
   "social": {
-    "background": "assets/images/emac/bg3.jpg",
+    "background": "/assets/images/emac/bg3.jpg",
     "social": [
       {
         "link": "https://www.facebook.com/saintcyrcoetquidan",
