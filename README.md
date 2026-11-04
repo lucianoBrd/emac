@@ -12,8 +12,11 @@ Ce site permet l'affichage d'informations concernant :
 
 Les responsables gèrent les promotions depuis [Pages CMS](https://app.pagescms.org),
 avec des formulaires pour les dates, les textes, les images, les galeries et les
-chants. Les modifications sont enregistrées dans GitHub ; après une modification
-sur `main`, GitHub Actions vérifie le contenu, reconstruit le site et le publie.
+chants. Les modifications sont enregistrées dans GitHub sur une branche de
+travail, par exemple `cms/contenu`. Une pull request vers `main` lance les
+vérifications obligatoires ; après sa fusion, GitHub Actions reconstruit le site
+et le publie. La branche `main` est protégée et n'accepte pas les enregistrements
+directs depuis le CMS.
 La mise en ligne prend le temps du workflow. En cas de validation ou compilation
 incorrecte, le déploiement est interrompu et le site publié reste disponible.
 
@@ -23,8 +26,9 @@ incorrecte, le déploiement est interrompu et le site publié reste disponible.
 2. Ouvrir [app.pagescms.org](https://app.pagescms.org) et se connecter avec GitHub.
 3. Installer l'application GitHub Pages CMS sur le compte propriétaire, en
    sélectionnant le dépôt `emac`.
-4. Ouvrir le dépôt et choisir la branche `main`. Pages CMS lit automatiquement
-   la configuration `.pages.yml`.
+4. Dans GitHub, créer une branche de travail depuis la dernière version de
+   `main`, par exemple `cms/contenu`. Dans Pages CMS, ouvrir le dépôt et choisir
+   cette branche. Pages CMS lit automatiquement sa configuration `.pages.yml`.
 5. Donner accès aux responsables autorisés via les permissions GitHub ou les
    [collaborateurs Pages CMS](https://pagescms.org/docs/configuration/collaborators/).
 
@@ -34,7 +38,8 @@ Voir le [guide officiel de connexion](https://pagescms.org/docs/quick-start/).
 
 ### Ajouter ou modifier une promotion
 
-1. Dans **Promotions**, ouvrir une fiche ou créer une nouvelle entrée.
+1. Dans Pages CMS, sélectionner la branche de travail (par exemple `cms/contenu`),
+   puis dans **Promotions**, ouvrir une fiche ou créer une nouvelle entrée.
 2. À la création, choisir un nom de fichier stable, par exemple
    `capitaine-exemple.json` : minuscules, chiffres et tirets uniquement.
    Ce nom détermine l'URL `/promotions/capitaine-exemple/`.
@@ -45,9 +50,19 @@ Voir le [guide officiel de connexion](https://pagescms.org/docs/quick-start/).
    réseaux sociaux et décorations.
 5. Pour une galerie, choisir **Photo**, **Vidéo locale** ou **YouTube**. Pour
    YouTube, saisir un lien `https://www.youtube.com/embed/IDENTIFIANT` et sa miniature.
-6. Cocher **Publier sur le site** et enregistrer pour mettre en ligne. Une nouvelle
-   fiche est un brouillon par défaut ; elle peut être complétée avant publication.
-7. Vérifier le workflow dans l'onglet **Actions** du dépôt.
+6. Cocher **Publier sur le site** lorsque la fiche est prête, puis enregistrer sur
+   la branche de travail. Une nouvelle fiche est un brouillon par défaut ; elle
+   peut être complétée avant publication. Enregistrer ne modifie pas encore le
+   site en ligne.
+7. Dans GitHub, ouvrir une pull request de cette branche vers `main`. Attendre la
+   réussite de `format:check`, `lint` et `Tests`, puis fusionner la PR.
+8. Vérifier le déploiement dans l'onglet **Actions** du dépôt. Pour le lot de
+   modifications suivant, repartir d'une nouvelle branche créée depuis `main`.
+
+Si Pages CMS affiche **This repository requires changes through a pull request**,
+la sauvegarde vise une branche protégée, généralement `main`. Conserver une copie
+des modifications non enregistrées avant de changer de branche, puis les
+enregistrer sur la branche de travail. La protection de `main` reste active.
 
 Les identifiants techniques, les titres communs et les références aux images sont
 générés automatiquement. Le menu, les pages prérendues et le sitemap suivent les
@@ -69,9 +84,10 @@ l'histoire, le chant et son enregistrement, les traditions et les liens sociaux.
 Les textes longs utilisent l'éditeur de texte mis en forme ; les images et
 fichiers audio utilisent les mêmes bibliothèques que les promotions.
 
-Enregistrer la fiche sur `main` déclenche les vérifications et la publication
-GitHub Actions. Les champs obligatoires, les fichiers référencés et les liens
-sont contrôlés avant la compilation. L'URL de l'accueil reste `/`.
+Enregistrer la fiche sur la branche de travail, puis ouvrir une pull request vers
+`main` comme pour les promotions. Les champs obligatoires, les fichiers référencés
+et les liens sont contrôlés avant la compilation. La publication GitHub Actions
+intervient après la fusion de la PR. L'URL de l'accueil reste `/`.
 Les identifiants de l'école, des sections et des couplets sont automatiques.
 
 Le contenu est conservé dans `content/emac.json`. Le fichier TypeScript
