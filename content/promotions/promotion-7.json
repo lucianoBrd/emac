@@ -4,6 +4,8 @@
   "number": 7,
   "startDate": "2026-02-01",
   "endDate": "2027-02-01",
-  "logo": "/assets/images/logo/emac.svg",
-  "description": []
+  "logo": "/assets/images/emac/emac.png",
+  "song": {
+    "description": "<p></p>"
+  }
 }
