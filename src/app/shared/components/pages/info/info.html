@@ -20,7 +20,7 @@
               <div ngbAccordionItem [collapsed]="true" [destroyOnHide]="false">
                 <div ngbAccordionHeader>
                   @for (d of info.description.slice(0, 2); track $index) {
-                  <p class="dark about-para text-start" [innerHTML]="d"></p>
+                  <div class="dark about-para text-start" [innerHTML]="d"></div>
                   } @if (info.description.length > 2) {
                   <button
                     class="btn btn-default primary-btn"
@@ -36,7 +36,10 @@
                     <ng-template>
                       @for (d of info.description.slice(2,
                       info.description.length); track $index) {
-                      <p class="dark about-para text-start" [innerHTML]="d"></p>
+                      <div
+                        class="dark about-para text-start"
+                        [innerHTML]="d"
+                      ></div>
                       }
                     </ng-template>
                   </div>

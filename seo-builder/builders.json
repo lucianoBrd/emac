@@ -1,9 +1,0 @@
-{
-  "builders": {
-    "generate-mpa": {
-      "implementation": "./dist/generate-mpa",
-      "schema": "./src/generate-mpa/schema.json",
-      "description": "Generates MPA-style directories for Angular projects."
-    }
-  }
-}
