@@ -1,11 +1,18 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { mkdtempSync, readFileSync, writeFileSync, rmSync } from "node:fs";
+import {
+  mkdirSync,
+  mkdtempSync,
+  readFileSync,
+  writeFileSync,
+  rmSync,
+} from "node:fs";
 import { join, resolve, sep } from "node:path";
 import { parse } from "yaml";
 import { loadEmac } from "./generate-emac.mjs";
 
 function fixture(t) {
+  mkdirSync(resolve("tmp"), { recursive: true });
   const root = mkdtempSync(resolve("tmp/emac-test-"));
   t.after(() => {
     assert(root.startsWith(resolve("tmp") + sep));

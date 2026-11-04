@@ -12,6 +12,7 @@ import { parse } from "yaml";
 import { loadPromotions } from "./generate-promotions.mjs";
 
 function fixture(t) {
+  mkdirSync(resolve("tmp"), { recursive: true });
   const root = mkdtempSync(resolve("tmp/content-test-")),
     contentRoot = join(root, "content"),
     publicRoot = join(root, "public");
