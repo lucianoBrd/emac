@@ -70,6 +70,89 @@ test("drafts and empty optional sections never produce published routes", (t) =>
   assert.equal(result[0].song, undefined);
 });
 
+test("optional CMS sections do not require their empty scalar fields", () => {
+  const config = parse(readFileSync(".pages.yml", "utf8"));
+  function check(fields, parent) {
+    for (const field of fields) {
+      if (field.type !== "object") continue;
+      const location = `${parent}.${field.name}`;
+      if (!field.required && !field.list) {
+        for (const child of field.fields) {
+          if (child.type !== "object") {
+            assert(
+              !child.required,
+              `${location}.${child.name} blocks an empty section in the CMS`,
+            );
+          }
+        }
+      }
+      check(field.fields, location);
+    }
+  }
+  for (const entry of config.content) check(entry.fields, entry.name);
+  const fields = config.content.find(
+    (entry) => entry.name === "promotions",
+  ).fields;
+  for (const name of ["title", "number", "startDate", "endDate", "logo"]) {
+    assert(
+      fields.find((field) => field.name === name).required,
+      `${name} remains required`,
+    );
+  }
+});
+
+test("empty editor placeholders omit optional promotion sections", (t) => {
+  const { data, write, load } = fixture(t);
+  write({
+    ...data,
+    about: { title: " ", image: null, description: ["<p><br></p>"] },
+    song: {
+      name: "",
+      description: "<p>&nbsp;</p>",
+      verse: [],
+      music: { name: " ", image: "", titles: [], platforms: [] },
+    },
+    album: { name: "", image: "", titles: [], platforms: [] },
+    footer: { title: "", image: "", text: [] },
+    gallery: { title: "", gallery: [] },
+    social: { background: "", social: [] },
+  });
+  const record = load()[0];
+  for (const name of [
+    "about",
+    "song",
+    "album",
+    "footer",
+    "gallery",
+    "social",
+  ]) {
+    assert.equal(record[name], undefined, name);
+  }
+});
+
+test("populated optional sections still require their model fields", (t) => {
+  const { data, write, load } = fixture(t);
+  for (const [section, value, missing] of [
+    ["about", { title: "Histoire" }, "about.image"],
+    ["about", { image: data.logo }, "about.title"],
+    ["song", { description: "Un chant" }, "song.name"],
+    ["album", { name: "Album" }, "album.image"],
+    ["album", { image: data.logo }, "album.name"],
+    ["footer", { title: "Décorations" }, "footer.image"],
+    ["footer", { image: data.logo }, "footer.title"],
+    ["song", { name: "Chant", music: { name: "Audio" } }, "song.music.image"],
+    ["song", { name: "Chant", music: { image: data.logo } }, "song.music.name"],
+  ]) {
+    write({ ...data, [section]: value });
+    assert.throws(load, (error) =>
+      error.message.includes(`${missing}: required field`),
+    );
+  }
+  write({ ...data, song: { name: "Chant", music: { name: "", image: "" } } });
+  assert.equal(load()[0].song.name, "Chant");
+  assert.equal(load()[0].song.music, undefined);
+});
+
 test("duplicate numbers, invalid or reversed dates and missing required fields fail publication", (t) => {
   const { data, write, load } = fixture(t);
   for (const invalid of [

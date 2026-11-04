@@ -18,7 +18,19 @@
 modification valide est rechargée, une modification invalide est signalée dans le
 terminal en conservant la dernière version valide. Pour générer manuellement :
 `npm run content:generate`. Pour les tests de validation : `npm run test:content`.
-La configuration des formulaires est aussi la source de validation des champs.
+La configuration des formulaires définit les types et les champs obligatoires.
+Pour les sections facultatives (`about`, `song`, `album`, `footer`) et les
+enregistrements `song.music`, les champs internes restent facultatifs dans le
+formulaire Pages CMS afin de permettre une section vide. Les obligations liées
+aux modèles sont ajoutées par `validationFields` dans
+`scripts/generate-promotions.mjs` uniquement lors de la validation du contenu.
+
+Une section absente ou entièrement vide, y compris les paragraphes vides de
+l'éditeur, n'est pas publiée. Dès qu'elle est renseignée, ses champs nécessaires
+sont vérifiés : par exemple un chant doit avoir un nom, une histoire de l'insigne
+doit avoir un titre et une image. L'enregistrement audio peut rester vide même
+si le chant est renseigné. Les sections obligatoires de la fiche EMAC conservent
+leurs champs obligatoires dans le CMS.
 
 ## Chemins des médias dans Pages CMS
 
