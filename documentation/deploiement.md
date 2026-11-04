@@ -5,8 +5,10 @@
 ## Publication automatique
 
 Le workflow [Automatic Deploy to GitHub Pages](../.github/workflows/main.yml)
-s'exécute à chaque push sur `main`, y compris après la fusion d'une pull request
-ou un enregistrement Pages CMS sur cette branche.
+s'exécute à chaque push sur `main`, notamment après la fusion d'une pull request.
+Les modifications Pages CMS sont enregistrées sur une branche de travail, puis
+fusionnées via une PR après réussite des contrôles obligatoires. Elles ne sont
+pas enregistrées directement sur `main`, qui est protégée.
 
 Avec Node.js 24, il installe les dépendances via `npm ci`, valide le contenu,
 compile le site, vérifie le SEO, la PWA et le cache audio, puis publie sur GitHub
