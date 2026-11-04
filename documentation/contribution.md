@@ -17,8 +17,9 @@ npm run format
 npm run lint:fix
 ```
 
-Relire les modifications avant de les enregistrer dans Git. Le hook
-[pre-push](../.github/hook/pre-push) utilise ces deux commandes.
+Relire les modifications avant de les enregistrer dans Git. Le formatage ignore
+les fichiers exclus par `.gitignore`, notamment les sorties de compilation et
+les fichiers temporaires.
 
 Pour vérifier sans modifier les fichiers :
 
@@ -26,6 +27,10 @@ Pour vérifier sans modifier les fichiers :
 npm run format:check
 npm run lint
 ```
+
+Le hook [pre-push](../.github/hook/pre-push) lance ces deux vérifications sans
+modifier les fichiers et bloque le push si l'une échoue. En cas d'échec, corriger
+les problèmes, puis enregistrer les modifications avant de pousser à nouveau.
 
 ## Tests
 

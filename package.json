@@ -10,7 +10,7 @@
     "test": "ng test",
     "lint": "eslint . --ext .ts,.html",
     "lint:fix": "eslint . --ext .ts,.html --fix",
-    "format": "prettier --write \"**/*.{ts,html,scss,css,js,json,md}\"",
+    "format": "prettier --write \"**/*.{ts,html,scss,css,js,json,md}\" --ignore-path .gitignore",
     "format:check": "prettier --check \"**/*.{ts,html,scss,css,js,json,md}\" --ignore-path .gitignore",
     "generate-mpa": "node scripts/finalize-static.mjs",
     "github-build": "npm run build",

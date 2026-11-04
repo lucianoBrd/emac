@@ -4,15 +4,16 @@ import { Injectable } from "@angular/core";
   providedIn: "root",
 })
 export class FilterService {
-  public transform(items: any[], searchText: string): any[] {
+  public transform<T extends object>(
+    items: T[] | null | undefined,
+    searchText: string,
+  ): T[] {
     if (!items) return [];
     if (!searchText) return items;
 
     return items.filter((item) => {
-      return Object.keys(item).some((key) => {
-        return String(item[key])
-          .toLowerCase()
-          .includes(searchText.toLowerCase());
+      return Object.values(item).some((value) => {
+        return String(value).toLowerCase().includes(searchText.toLowerCase());
       });
     });
   }
