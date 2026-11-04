@@ -11,10 +11,20 @@ médias sur `cms/contenu` dans Pages CMS. Le workflow
 1. Ouvre une PR vers `main`, ou réutilise celle déjà ouverte pour cette branche.
 2. Met la branche à jour depuis `main` si nécessaire. Cette mise à jour déclenche
    de nouvelles vérifications.
-3. Attend la réussite de **format:check**, **lint** et **Tests**.
-4. Fusionne la PR seulement si ces trois contrôles GitHub Actions ont réussi
+3. Lance `npm run format` et `npm run lint:fix` sur les données CMS, avec les
+   outils et le code de `main`. Si ces commandes corrigent des fichiers JSON,
+   crée un commit `style(cms): apply automatic format and lint fixes` sur la
+   branche CMS et relance la CI grâce au jeton de la GitHub App.
+4. Attend la réussite de **format:check**, **lint** et **Tests** sur le dernier commit.
+5. Fusionne la PR seulement si ces trois contrôles GitHub Actions ont réussi
    sur le dernier commit et que la branche est à jour.
-5. Laisse le workflow de déploiement publier le site après la fusion sur `main`.
+6. Laisse le workflow de déploiement publier le site après la fusion sur `main`.
+
+Aucun commit n'est créé si les fichiers sont déjà corrects. Le commit des
+corrections conserve l'arbre Git de la branche CMS et ne remplace que les JSON
+corrigés : les médias et les autres changements enregistrés sont conservés.
+Il est envoyé sans force push et uniquement si aucun nouvel enregistrement CMS
+n'a remplacé le commit en cours de traitement.
 
 La protection de `main` reste appliquée à l'application d'automatisation. Aucun
 contournement administrateur et aucune exception de branche ne sont nécessaires.
@@ -99,8 +109,14 @@ reste à relire et fusionner manuellement. Les renommages sont vérifiés sur le
 ancien et leur nouveau chemin. Aucun fichier de la branche CMS n'est exécuté
 par le job de publication : son script est chargé depuis `main`.
 
-Une PR en brouillon n'est pas fusionnée. Si la CI échoue, corriger le contenu ou
-le format indiqué par les contrôles, puis enregistrer à nouveau. Si la mise à
+Une PR en brouillon n'est pas fusionnée. Les corrections automatiques ne
+s'appliquent qu'aux PR de contenu admissibles. Si le format ou le lint échoue
+malgré les corrections possibles, aucun commit de correction n'est envoyé.
+Si les outils modifient du code hors des JSON CMS, le workflow s'arrête pour
+demander une correction manuelle de `main`.
+
+Si la CI échoue, corriger le contenu indiqué par les contrôles, puis enregistrer
+à nouveau. Si la mise à
 jour de la branche rencontre un conflit, le résoudre sur GitHub ou localement.
 Une nouvelle modification rend les anciens résultats CI insuffisants : le
 workflow attend ceux du nouveau commit. GitHub conserve le dernier contrôle des
@@ -117,4 +133,6 @@ npm run test:cms
 
 Ces tests simulent les réponses GitHub : création et réutilisation de PR, branche
 à mettre à jour, commit modifié, CI en échec ou ignorée, dépôt fork, brouillon et
-fichiers hors périmètre. Ils ne créent ni ne fusionnent de PR réelle.
+fichiers hors périmètre. Ils couvrent aussi les corrections de format/lint, les
+commits vides, les échecs des outils et les enregistrements concurrents. Ils ne
+créent ni ne fusionnent de PR réelle.

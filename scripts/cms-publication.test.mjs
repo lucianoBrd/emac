@@ -63,7 +63,18 @@ function fixture({ publishing = false, existing = true } = {}) {
     checks,
     context,
     github,
-    run: () => automate({ github, context, core: { info() {}, warning() {} } }),
+    run: () =>
+      automate({
+        github,
+        context,
+        core: {
+          info() {},
+          warning() {},
+          setOutput(name, value) {
+            calls.push({ name: "output", args: { name, value } });
+          },
+        },
+      }),
   };
 }
 
@@ -76,6 +87,11 @@ test("CMS push opens one PR and waits for CI; existing PRs are reused", async ()
       existing ? 0 : 1,
     );
     assert(!f.calls.some((c) => c.name === "merge"));
+    assert.equal(
+      f.calls.find((c) => c.name === "output" && c.args.name === "format-sha")
+        .args.value,
+      "current",
+    );
   }
 });
 
@@ -93,6 +109,7 @@ test("a stale CMS branch is updated and must pass a new CI run", async () => {
 test("successful CI merges precisely the validated commit", async () => {
   const f = fixture({ publishing: true });
   await f.run();
+  assert(!f.calls.some((c) => c.name === "output"));
   assert.deepEqual(f.calls.find((c) => c.name === "merge").args, {
     owner: "owner",
     repo: "emac",
@@ -100,6 +117,20 @@ test("successful CI merges precisely the validated commit", async () => {
     sha: "current",
     merge_method: "squash",
   });
+});
+
+test("correction outputs contain file metadata without diff patches", async () => {
+  const f = fixture();
+  f.files[0].patch =
+    "A large diff should not be passed through workflow outputs";
+  await f.run();
+  const files = JSON.parse(
+    f.calls.find((c) => c.name === "output" && c.args.name === "format-files")
+      .args.value,
+  );
+  assert.deepEqual(files, [
+    { filename: "content/promotions/promotion-7.json" },
+  ]);
 });
 
 test("old runs, failed CI, fork runs and non-PR runs never merge", async () => {

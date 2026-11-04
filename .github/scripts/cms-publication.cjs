@@ -119,7 +119,19 @@ module.exports = async function publishCms({ github, context, core }) {
     return;
   }
   if (!publishing) {
-    core.info(`PR #${pr.number} is ready for CI.`);
+    core.setOutput("format-branch", branch);
+    core.setOutput("format-sha", sha);
+    core.setOutput(
+      "format-files",
+      JSON.stringify(
+        files.map(({ filename, status, previous_filename }) => ({
+          filename,
+          status,
+          previous_filename,
+        })),
+      ),
+    );
+    core.info(`PR #${pr.number} is ready for automatic formatting and CI.`);
     return;
   }
   const results = await github.paginate(github.rest.checks.listForRef, {

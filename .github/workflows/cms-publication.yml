@@ -30,7 +30,7 @@ jobs:
        github.event.workflow_run.event == 'pull_request' &&
        github.event.workflow_run.head_repository.full_name == github.repository)
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 15
     steps:
       - name: Check GitHub App configuration
         env:
@@ -58,9 +58,36 @@ jobs:
           ref: main
           persist-credentials: false
       - name: Prepare PR or publish checked content
+        id: prepare
         uses: actions/github-script@v9
         with:
           github-token: ${{ steps.app-token.outputs.token }}
           script: |
             const automate = require('./.github/scripts/cms-publication.cjs');
             await automate({ github, context, core });
+      - name: Setup Node.js for automatic corrections
+        if: steps.prepare.outputs.format-branch != ''
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24.x"
+          cache: npm
+      - name: Install trusted dependencies from main
+        if: steps.prepare.outputs.format-branch != ''
+        run: npm ci
+      - name: Format, fix lint and commit CMS corrections
+        if: steps.prepare.outputs.format-branch != ''
+        uses: actions/github-script@v9
+        env:
+          CMS_BRANCH: ${{ steps.prepare.outputs.format-branch }}
+          CMS_SHA: ${{ steps.prepare.outputs.format-sha }}
+          CMS_FILES: ${{ steps.prepare.outputs.format-files }}
+        with:
+          github-token: ${{ steps.app-token.outputs.token }}
+          script: |
+            const formatCms = require('./.github/scripts/cms-format.cjs');
+            await formatCms({
+              github, repo: context.repo, core,
+              branch: process.env.CMS_BRANCH,
+              sha: process.env.CMS_SHA,
+              files: JSON.parse(process.env.CMS_FILES),
+            });
