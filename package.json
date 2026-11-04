@@ -11,6 +11,7 @@
     "lint": "eslint . --ext .ts,.html",
     "lint:fix": "eslint . --ext .ts,.html --fix",
     "format": "prettier --write \"**/*.{ts,html,scss,css,js,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,html,scss,css,js,json,md}\" --ignore-path .gitignore",
     "generate-mpa": "node scripts/finalize-static.mjs",
     "github-build": "npm run build",
     "github-deploy": "npx angular-cli-ghpages --dir=dist/emac/browser --no-silent --no-notfound --repo=https://github.com/lucianoBrd/emac.git --name=\"lucianoBrd\" --email=lucien.burdet@gmail.com",
