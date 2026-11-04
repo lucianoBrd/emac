@@ -38,10 +38,12 @@ export class PromotionsList {
     general: ConfigDB.wordings.general,
   };
   public promotions: Promotion[];
+  public readonly currentPromotionId: string | undefined;
   public numberOfPromotion: number;
 
   constructor() {
     this.promotions = this.promotionService.getPromotions();
+    this.currentPromotionId = this.promotions[0]?.id;
     this.numberOfPromotion = this.promotionService.getLength();
   }
 

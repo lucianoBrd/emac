@@ -47,7 +47,7 @@
               </h6>
             </div>
 
-            @if ($first) {
+            @if (promotion.id === currentPromotionId) {
             <div class="mb-2 font-primary">
               <h6 class="text-center-feature">
                 {{wordings.promotion.current}}
