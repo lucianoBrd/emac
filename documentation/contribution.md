@@ -37,6 +37,7 @@ les problèmes, puis enregistrer les modifications avant de pousser à nouveau.
 ```bash
 npm run test:content
 npm run test:audio
+npm run test:cms
 npm run build
 npm run test:seo
 npm run test:pwa
@@ -52,7 +53,11 @@ trois contrôles distincts avec Node.js 24 et les dépendances de `package-lock.
 
 - `format:check` : format Prettier, hors fichiers ignorés par Git.
 - `lint` : analyse ESLint.
-- `Tests` : validation du contenu, cache audio, compilation, SEO et PWA.
+- `Tests` : validation du contenu, cache audio, automatisation CMS, compilation,
+  SEO et PWA.
 
 Une nouvelle modification de la PR annule les vérifications précédentes encore
 en cours. Le déploiement est décrit dans le [guide de publication](deploiement.md).
+
+Pour créer et fusionner automatiquement les PR de contenu après validation,
+consulter le [guide de publication CMS](publication-cms.md).

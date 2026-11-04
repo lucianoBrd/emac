@@ -18,6 +18,7 @@
     "test:seo": "node scripts/verify-seo.mjs",
     "test:pwa": "node scripts/verify-pwa.mjs",
     "test:audio": "node --test scripts/audio-cache.test.mjs",
+    "test:cms": "node --test scripts/cms-publication.test.mjs scripts/cms-format.test.mjs",
     "content:generate": "node scripts/generate-content.mjs",
     "postinstall": "npm run content:generate",
     "prebuild": "npm run content:generate",
