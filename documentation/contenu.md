@@ -19,3 +19,16 @@ modification valide est rechargée, une modification invalide est signalée dans
 terminal en conservant la dernière version valide. Pour générer manuellement :
 `npm run content:generate`. Pour les tests de validation : `npm run test:content`.
 La configuration des formulaires est aussi la source de validation des champs.
+
+## Chemins des médias dans Pages CMS
+
+Les champs image et fichier des fiches JSON utilisent les préfixes publics
+définis par `media.output` dans `.pages.yml` : `/assets/images/...` pour les
+images et vidéos, `/assets/music/...` pour les chants. Le `/` initial est
+nécessaire pour que Pages CMS convertisse le chemin public vers le fichier du
+dépôt, par exemple `/assets/images/logo/emac.svg` vers
+`public/assets/images/logo/emac.svg`, et affiche son aperçu dans l'éditeur.
+
+Les fichiers restent dans `public/assets` ; ne pas ajouter `public/` dans les
+valeurs des fiches. `npm run test:content` vérifie aussi la correspondance des
+chemins enregistrés avec les bibliothèques de médias et les fichiers du dépôt.

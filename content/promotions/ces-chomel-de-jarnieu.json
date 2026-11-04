@@ -4,6 +4,6 @@
   "number": 5,
   "startDate": "2024-02-01",
   "endDate": "2025-02-01",
-  "logo": "assets/images/promotion/ces-chomel-de-jarnieu.PNG",
+  "logo": "/assets/images/promotion/ces-chomel-de-jarnieu.PNG",
   "description": []
 }

@@ -4,6 +4,6 @@
   "number": 4,
   "startDate": "2023-02-01",
   "endDate": "2024-02-01",
-  "logo": "assets/images/promotion/ltn-michard.PNG",
+  "logo": "/assets/images/promotion/ltn-michard.PNG",
   "description": []
 }
