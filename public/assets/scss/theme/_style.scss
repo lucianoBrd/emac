@@ -4391,8 +4391,12 @@ event css start
   h6,
   p {
     color: $secondary;
-    &.dark {
-      color: $dark;
+  }
+  .dark {
+    color: $dark;
+    // Rich-text descriptions inject paragraphs with their own theme color.
+    p {
+      color: inherit;
     }
   }
   h1 {
