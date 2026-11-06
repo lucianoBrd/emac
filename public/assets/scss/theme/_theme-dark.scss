@@ -815,10 +815,9 @@ body {
       }
     }
     .event {
-      p {
-        &.dark {
-          color: $white-5;
-        }
+      p.dark,
+      div.dark {
+        color: $white-5;
       }
       &.pricing {
         .price-container {
